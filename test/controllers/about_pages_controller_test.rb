@@ -2,12 +2,12 @@ require "test_helper"
 
 class AboutPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
-    get about_pages_home_url
+    get root_path
     assert_response :success
   end
 
   test "should get about" do
-    get about_pages_about_url
+    get about_path
     assert_response :success
   end
 end

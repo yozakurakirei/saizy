@@ -1,14 +1,12 @@
-<h1>ここはトップページ</h1>
-<p>Find me in app/views/about_pages/home.html.erb</p>
-
+ここにメインコンテンツが入ります。
 <div class="container">
   <div class="jumbotron m-3">
-    <h1 class="display-4">Hello, Bootstrap!</h1>
+    <h1 class="display-4">ようそこSaizyへ！</h1>
     <hr class="my-4">
-    <p>This is the template of Ruby on Rails using Bootstrap.</p>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+    <p>みんなの投稿で近所の催事ショップを盛り上げよう！</p>
+    <button type="button" class="btn btn-primary btn-lg">
       <i class="far fa-window-maximize"></i>
-      Click here
+      <%= link_to '無料アカウント作成', signup_path, class: "text-white" %>
     </button>
   </div>
   <!-- Modal -->
