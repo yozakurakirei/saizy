@@ -2,27 +2,27 @@ require "test_helper"
 
 class FootersControllerTest < ActionDispatch::IntegrationTest
   test "should get worldof" do
-    get footers_worldof_url
+    get worldof_path
     assert_response :success
   end
 
   test "should get policy" do
-    get footers_policy_url
+    get policy_path
     assert_response :success
   end
 
   test "should get privacy" do
-    get footers_privacy_url
+    get privacy_path
     assert_response :success
   end
 
   test "should get help" do
-    get footers_help_url
+    get help_path
     assert_response :success
   end
 
   test "should get contact" do
-    get footers_contact_url
+    get contact_path
     assert_response :success
   end
 end
