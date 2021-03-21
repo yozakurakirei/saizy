@@ -8,4 +8,6 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  
+  validates_acceptance_of :agreement, allow_nil: false, on: :create
 end
