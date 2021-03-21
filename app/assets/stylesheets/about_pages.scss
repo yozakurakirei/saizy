@@ -1,3 +1,75 @@
-// Place all the styles related to the About_Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// デバッグ
+.debug_dump {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 auot;
+  width: 100%;
+  padding: 20px;
+}
+
+// フッター
+footer {
+  display: block;
+}
+.ly_footer:nth-child(n+2){
+  margin-top: 80px;
+}
+.ly_footer {
+  min-width: 1160px;
+  background-color: #f4f4f5;
+}
+.ly_footer_inner {
+  width: 1140px;
+  padding: 40px 10px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: block;
+  margin-left: -32px;
+  text-align: left;
+}
+
+ul {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.nav-links-item {
+  display: inline-flex;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+.nav-links__link {
+  color: #6c6c75;
+}
+.nav-links__link:hover {
+  color: #6c6c75;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+
+// フッターレスポンシブ
+@media (max-width: 1000px) {
+
+}
+
+// スマフォ用
+@media (max-width: 670px) {
+  .nav-links-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+  .ly_footer_copyright {
+    margin-top: 40px;
+  }
+}
