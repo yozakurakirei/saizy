@@ -6,33 +6,33 @@
 
     <%= form_with(model: @user, local: true) do |f| %>
       <%= f.label :name, "ニックネーム" %>
-      <%= f.text_field :name, class: "form-control" %>
+      <%= f.text_field :name %>
       <% if @user.errors.include?(:name) %>
-        <p style="color: red;",><%= @user.errors.full_messages_for(:name).first %></p>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %></p>
       <% end %>
 
       <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email, class: "form-control" %>
+      <%= f.email_field :email %>
       <% if @user.errors.include?(:email) %>
-        <p style="color: red;",><%= @user.errors.full_messages_for(:email).first %></p>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
       <% end %>
 
       <%= f.label :password, "パスワード" %>
       <%= f.password_field :password, class: "form-control" %>
       <% if @user.errors.include?(:password) %>
-        <p style="color: red;",><%= @user.errors.full_messages_for(:password).first %></p>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %></p>
       <% end %>
 
       <%= f.label :password_confirmation, "パスワードの確認" %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
       <% if @user.errors.include?(:password_confirmation) %>
-        <p style="color: red;",><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
       <% end %>
 
       <%= f.submit "新規登録", class: "btn btn-primary" %>
 
       <%= f.check_box :agreement, :as => :boolean, 
-          checked: false, class: "form-control" %>
+          checked: false %>
         <%= link_to '利用規約', policy_path %>と
         <%= link_to 'プライバシーポリシー', privacy_path %>に同意します。
       <% if @user.errors.include?(:agreement) %>
