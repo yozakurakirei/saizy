@@ -1,5 +1,7 @@
 module SessionsHelper
   def login(user)
-    session[:user_id] = user.id
+    if session[:user_id]git 
+      @current_user ||= User.find_by(id: session[:user_id])
+    end
   end
 end
