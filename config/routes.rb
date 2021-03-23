@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get  '/signup', to: 'users#signup'
   resources :users
 
+  # ログイン
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
   # フッター
   get '/worldof', to:'footers#worldof'
   get '/policy', to:'footers#policy'
