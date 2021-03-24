@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       # ログイン失敗の時のエラーを表示
-      flash.now[:danger] = "ログインに失敗しました"
+      flash.now[:danger] = "メールアドレスかパスワードに誤りがあります"
       render 'new'
     end
   end

@@ -1,5 +1,5 @@
-class User < ApplicationRecord
-  # signup
+class Session < ApplicationRecord
+  # login
   before_save { email.downcase! }
   validates :name, presence: true, length: { maximum: 30 },
             uniqueness: true
