@@ -6,44 +6,37 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <%= link_to '使い方', about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '新規登録', signup_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ログイン', login_path, class: "nav-link" %>
-        </li>
+        <% if logged_in? %>
+          <!-- ログイン済 -->
+          <li class="nav-item">
+            <%= link_to '使い方', about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'お気に入り', "#", class: "nav-link" %>
+          </li>
+          <div class="dropdown">
+            <a class="dropdown-toggle nav-link" href="#"
+               id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
+               aria-expanded="false"><%= @current_user.name %>さん</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <%= link_to 'マイページ', "#", class: "dropdown-item" %>
+              <%= link_to 'アカウント設定', current_user, class: "dropdown-item" %>
+              <%= link_to 'ログアウト', logout_path, class: "dropdown-item", method: :delete %>
+            </div>
+          </div>
+        <% else %>
+          <!-- 未ログイン -->
+          <li class="nav-item">
+            <%= link_to '新規登録', signup_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', login_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
 </header>
-<!-- 
-  <div class="ly_header_main_menu">
-    <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <%= link_to 'Saizy', root_path, class: "navbar-brand" %>
 
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-    <div class="mr-auto"></div>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <%= link_to '使い方', about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to '新規登録', signup_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'ログイン', login_path, class: "nav-link" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  </div>
--->
+

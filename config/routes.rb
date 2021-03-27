@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/signup'
   root 'about_pages#home'
   get  '/about', to: 'about_pages#about'
+  
+  # ログイン系
   get  '/signup', to: 'users#signup'
-  resources :users
-
-  # ログイン
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  resources :users
 
   # フッター
   get '/worldof', to:'footers#worldof'
