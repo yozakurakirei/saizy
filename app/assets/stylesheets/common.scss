@@ -1,9 +1,23 @@
-// Place all the styles related to the User controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 // 共通レイアウト
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
 
+// デバッグ
+.debug {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 auot;
+  width: 100%;
+  padding: 20px;
+  background: #00c4cc;
+  margin-top: 30px;
+  lex-flow: column;
+}
 
 
 
