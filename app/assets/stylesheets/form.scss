@@ -2,3 +2,45 @@
   @extend .is-invalid !optional;
 }
 
+.l_container {
+  display: grid;
+  height: 100%;
+  place-items: center;
+}
+
+.l_login {
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 50px;
+}
+
+.l_login .title_text {
+  display: flex;
+  width: 100%;
+}
+
+.l_login .title_text .login {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.l_login .form_container {
+  width: 100%;
+}
+
+.form_inner form label {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 7px;
+}
+
+.form_inner form label input {
+  height: 100%;
+  width: 100%;
+}

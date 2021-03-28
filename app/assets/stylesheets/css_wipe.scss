@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
+  font-family: "Hiragino Kaku Gothic Pro", sans-serif;
+  color: #555;
 }
+
+// 画面中央寄せ
+.l_container {
+    width: 90%;
+    margin: 0 auto;
+  }
 /* webkit specific styles */
 
 input[type="color"]::-webkit-color-swatch {

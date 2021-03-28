@@ -1,24 +1,32 @@
-<h1>ログイン</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @session, url: login_path, scope: :session, local: true) do |f| %>
+<!-- login -->
+<div class="l_login">
+  <div class="title_text">
+    <div class="login">ログイン</div>
+  </div>
 
-      <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email, class: "form-control", placeholder: "Eメール" %>
+  <div class="form_container">
+    <div class="form_inner">
+        <%= form_with(model: @session, url: login_path, scope: :session, local: true) do |f| %>
 
-      <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.email_field :email, class: "form-control", placeholder: "Eメール", required: true %> <!--input-->
 
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>ログインしたままにする</span>
-      <% end %>
+          <%= f.label :password, "パスワード" %>
+          <%= f.password_field :password, class: "form-control", placeholder: "パスワード", required: true %>
 
-      <%= f.submit "ログイン", class: "btn btn-primary" %>
-    <% end %>
-    
-    <p>アカウント作成がまだの方は<%= link_to 'こちら', signup_path %>から</p>
-    <p>ログインすると<%= link_to '利用規約', policy_path %>と
-        <%= link_to 'プライバシーポリシー', privacy_path %>に同意したことになります。</p>
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+            <%= f.check_box :remember_me %>
+            <span>ログインしたままにする</span>
+          <% end %>
+
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        <% end %>
+        
+        <div class="pass_link">
+          <p>アカウント作成がまだの方は<%= link_to 'こちら', signup_path %>から</p>
+          <p>ログインすると<%= link_to '利用規約', policy_path %>と<%= link_to 'プライバシーポリシー', privacy_path%>
+          に同意したことになります。     
+        </div>
+    </div>
   </div>
 </div>
