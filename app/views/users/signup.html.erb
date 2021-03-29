@@ -1,47 +1,58 @@
-<h1>Saizyアカウントを作りましょう</h1>
-<p>Find me in app/views/users/signup.html.erb</p>
+<!-- login -->
+<div class="l_login">
+  <div class="l_form_box">
+    <h2>Saizyアカウントを作りましょう！</h2>
+      <%= form_with(model: @user, local: true) do |f| %>
 
-<div class="row">
-  <div class="col-md-6 col-md-ofset-3">
+      <div class="l_form_input">
+        <%= f.label :name, "ニックネーム", class: "label_name" %>
+        <%= f.text_field :name, class: "input_area", placeholder: "ニックネーム" %>
+        <% if @user.errors.include?(:name) %>
+          <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %></p>
+        <% end %>
+      </div>
 
-    <p>アカウントをお持ちの方は<%= link_to "こちら", login_path %>から</p>
+      <div class="l_form_input">
+        <%= f.label :email, "メールアドレス", class: "label_name" %>
+        <%= f.email_field :email, class: "input_area", placeholder: "Eメール" %>
+        <% if @user.errors.include?(:email) %>
+          <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
+        <% end %>
+      </div>
 
-    <%= form_with(model: @user, local: true) do |f| %>
-      <%= f.label :name, "ニックネーム" %>
-      <%= f.text_field :name, placeholder: "ニックネーム" %>
-      <% if @user.errors.include?(:name) %>
-        <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %></p>
-      <% end %>
+      <div class="l_form_input">
+        <%= f.label :password, "パスワード", class: "label_name" %>
+        <%= f.password_field :password, class: "input_area", placeholder: "英数字6桁以上" %>
+        <% if @user.errors.include?(:password) %>
+          <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %></p>
+        <% end %>
+      </div>
 
-      <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email, placeholder: "Eメール" %>
-      <% if @user.errors.include?(:email) %>
-        <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
-      <% end %>
+      <div class="l_form_input">
+        <%= f.label :password_confirmation, "パスワードの確認", class: "label_name" %>
+        <%= f.password_field :password_confirmation, class: "input_area", placeholder: "パスワードの確認" %>
+        <% if @user.errors.include?(:password_confirmation) %>
+          <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+        <% end %>
+      </div>
 
-      <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password, class: "form-control", placeholder: "パスワード" %>
-      <% if @user.errors.include?(:password) %>
-        <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %></p>
-      <% end %>
-
-      <%= f.label :password_confirmation, "パスワードの確認" %>
-      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワードの確認" %>
-      <% if @user.errors.include?(:password_confirmation) %>
-        <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
-      <% end %>
-
-      
-
-      <%= f.check_box :agreement, :as => :boolean, 
-          checked: false %>
-        <%= link_to '利用規約', policy_path %>と
-        <%= link_to 'プライバシーポリシー', privacy_path %>に同意します。
-      <% if @user.errors.include?(:agreement) %>
-        <p style="color: red;",><%= @user.errors.full_messages_for(:agreement).first %></p>
-      <% end %>
-
-      <%= f.submit "新規登録", class: "btn btn-primary" %>
+      <div class="l_login_form_button">
+        <%= f.submit "新規登録", class: "form_button" %>  
+      </div>
+      <div class="l_login_form_link">
+        <p>アカウントをお持ちの方は<%= link_to 'こちら', login_path %>へ</p>
+        <p>ログインすると<%= link_to '利用規約', policy_path %>と<%= link_to 'プライバシーポリシー', privacy_path%>
+        に同意したことになります。  
+      </div>
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
