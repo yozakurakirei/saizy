@@ -1,14 +1,74 @@
-
-
 h1 {
   color: red;
   font-size: 30px;
+}
+
+// ヘッダー
+.l_header {
+  position: relative;
+  max-width: 100%;
+  padding: 10px;
+  background: #00c4cc;
+  box-sizing: border-box;
+}
+.l_header_logo {
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 34px;
+  padding: 0 20px;
+  background: #ccc;
+  text-align: center;
+  font-weight: 600;
+  box-sizing: border-box;
+  float: left;
+  text-decoration: none;
+}
+
+.l_header_logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.l_header_logo a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.l_header_nav {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.l_header_nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.l_header_nav ul li a {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.l_header_nav ul li a:hover {
+  background: #18baad;
+  color: #fff;
+  transition: 0.5s;
 }
 
 
 // フッター
 footer {
   display: block;
+  max-width: 100%;
 }
 .ly_footer:nth-child(n+2){
   margin-top: 80px;
