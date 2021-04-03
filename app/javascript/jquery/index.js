@@ -1,7 +1,7 @@
 // jQuery
 
 $(function() {
-  console.log("OK");
+console.log("Hello jQuery");
 
   
 });
