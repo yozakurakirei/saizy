@@ -6,6 +6,37 @@ section {
   display: flex;
 }
 
+// トップページ練習
+.top_container h1 {
+  font-size: 30px;
+  padding: 10px;
+}
+.top_container p {
+  font-size: 20px;
+  padding: 10px;
+}
+img {
+  display: none;
+}
+// .btn {
+//   display: inline-block;
+//   background: #58cc02;
+//   padding: 10px 30px;
+//   border-radius: 10px;
+//   color: #fff;
+//   font-weight: bold;
+//   font-size: 20px;
+//   box-shadow: 0px 5px #58A700;
+//   margin: 30px 50px;
+// }
+// .btn:active {
+//   position: relative;
+//   text-decoration: none;
+//   color: #fff;
+//   top: 5px;
+// }
+
+
 
 // デバッグ
 .debug {
@@ -20,29 +51,6 @@ section {
   flex-flow: column;
 }
 
-// ヘッダー
-// .l_header {
-//   position: relative;
-//   max-width: 100%;
-//   padding: 10px;
-//   background: #00c4cc;
-//   box-sizing: border-box;
-// }
-
-// .l_header_logo {
-//   color: #fff;
-//   height: 50px;
-//   line-height: 50px;
-//   padding: 0 20px;
-//   font-size: 28px;
-//   font-weight: 600;
-//   font-family: 'Nunito', sans-serif;
-//   letter-spacing: 1.5px;
-//   box-sizing: border-box;
-//   text-align: center;
-//   float: left;
-//   text-decoration: none;
-// }
 
 
 

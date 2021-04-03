@@ -1,3 +1,23 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// jquery 練習用
+
+.login_button { 
+  padding: 10px 26px;
+  display: inline-block;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #58cc02;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  margin: 20px;
+  box-shadow: 0 7px #1a7940;
+}
+.login_button:hover {
+  opacity: 0.7;
+}
+.login_button:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+}

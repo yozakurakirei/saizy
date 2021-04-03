@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("jquery")
+require('jquery/index.js')
+
 require("popper.js")
 require("bootstrap")
 
