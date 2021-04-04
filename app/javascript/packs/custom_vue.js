@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       custom_color:function(){
         return this.color.toUpperCase();
       }
-    }
+    },
+    components: { App }
   })
 })
