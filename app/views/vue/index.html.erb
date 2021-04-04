@@ -1,5 +1,42 @@
 <%= javascript_pack_tag 'custom_vue' %>  
 
+<div id="app">
+  <!-- vue.js area -->
+  <table>
+    <thead>
+      <tr>
+        <th class="id">ID</th>
+        <th class="comment">コメント</th>
+        <th class="state">状態</th>
+        <th class="button">-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ここにtrで要素を一行ずつ繰り返し表示したい -->
+      <tr v-for="item in todos" v-bind:key="item.id">
+        <th>{{ item.id }}</th>
+        <td>{{ item.comment }}</td>
+        <td class="state">
+          <button>{{ item.state }}</button>
+        </td>
+        <td class="button">
+          <!-- 削除 -->
+          <button>削除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>新しい作業の追加</h2>
+  <form class="add-form" v-on:submit.prevent="doAdd"></form>
+  <!-- コメント入力 -->
+  コメント<input type="text" ref="comment">
+  <!-- 追加 -->
+  <button type="submit">追加する</button>
+</div>
+
+
+  <!--
 <div id="app" class="vue">
   {{ number }}
   <button v-on:click="countUp">カウントアップ</button>
@@ -11,6 +48,24 @@
   <div v-bind:class="color">カラー</div>
   <div :class>こんにちは</div> <!-- v-bindの省略系 -->
 
+  <!--
   <input type="text" v-model="color">
   {{ custom_color }}
+
+  <p>Hello {{ name.toUpperCase() }}さん</p>
+  <p><input type="text" v-model="name"></p>
+
+  <h1>Todoリストを作ろう</h1>
+  <ul>
+    <li v-for="(todo, index) in todos">
+    <input type="checkbox">
+    {{ todo.title }}
+    <span @click="deleteItem(index)"><i class="fas fa-times"></i></span>
+    </li>
+  </ul>
+  <form @submit.prevent="addItem">
+    <input type="text" v-model="newItem">
+    <input type="submit" value="追加">
+  </form>
 </div>
+-->
