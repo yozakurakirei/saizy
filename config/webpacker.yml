@@ -33,7 +33,6 @@ default: &default
     - .woff2
 
   extensions:
-    - .jsx
     - .mjs
     - .js
     - .sass
@@ -54,7 +53,7 @@ development:
 
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
-    https: true #変更
+    https: false
     host: localhost
     port: 3035
     public: localhost:3035

@@ -8,14 +8,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
-  
+
   # フッター
   get '/worldof', to:'footers#worldof'
   get '/policy', to:'footers#policy'
   get '/privacy', to:'footers#privacy'
   get '/help', to:'footers#help'
   get '/contact', to:'footers#contact'
-
-  # react練習用
-  get '/react', to: 'react#index'
 end

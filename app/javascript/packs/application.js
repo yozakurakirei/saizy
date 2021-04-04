@@ -9,10 +9,10 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("jquery")
-require('jquery/index.js')
-
 require("popper.js")
 require("bootstrap")
+require("test.js")
+
 
 
 
@@ -31,9 +31,3 @@ import '../src/application.scss'
 // Rails.start()
 // // Turbolinks.start()
 // ActiveStorage.start()
-// Support component names relative to this directory:
-var componentRequireContext = require.context("components", true);
-var ReactRailsUJS = require("react_ujs");
-ReactRailsUJS.useContext(componentRequireContext);
-
-
