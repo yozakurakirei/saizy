@@ -6,6 +6,139 @@ section {
   display: flex;
 }
 
+// ヘッダー
+.l_header {
+  position: relative;
+  max-width: 100%;
+  padding: 10px;
+  background: #00c4cc;
+  box-sizing: border-box;
+}
+.l_header_logo {
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 34px;
+  padding: 0 20px;
+  background: #ccc;
+  text-align: center;
+  font-weight: 600;
+  box-sizing: border-box;
+  float: left;
+  text-decoration: none;
+}
+
+.l_header_logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.l_header_logo a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.l_header_nav {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.l_header_nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.l_header_nav ul li a {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.l_header_nav ul li a:hover {
+  background: #18baad;
+  color: #fff;
+  transition: 0.5s;
+}
+
+
+// フッター
+footer {
+  display: block;
+  max-width: 100%;
+}
+.ly_footer:nth-child(n+2){
+  margin-top: 80px;
+}
+.ly_footer {
+  min-width: 1160px;
+  background-color: #f4f4f5;
+}
+.ly_footer_inner {
+  width: 1140px;
+  padding: 40px 10px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: block;
+  margin-left: -32px;
+  text-align: left;
+}
+
+ul {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.nav-links-item {
+  display: inline-flex;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+.nav-links__link {
+  color: #6c6c75;
+}
+.nav-links__link:hover {
+  color: #6c6c75;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+
+// フッターレスポンシブ
+@media (max-width: 1000px) {
+
+}
+
+// スマフォ用
+@media (max-width: 670px) {
+  .nav-links-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+  .ly_footer_copyright {
+    margin-top: 40px;
+  }
+  footer {
+    display: block;
+    width: 100%;
+  }
+}
+
 
 // デバッグ
 .debug {
