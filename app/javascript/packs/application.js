@@ -11,22 +11,10 @@ require("channels")
 require("jquery")
 require("popper.js")
 require("bootstrap")
-require("test.js")
+require("custom.js")
 
-
-
-
-// import Rails from "@rails/ujs"
-// import Turbolinks from "turbolinks"
-// import * as ActiveStorage from "@rails/activestorage"
-// import "channels"
-// import 'jquery'
-// import 'popper.js'
-// import 'bootstrap'
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
-
-
 
 // Rails.start()
 // // Turbolinks.start()

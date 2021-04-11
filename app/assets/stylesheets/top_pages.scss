@@ -21,9 +21,6 @@ $sofia: "Sofia", cursive;
 header{
   background-color: $primary-color;
 }
-.container {
-  height: 70px;
-}
 .site-logo{
   font-size: 40px;
   font-weight: 600;
@@ -44,4 +41,29 @@ header{
 
 .header-links a{
   font-size: 0.9em;
+}
+
+// second-header
+.navbar-nav{
+  padding: 0.8rem 0rem;
+}
+.navbar-nav .nav-link{
+  font-size: 0.9rem;
+  color: $light-gray !important;
+}
+.navbar-nav .nav-item .nav-link{
+  padding: 0 1.3rem;
+}
+.like-icon{
+  margin-right: 2.5rem !important;
+}
+
+// image
+.thumbnail{
+  display: inline-block;
+  width: 100%;
+  height: 450px; 
+}
+.thumbnail img{
+  height: 100%;
 }
