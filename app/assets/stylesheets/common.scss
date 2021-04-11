@@ -5,13 +5,21 @@ section {
   height: 100vh;
   display: flex;
 }
+.container{
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.container-md {
+  max-width: 100rem;
+  margin: 0 auto;
+}
 
 // ヘッダー
 .l_header {
   position: relative;
   max-width: 100%;
   padding: 10px;
-  background: #00c4cc;
+  background: #ff7e5f;
   box-sizing: border-box;
 }
 .l_header_logo {
@@ -20,7 +28,6 @@ section {
   line-height: 50px;
   font-size: 34px;
   padding: 0 20px;
-  background: #ccc;
   text-align: center;
   font-weight: 600;
   box-sizing: border-box;
@@ -117,6 +124,15 @@ ul {
 
 
 // フッターレスポンシブ
+@media only screen and (max-width: 1200px){
+  .container {
+    padding: 0 3rem;
+  }
+  .container-md {
+    padding: 0 3rem;
+  }
+}
+
 @media (max-width: 1000px) {
 
 }
@@ -153,29 +169,7 @@ ul {
   flex-flow: column;
 }
 
-// ヘッダー
-// .l_header {
-//   position: relative;
-//   max-width: 100%;
-//   padding: 10px;
-//   background: #00c4cc;
-//   box-sizing: border-box;
-// }
 
-// .l_header_logo {
-//   color: #fff;
-//   height: 50px;
-//   line-height: 50px;
-//   padding: 0 20px;
-//   font-size: 28px;
-//   font-weight: 600;
-//   font-family: 'Nunito', sans-serif;
-//   letter-spacing: 1.5px;
-//   box-sizing: border-box;
-//   text-align: center;
-//   float: left;
-//   text-decoration: none;
-// }
 
 
 

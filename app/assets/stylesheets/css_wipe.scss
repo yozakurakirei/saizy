@@ -1,14 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: "Hiragino Kaku Gothic Pro", sans-serif;
-  color: #555;
 }
 
-// 画面中央寄せ
-.l_container {
-    width: 90%;
-    margin: 0 auto;
-  }
 /* webkit specific styles */
 
 input[type="color"]::-webkit-color-swatch {
@@ -49,6 +42,9 @@ time, mark, audio, video {
 
 body {
     line-height:1;
+    font-family: "Hiragino Kaku Gothic Pro", sans-serif;
+    background: #fff;
+    color: #243a6f;
 }
 
 article,aside,details,figcaption,figure,
@@ -74,8 +70,12 @@ a {
     margin:0;
     padding:0;
     font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    background-color: transparent;
 }
 
 /* change colours to suit your needs */

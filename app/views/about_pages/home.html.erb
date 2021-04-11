@@ -1,6 +1,22 @@
 <%= javascript_pack_tag 'hello_vue' %>  
 <%= javascript_pack_tag 'custom_vue' %>  
-<!-- トップページ -->
-<div class="header-index">
+
+<!-- header-index -->
+<div class="indexHeader">
+  <div class="indexHeader_inner">
+    <h1>
+      期間限定ショップで<br>
+      普段買えない商品を買おう！
+    </h1>
+    <p>期間限定ショップは、</p>
+    <p>『催事』『POPUP』『イベント』など複数の名前で呼ばれます</p>
+    <p>あなたのご近所でも遠くの商品が売っているかもしれません！</p>
+    <div class="btnHeader">
+      <%= link_to '新規登録', signup_path, class: "top-btn signup" %>
+      <%= link_to 'ログイン', login_path, class: "top-btn login" %>
+    </div>
+  </div>
 </div>
+
+
 

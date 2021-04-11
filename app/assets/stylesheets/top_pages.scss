@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+// 変数
+$light-gray: #2b3032a1;
+$primary-color: #fe8769;
+$border: #2b303228;
+$text-color: #ff686b;
+$gugi: "Gugi", cursive;
+$sofia: "Sofia", cursive;
+
+
+// 共通
+.bg-primary-color{
+  background-color: $primary-color !important;
+}
+.lightblue{
+  color: lightblue;
+}
+
+// header
+header{
+  background-color: $primary-color;
+}
+.container {
+  height: 70px;
+}
+.site-logo{
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: 'Balsamiq Sans', cursive;
+  display: inline-block;
+  line-height: px;
+  text-align: center;
+  margin: 0;
+}
+.container .dropdown-toggle,
+.container .dropdown-item{
+  font-size: 0.9em;
+}
+.header-links {
+  line-height: normal;
+}
+
+.header-links a{
+  font-size: 0.9em;
+}
