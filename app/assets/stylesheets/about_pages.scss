@@ -67,7 +67,7 @@
 .site-slider .slider-btn .prev,
 .site-slider .slider-btn .next {
   background-color: #fe8769;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   border-radius: 100%;
   color: #fff;
   margin: 0 1rem;
@@ -116,8 +116,8 @@
 
 // second-slider
 .slider-two img {
-  width: 40%;
-  height: 20vw;
+  width: 60%;
+  height: 15vw;
   object-fit: cover;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .site-slider-two .product {
-  height: 25rem;
+  height: 15rem;
   position: relative;
   overflow: hidden;
 }
@@ -135,11 +135,11 @@
 .site-slider-two .product img {
   width: 100%;
   margin: auto;
-  border-radius: 10px;
 }
 
-.site-btn .btn-span {
-  padding: 0.8rem 1.9rem;
+.site-btn.btn-span {
+  padding: 10px;
+  margin-bottom: 10px;
   border-radius: 4rem;
   border: 1px solid #2b303228;
   background-color: #fff;
@@ -148,6 +148,23 @@
 
 .slider-two .slick-track .product:hover span {
   background-color: #e4e4e4;
-  font-size: 20px;
 }
 
+.hr {
+  padding-top: 20px 0;
+  border: 1px solid #2b303228;
+}
+
+// facility area
+.container .facility {
+  padding: 1rem 0;
+}
+.container .facility h2 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+}
+.container .facility p {
+  padding: 10px 0;
+  font-size: 0.9em;
+}
