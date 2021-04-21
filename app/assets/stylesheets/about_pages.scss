@@ -51,7 +51,7 @@
 // first-slider 
 .site-slider img {
   width: 100%;
-  height: 45vw;
+  height: 30vw;
   object-fit: cover;
 }
 
@@ -141,18 +141,12 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4rem;
-  border: 1px solid #2b303228;
   background-color: #fff;
   color: #555;
 }
 
 .slider-two .slick-track .product:hover span {
   background-color: #e4e4e4;
-}
-
-.hr {
-  padding-top: 20px 0;
-  border: 1px solid #2b303228;
 }
 
 // facility area
@@ -204,4 +198,11 @@
   height: 15vw;
   object-fit: cover;
   border-radius: 5px;
+}
+
+
+// grid zone
+.grid-img {
+  width: 100%;
+  height: 6vw;
 }

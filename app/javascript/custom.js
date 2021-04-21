@@ -11,17 +11,7 @@ $(function() {
   });
 });
 
-// second-slider
-$(function() {
-  $('.slider-two')
-  .not("slick-intialized")
-  .slick({
-    prevArrow: ".site-slider-two .prev",
-    nextArrow: ".site-slider-two .next",
-    slidesToShow: 4,
-    slidesToScroll: 2
-  });
-});
+
 $(function() {
   $('.slider-three')
   .not("slick-intialized")
@@ -29,7 +19,8 @@ $(function() {
     prevArrow: ".site-slider-three .prev",
     nextArrow: ".site-slider-three .next",
     slidesToShow: 4,
-    slidesToScroll: 2
+    slidesToScroll: 2,
+    inifinite: true
   });
 });
 

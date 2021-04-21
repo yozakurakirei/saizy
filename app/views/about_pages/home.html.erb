@@ -20,7 +20,7 @@
   </div>
   <!-- /top slider -->
 
-  <!-- second slider
+  <!-- 施設側として今度実装する
   <div class="container-fluid">
     <div class="site-slider-two px-md-4">
       <div class="row slider-two text-center">
@@ -60,13 +60,11 @@
     </div>
   </div>
    /second slider -->
-
-  <hr class="hr" />
-
+  
   <!-- facility area -->
   <div class="container text-left">
     <div class="facility">
-      <h2>催事開催スペース</h2>
+      <h2>人気の催事商品</h2>
       <p class="text-left">
         百貨店・商業施設・エキナカなど近所の催事に行ってみよう！
       </p>
@@ -180,24 +178,69 @@
   <!-- /facility third slider -->
   <!-- /facility area -->
 
-</main>
-
-<!-- header-index 
-<div class="indexHeader">
-  <div class="indexHeader_inner">
-    <h1>
-      期間限定ショップで<br>
-      普段買えない商品を買おう！
-    </h1>
-    <p>期間限定ショップは、</p>
-    <p>『催事』『POPUP』『イベント』など複数の名前で呼ばれます</p>
-    <p>あなたのご近所でも遠くの商品が売っているかもしれません！</p>
-    <div class="btnHeader">
-      <%= link_to '新規登録', signup_path, class: "top-btn signup" %>
-      <%= link_to 'ログイン', login_path, class: "top-btn login" %>
+  
+  <!-- new, best and features sellers -->
+  <div class="container">
+    <div class="newseller">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <h3 class="text-secondary">人気の商品</h3>
+          <div class="row py-3">
+            <!-- item -->
+            <div class="col-md-3 p-0">
+              <div class="items border">
+                <%= image_pack_tag 'media/images/letao.jpeg', class: "img-fluid grid-img" %>
+              </div>
+            </div>
+            <div class="col-md-9 p-0 py-4">
+              <div class="px-4">
+                <h6>ドゥーブルフロマージュ</h6>
+                <div class="rating pb-2">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h5>
+                  <small><s class="text-secondary">¥1780円</s></small>
+                </h5>
+              </div>
+            </div>
+            <!-- item -->
+            <div class="col-md-3 p-0">
+              <div class="items border">
+                <%= image_pack_tag 'media/images/ito-kyuemon.jpeg', class: "img-fluid grid-img" %>
+              </div>
+            </div>
+            <div class="col-md-9 p-0 py-4">
+              <div class="px-4">
+                <h6>ドゥーブルフロマージュ</h6>
+                <div class="rating pb-2">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h5>
+                  <small><s class="text-secondary">¥1780円</s></small>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <h3 class="text-secondary">人気の商品</h3>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <h3 class="text-secondary">おすすめスポット</h3>
+        </div>
+      </div>
     </div>
   </div>
-</div>
--->
+</main>
+
+
 
 
