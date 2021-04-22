@@ -1,23 +1,48 @@
 <!-- footer -->
 <footer>
-  <div class="l-footer pt-5 pb-4">
+  <div class="l-footer pt-5 pb-5">
     <div class="container text-center text-md-left">
       <div class="row text-center text-md-left">
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="l-footer-title mb-4 text-center">Saizy</h5> 
+          <h5 class="mb-4 text-center">
+            <%= link_to 'Saizy', root_path, class: "l-footer-logo" %>
+          </h5> 
           <p>Saizyはお客様に一番優しいサービスを目指しています。</p>
         </div>
 
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="l-footer-title mb-4">催事をお探しですか？</h6>
+          <h6 class="l-footer-title">催事をお探しですか？</h6>
           <ul class="l-footer-list">
             <li><%= link_to '催事ブランド一覧', "#" %></li>
             <li><%= link_to '催事ブランド一覧', "#" %></li>
             <li><%= link_to '催事ブランド一覧', "#" %></li>
-          </ul>
-            
+          </ul>    
         </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="l-footer-title">Saizyについて</h6>
+          <ul class="l-footer-list">
+            <li><%= link_to '使い方', help_path %></li>
+            <li><%= link_to 'Saizyが目指す世界', worldof_path %></li>
+            <li><%= link_to 'お問い合わせ', contact_path %></li>
+          </ul>    
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h6 class="l-footer-title">プライバシーと利用規約</h6>
+          <ul class="l-footer-list">
+            <li><%= link_to 'プライバシーポリシー', privacy_path %></li>
+            <li><%= link_to '利用規約', policy_path %></li>
+            <li><%= link_to '催事ブランド一覧', "#" %></li>
+            <li><%= link_to '催事ブランド一覧', "#" %></li>
+          </ul>    
+        </div>
+
       </div>
+        <div class="copy-right text-center">
+          <p>
+            &copy;2021 All rights reserved by:
+            <strong class="l-footer-logo">Saizy</strong>
+          </p>
+        </div>
     </div>
   </div>
 </footer>

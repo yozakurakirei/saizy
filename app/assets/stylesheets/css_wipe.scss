@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+// 共通レイアウト
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+  }
+  
+  section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex: 1;
+  }
+
 /* webkit specific styles */
 
 input[type="color"]::-webkit-color-swatch {

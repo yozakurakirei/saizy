@@ -1,0 +1,106 @@
+.container{
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.container-md {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+// header
+.l-header{
+  background-color: #ff7e5f;
+}
+.site-logo{
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: 'Balsamiq Sans', cursive;
+  display: inline-block;
+  line-height: px;
+  text-align: center;
+  margin: 0;
+}
+.container .dropdown-toggle,
+.container .dropdown-item{
+  font-size: 0.9em;
+}
+.header-links {
+  line-height: normal;
+}
+
+.header-links a{
+  font-size: 0.9em;
+}
+
+// second-header
+.navbar-nav{
+  padding: 0.8rem 0rem;
+}
+.navbar-nav .nav-link{
+  font-size: 0.9rem;
+}
+.navbar-nav .nav-item .nav-link{
+  padding: 0 1.3rem;
+}
+.like-icon{
+  margin-right: 2.5rem !important;
+}
+
+
+
+
+// フッター
+.l-footer-logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Balsamiq Sans', cursive;
+  letter-spacing: 1px;
+}
+.l-footer {
+  background-color: #ff7e5f;
+  color: #fff;
+}
+.l-footer a {
+  color: white;
+}
+.l-footer a:hover {
+  opacity: 0.6;
+}
+.l-footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #efefef;
+  letter-spacing: 1px;
+
+}
+.l-footer-list li {
+  margin-bottom: 18px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.copy-right {
+  margin-top: 40px;
+}
+strong {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+
+// デバッグ
+.debug {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 auot;
+  width: 100%;
+  padding: 20px;
+  background: #00c4cc;
+  margin-top: 30px;
+  flex-flow: column;
+}
+
