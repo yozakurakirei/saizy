@@ -2,31 +2,30 @@
   <div class="l_form_box">
     <h2>プロフィールを編集する</h2>
       <%= form_with(model: @user, local: true) do |f| %>
+
+        <div class="gravatar_edit">
+          <a href="https://gravatar.com/emails" 
+             target="_blank" rel="noopener">
+            <%= gravatar_for @user %>
+          </a>
+        </div>
+
         <div class="l_form_input">
           <%= f.label :name, "ニックネーム", class: "label_name" %>
           <%= f.text_field :name, class: "input_area" %>
+          <% if @user.errors.include?(:name) %>
+            <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %></p>
+          <% end %>
         </div>
 
         <div class="l_form_input">
           <%= f.label :email, "メールアドレス", class: "label_name" %>
           <%= f.email_field :email, class: "input_area" %> 
+          <% if @user.errors.include?(:email) %>
+            <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
+          <% end %>
         </div>
-
-        <div class="l_form_input">
-          <%= f.label :password, "パスワード", class: "label_name" %>
-          <%= f.password_field :password, class: "input_area" %>
-        </div>
-
-        <div class="l_form_input">
-          <%= f.label :password_confirmatioin, "パスワードの確認", class: "label_name" %>
-          <%= f.password_field :password_confirmatioin, class: "input_area" %>
-        </div>
-
-        <div class="gravatar_edit">
-          <%= gravatar_for @user %>
-          <a href="https://gravatar.com/emails" target="_blank">写真を変更</a>
-        </div>
-        
+     
         <div class="l_login_form_button">
           <%= f.submit "更新する", class: "form_button" %>  
         </div>

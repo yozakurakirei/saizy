@@ -1,5 +1,5 @@
 <!-- login -->
-<div class="l_login">
+<div class="l_form">
   <div class="l_form_box">
     <h2>Saizyアカウントを作りましょう！</h2>
       <%= form_with(model: @user, local: true) do |f| %>
@@ -36,10 +36,10 @@
         <% end %>
       </div>
 
-      <div class="l_login_form_button">
+      <div class="l_form_form_button">
         <%= f.submit "新規登録", class: "form_button" %>  
       </div>
-      <div class="l_login_form_link">
+      <div class="l_form_form_link">
         <p>アカウントをお持ちの方は<%= link_to 'こちら', login_path %>へ</p>
         <p>ログインすると<%= link_to '利用規約', policy_path %>と<%= link_to 'プライバシーポリシー', privacy_path%>
         に同意したことになります。  

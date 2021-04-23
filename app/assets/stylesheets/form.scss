@@ -1,4 +1,4 @@
-section .l_login {
+section .l_form {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -6,7 +6,7 @@ section .l_login {
   margin-top: 110px;
 } 
 
-section .l_login .l_form_box h2 {
+section .l_form .l_form_box h2 {
   color: #607d8b;
   font-weight: bold;
   font-size: 30px;
@@ -16,11 +16,11 @@ section .l_login .l_form_box h2 {
   letter-spacing: 1px;
 }
 
-section .l_login .l_form_box .l_form_input {
+section .l_form .l_form_box .l_form_input {
   margin-bottom: 20px;
 }
 
-section .l_login .l_form_box .l_form_input .label_name {
+section .l_form .l_form_box .l_form_input .label_name {
   margin-bottom: 20px;
   font-size: 16px;
   margin-bottom: 5px;
@@ -28,7 +28,7 @@ section .l_login .l_form_box .l_form_input .label_name {
   letter-spacing: 1px;
 }
 
-section .l_login .l_form_box .l_form_input .input_area {
+section .l_form .l_form_box .l_form_input .input_area {
   width: 100%;
   padding: 10px 20px;
   outline: none;
@@ -38,7 +38,7 @@ section .l_login .l_form_box .l_form_input .input_area {
   letter-spacing: 1px;
   background: #f7f7f7;
   border-radius: 18px;
-  color: #f7f7f7;
+  color: #555;
 }
 
 .form_button {
@@ -61,7 +61,7 @@ section .l_login .l_form_box .l_form_input .input_area {
   opacity: 0.7;
 }
 
-section .l_login .l_form_box .l_form_remember {
+section .l_form .l_form_box .l_form_remember {
   margin-bottom: 10px;
   font-size: 14px;
 }
