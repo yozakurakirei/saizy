@@ -9,13 +9,14 @@
 
 // header
 .l-header{
-  background-color: #ff7e5f;
+  background-color: #f8f8f8;
 }
 .site-logo{
   font-size: 40px;
   font-weight: 600;
   letter-spacing: 2px;
   font-family: 'Balsamiq Sans', cursive;
+  color: #555;
   display: inline-block;
   line-height: px;
   text-align: center;
@@ -34,55 +35,32 @@
 }
 
 // second-header
-.navbar-nav{
-  padding: 0.8rem 0rem;
-}
-.navbar-nav .nav-link{
-  font-size: 0.9rem;
-}
-.navbar-nav .nav-item .nav-link{
-  padding: 0 1.3rem;
-}
-.like-icon{
-  margin-right: 2.5rem !important;
-}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  .menu-item {
+    padding: 20px 20px;
+    position: relative;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    transition: 0.4s;
 
-
-
+    .active,
+    :hover {
+      color: #333;
+      opacity: 0.7;
+      border-bottom-color: #3b3b3b;
+    }
+  }
+} 
 
 // フッター
-.l-footer-logo {
-  font-size: 28px;
-  font-weight: bold;
-  font-family: 'Balsamiq Sans', cursive;
-  letter-spacing: 1px;
-}
-.l-footer {
-  background-color: #ff7e5f;
-  color: #fff;
-}
-.l-footer a {
-  color: white;
-}
-.l-footer a:hover {
-  opacity: 0.6;
-}
-.l-footer-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 24px;
-  color: #efefef;
-  letter-spacing: 1px;
-
-}
-.l-footer-list li {
-  margin-bottom: 18px;
-  font-size: 15px;
-  letter-spacing: 1px;
-}
-
 .copy-right {
-  margin-top: 40px;
+  padding: 20px 20px 30px 20px;
+  background-color: #f8f8f8;
 }
 strong {
   font-weight: bold;

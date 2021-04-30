@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'about_pages#home'
+  root to:  'about_pages#home'
   get  '/about', to: 'about_pages#about'
   
   # ログイン系
