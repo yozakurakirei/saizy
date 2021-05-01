@@ -1,15 +1,19 @@
 <template>
   <div id="app">
     <p>{{ message }}</p>
+    <Sample></Sample>
   </div>
 </template>
 
 <script>
+import Sample from './components/Sample'
 export default {
   data () {
     return {
-      message: "Hello"
     }
+  },
+  components: {
+    Sample
   }
 }
 </script>

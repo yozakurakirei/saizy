@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       message: "Can you say hello?"
     },
-    components: { App }
+    components: { 
+      App,
+      
+    }
   })
 })
 
