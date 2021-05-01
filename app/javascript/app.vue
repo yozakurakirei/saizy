@@ -6,17 +6,17 @@
 
 <script>
 export default {
-  data: function () {
+  data () {
     return {
-      message: "Hello Vue! How are you?"
+      message: "Hello"
     }
   }
 }
 </script>
 
-<style scoped>
-p {
+<style lang="scss" scoped>
+  p {
   font-size: 2em;
   text-align: center;
-}
+  }
 </style>
