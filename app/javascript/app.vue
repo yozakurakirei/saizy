@@ -1,26 +1,26 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
     <Sample></Sample>
+    <Anime></Anime>
   </div>
 </template>
 
 <script>
 import Sample from './components/Sample'
+import Anime from './components/Anime'
+
 export default {
   data () {
     return {
     }
   },
   components: {
-    Sample
+    Sample,
+    Anime
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  p {
-  font-size: 2em;
-  text-align: center;
-  }
+
 </style>
