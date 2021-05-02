@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <Sample></Sample>
-    <Anime></Anime>
+    <Sample />
   </div>
 </template>
 
 <script>
 import Sample from './components/Sample'
-import Anime from './components/Anime'
 
 export default {
   data () {
@@ -15,8 +13,7 @@ export default {
     }
   },
   components: {
-    Sample,
-    Anime
+    Sample
   }
 }
 </script>
