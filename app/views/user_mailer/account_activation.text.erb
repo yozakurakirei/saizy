@@ -1,0 +1,8 @@
+はじめまして、<%= @user.name %>さん。
+
+Saizyに登録してくれてありがとうございます！
+下のリンクをクリックして、会員登録を完了させてくださいませ！
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+

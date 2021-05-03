@@ -16,6 +16,5 @@ Rails.application.routes.draw do
   get '/help', to:'footers#help'
   get '/contact', to:'footers#contact'
   
-  # vue
-  get '/vue', to: 'vue#index'
+  resources :account_activation, only: [:edit]
 end

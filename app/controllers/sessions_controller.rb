@@ -5,10 +5,17 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      # マイページに移るようにする
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
+      if user.activated?
+        # マイページに移るようにする
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+      else
+        message = "まだ登録は完了しておりません"
+        message += "メールをお送りしました！チェックをお願いします！"
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       # ログイン失敗の時のエラーを表示
       flash.now[:danger] = "メールアドレスかパスワードに誤りがあります"

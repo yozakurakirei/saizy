@@ -2,8 +2,8 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "yama", email: "yama@example.com",
-                     password: "yama0123", password_confirmation: "yama0123")
+    @user = User.new(name: "admin", email: "admin@example.com",
+                     password: "password", password_confirmation: "password")
   end
 
   test "name blank is not good" do
@@ -61,7 +61,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "authentication test without digest" do
-    assert_not @user.authenticated?("")
+  test "authentication? no digest for false" do
+    assert_not @user.authenticated?(:remember, '')
   end
 end
