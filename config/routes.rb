@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   get '/help', to:'footers#help'
   get '/contact', to:'footers#contact'
   
-  resources :account_activation, only: [:edit]
+  resources :account_activations, only: [:edit]
 end

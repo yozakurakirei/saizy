@@ -1,6 +1,6 @@
 # メインのサンプルユーザーを1人作成する
 User.create!(name:  "admin",
-  email: "admin@saizy.org",
+  email: "admin@example.com",
   password:              "password",
   password_confirmation: "password",
   admin: true,
