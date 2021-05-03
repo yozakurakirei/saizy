@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/contact', to:'footers#contact'
   
   resources :account_activations, only: [:edit]
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
