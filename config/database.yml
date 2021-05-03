@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   timeout: 5000
 
 development:
@@ -24,7 +24,8 @@ production:
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide 
-  # https://railsguides.jp/configuring.html#データベース接続をプールする pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: sample_app_production
-  username: sample_app
+  # https://railsguides.jp/configuring.html#データベース接続をプールする 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: saiji_app_production
+  username: saiji_app
   password: <%= ENV['SAMPLE_APP_DATABASE_PASSWORD'] %>
