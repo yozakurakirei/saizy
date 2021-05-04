@@ -34,12 +34,9 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'foreman'
-<<<<<<< HEAD
-  gem 'letter_opener_web' 
-=======
   gem 'letter_opener_web' # メール
->>>>>>> f301acda603768df4d821b80b5b3a0bab73777dd
 end
+
 
 group :test do
   gem 'capybara', '>= 3.26'

@@ -39,19 +39,12 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # production環境でのメール送信
-<<<<<<< HEAD
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  host = 'saizy.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
-=======
   # https://qiita.com/Atelier-Mirai/items/66bada83622820960dd8
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  # host = '<your heroku app>.herokuapp.com'
+  host = '<your heroku app>.herokuapp.com'
   config.action_mailer.default_url_options = { host: 'saizy.herokuapp.com' }
->>>>>>> f301acda603768df4d821b80b5b3a0bab73777dd
   ActionMailer::Base.smtp_settings = {
      :port => 587,
      :address => 'smtp.sendgrid.net',
