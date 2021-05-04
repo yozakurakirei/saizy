@@ -34,6 +34,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'foreman'
+  gem 'letter_opener_web' 
 end
 
 group :test do
