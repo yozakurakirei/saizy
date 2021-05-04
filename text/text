@@ -1,1 +1,6 @@
-http://localhost:3000/account_activations/nw2D7rxz6JdoSRcGc36IBA/edit?email=nuxt%40example.com
+pathを使う場合
+外部からアクセスする場合は完全なURLが必要なので、pathじゃなくてurlを使用する
+
+名前付きルーティング
+new_password_resetなどのように、
+/aboutとか、勝手に決めたものではないもの

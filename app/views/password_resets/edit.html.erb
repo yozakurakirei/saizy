@@ -1,0 +1,27 @@
+<!-- password reset input -->
+<div class="l_form">
+  <div class="l_form_box">
+    <h2>パスワードの再設定</h2>
+    <p>新しいパスワードを入力してください</p>
+
+    <%= form_with(model: @user, url: password_reset_path(params[:id]),
+                  local: true) do |f| %>
+
+      <%= hidden_field_tag :email, @user.email %>
+
+      <div class="l_form_input">
+        <%= f.label :password, "パスワード", class: "label_name" %>
+        <%= f.password_field :password, class: "input_area", placeholder: "英数字6桁以上" %>
+      </div>
+
+      <div class="l_form_input">
+        <%= f.label :password_confirmation, "パスワードの確認", class: "label_name" %>
+        <%= f.password_field :password_confirmation, class: "input_area", placeholder: "パスワードの確認" %>
+      </div>
+
+      <div class="l_form_form_button">
+        <%= f.submit "パスワード再設定", class: "form_button" %>  
+      </div>
+    <% end %>
+  </div>
+</div>

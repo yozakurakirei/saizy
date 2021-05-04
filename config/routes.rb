@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
+  get 'pass_reset/new'
+  get 'pass_reset/edit'
   root to:  'about_pages#home'
   get  '/about', to: 'about_pages#about'
   
@@ -18,4 +22,5 @@ Rails.application.routes.draw do
   
   resources :account_activations, only: [:edit]
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 end

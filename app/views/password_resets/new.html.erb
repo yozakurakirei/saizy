@@ -1,0 +1,19 @@
+<!-- password reset -->
+<div class="l_form">
+  <div class="l_form_box">
+    <h2>パスワードの再設定</h2>
+    <p>パスワード再設定用メールをお送りいたします。</p>
+    <p>ご登録時のメールアドレスを入力してください</p>
+
+    <%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
+      <div class="l_form_input">
+        <%= f.label :email, "メールアドレス", class: "label_name" %>
+        <%= f.email_field :email, class: "input_area", placeholder: "Eメール", required: true %> 
+      </div>
+        
+      <div class="l_login_form_button">
+        <%= f.submit "メールを送信する", class: "form_button" %>  
+      </div>
+    <% end %>
+  </div>
+</div>

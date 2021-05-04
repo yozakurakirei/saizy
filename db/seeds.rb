@@ -1,4 +1,4 @@
-# メインのサンプルユーザーを1人作成する
+# adminユーザー
 User.create!(name:  "admin",
   email: "admin@example.com",
   password:              "password",
@@ -7,8 +7,18 @@ User.create!(name:  "admin",
   activated: true,
   activated_at: Time.zone.now)
 
+# testユーザー
+User.create!(name:  "test",
+  email: "test@example.com",
+  password:              "password",
+  password_confirmation: "password",
+  admin: false,
+  activated: true,
+  activated_at: Time.zone.now)
+
+
 # 追加のユーザーをまとめて生成する
-99.times do |n|
+33.times do |n|
 name  = Faker::Name.name
 email = "example-#{n+1}@railstutorial.org"
 password = "password"
