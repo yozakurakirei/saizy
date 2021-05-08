@@ -23,7 +23,7 @@ gem 'rails-i18n'
 gem 'active_storage_validations', '0.8.2'
 gem 'image_processing'
 gem 'mini_magick'
-gem 'aws-sdk-s3',  '1.46.0', require: false
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
