@@ -64,4 +64,14 @@ class UserTest < ActiveSupport::TestCase
   test "authentication? no digest for false" do
     assert_not @user.authenticated?(:remember, '')
   end
+
+  # 削除のテスト
+  # test "user micropost destroy" do
+  #   @user.save 
+  #   @user.microposts.create!(content: "bar")
+  #   @user.microposts.create!(title: "foo")
+  #   assert_difference 'Micropost.count', -1 do
+  #     @user.destroy
+  #   end
+  # end
 end

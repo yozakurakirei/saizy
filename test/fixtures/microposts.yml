@@ -1,0 +1,12 @@
+hello:
+  content: "Hello!"
+  title: "Nice to meet you"
+  created_at: <%= 10.minutes.ago %>
+  user: admin
+
+most_recent: 
+  content: "My life didn’t please me, so I created my life."
+  title: "名言"
+  created_at: <%= 22.minutes.ago %>
+  user: admin
+

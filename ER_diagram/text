@@ -4,3 +4,7 @@ pathを使う場合
 名前付きルーティング
 new_password_resetなどのように、
 /aboutとか、勝手に決めたものではないもの
+
+実装
+有効期限
+https://qiita.com/ko_ichitaka/items/02047b686a7f1b214722

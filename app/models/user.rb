@@ -1,15 +1,19 @@
 class User < ApplicationRecord
+  #micropostと関連づけとユーザー削除と投稿削除は一緒
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
-  validates :name, presence: true, length: { maximum: 30 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 },
-            allow_nil: true
+
+  # with_optionでまとめる
+  with_options presence: true do
+    validates :name, length: { maximum: 30 }
+    validates :email, length: { maximum: 255 },format: { with: VALID_EMAIL_REGEX },
+                      uniqueness: true
+    validates :password, length: { minimum: 6 },allow_nil: true
+  end
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -57,6 +61,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < 1.hours.ago
+  end
+
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private

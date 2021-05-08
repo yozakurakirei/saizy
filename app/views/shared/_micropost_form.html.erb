@@ -1,0 +1,21 @@
+<%= form_with(model: @micropost, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :title, placeholder: "タイトル" %>
+      <%= f.text_area :content, placeholder: "催事のことを呟いてください" %>
+    </div>
+    <%= f.submit "投稿する", class: "btn btn-primary" %>
+    <span class="image">
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %> 
+    </span>
+ <% end %>
+
+<script type="text/javascript">
+  $("#micropost_image").bind("change", function() {
+    const size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert("投稿できるのは5MBまでです。画像の縮小をおこなってください");
+      $("#micropost_image").val("");
+    }
+  });
+</script>
