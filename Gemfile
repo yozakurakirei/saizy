@@ -41,7 +41,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'foreman'
-  gem 'letter_opener_web' # メール
+  gem 'letter_opener_web' # メール確認用
 end
 
 
