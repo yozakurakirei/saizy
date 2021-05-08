@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'rails', '~> 6.1.3'
+gem 'aws-sdk-s3', '1.46.0', require: false
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
+gem 'active_storage_validations', '0.8.2'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
@@ -17,12 +21,6 @@ gem 'faker',  '2.1.2'
 gem 'will_paginate', '3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'rails-i18n'
-
-# image関係
-gem 'active_storage_validations', '0.8.2'
-gem 'image_processing'
-gem 'mini_magick'
-gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
