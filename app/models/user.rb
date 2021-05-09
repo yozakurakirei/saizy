@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   #micropostと関連づけとユーザー削除と投稿削除は一緒
   has_many :microposts, dependent: :destroy
+  has_many :saizies, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest

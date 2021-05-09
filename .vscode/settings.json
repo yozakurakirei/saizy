@@ -243,5 +243,8 @@
     "you",
     "your",
     "zone"
-  ]
+  ],
+  "emmet.includeLanguages": {
+    "erb": "html",
+ },
 }

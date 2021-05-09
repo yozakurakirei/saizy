@@ -1,0 +1,2 @@
+module SaiziesHelper
+end
