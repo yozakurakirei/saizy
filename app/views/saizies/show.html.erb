@@ -6,4 +6,12 @@
 <%= @saizy.open %>〜<%= @saizy.close %>
 <%= @saizy.start %>〜<%= @saizy.finish %>
 
-<%= simple_format @saizy.content %>
+おすすめポイント<%= simple_format @saizy.content %>
+
+投稿者：<%= @saizy.user.name %>
+
+<% if @saizy.user.id == current_user.id %>
+<button>
+  <%= link_to '編集', edit_saizy_path(@saizy)  %>
+</button>
+<% end %>

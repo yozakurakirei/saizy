@@ -13,7 +13,7 @@ class SaiziesController < ApplicationController
   end
 
   def create
-    @saizy = Saizy.new(saizy_params)
+    @saizy = current_user.saizies.build(saizy_params)
     @saizy.user_id = current_user.id
     if @saizy.save
       flash[:info] = "投稿が完了しました"
