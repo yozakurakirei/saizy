@@ -25,6 +25,11 @@
             <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
           <% end %>
         </div>
+
+        <div class="l_form_input">
+          <%= f.label :profile, "プロフィール", class: "label_name" %>
+          <%= f.text_field :profile, class: "input_area" %> 
+        </div>
      
         <div class="l_login_form_button">
           <%= f.submit "更新する", class: "form_button" %>  

@@ -1,22 +1,13 @@
 <%= javascript_pack_tag 'custom_vue' %>  
 
+<!--
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>つぶやき一覧</h3>
-      <%= render 'shared/feed' %>
-    </div>
-  </div>
-
+ログインユーザーよう
 <% else %>
+その他
+<% end %>
+-->
+
 <!-- Main -->
 <main>
   <!-- top slider -->
@@ -271,7 +262,7 @@
     </div>
   </div>
 </main>
-<% end %>
+
 
 
 

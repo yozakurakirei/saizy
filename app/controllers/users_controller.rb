@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show 
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost = current_user.microposts.build
   end
   
   def signup
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :email, :password, :profile,
                           :password_confirmation, :agreement)
     end
 
