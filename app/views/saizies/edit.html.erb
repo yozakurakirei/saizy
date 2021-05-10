@@ -1,2 +1,53 @@
-<h1>Saizies#edit</h1>
-<p>Find me in app/views/saizies/edit.html.erb</p>
+<h2>編集画面</h2>
+
+<div class="l_form">
+  <div class="l_form_box">
+    <%= form_with(model: @saizy, local: true) do |f| %>
+      <div class="l_form_input">
+        <%= f.label :title, class: "label_name" %>
+        <%= f.text_field :title, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :name, class: "label_name" %>
+        <%= f.text_field :name, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :place, class: "label_name" %>
+        <%= f.text_field :place, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :open, class: "label_name" %>
+        <%= f.text_field :open, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :close, class: "label_name" %>
+        <%= f.text_field :close, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :start, class: "label_name" %>
+        <%= f.date_field :start, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :finish, class: "label_name" %>
+        <%= f.date_field :finish, class: "input_area" %>
+      </div>
+      <div class="l_form_input">
+        <%= f.label :content, class: "label_name" %>
+        <%= f.text_field :content, class: "input_area" %>
+      </div>
+
+      <% if @saizy.images.attached? %>
+      <div class="images">
+        <% @saizy.images.each do |image| %>
+          <%= image_tag image.variant(resize: "300x300") %>
+        <% end %>
+      </div>
+      <% end %>
+
+      <div class="l_form_form_button">
+        <%= f.submit "編集完了", class: "form_button" %>  
+      </div>
+    <% end %>
+  </div>
+</div>
+

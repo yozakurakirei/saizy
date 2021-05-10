@@ -24,10 +24,17 @@ class SaiziesController < ApplicationController
   end
 
   def edit
+    @saizy = Saizy.find(params[:id])
+  end
+
+  def update
+    @saizy = Saizy.find(params[:id])
+    @saizy.update(saizy_params)
+    redirect_to saizy_path(@saizy)
   end
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content, :title, :place, :open, :close, :start, :finish)
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, images: [])
     end
 end

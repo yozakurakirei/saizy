@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to:  'about_pages#home'
+  root to:  'saizies#index'
 
   get 'password_resets/new'
   get 'password_resets/edit'
