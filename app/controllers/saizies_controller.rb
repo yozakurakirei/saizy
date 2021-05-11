@@ -2,6 +2,9 @@ class SaiziesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy]
   
   def index
+    @saizies = Saizy.all
+    @microposts = Micropost.all
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def show

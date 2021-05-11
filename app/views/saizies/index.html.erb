@@ -1,11 +1,35 @@
-<!--
 <% if logged_in? %>
-ログインユーザーよう
+<h1>催事一覧</h1>
+<ul>
+  <% @saizies.each do |saizy| %>
+  <li>
+      <%= saizy.name %>
+      <%= saizy.title %>
+      <% saizy.images.each do |image| %>
+        <%= image_tag(image, width: 400, height: 300) %>
+      <% end %>
+      <%= saizy.user.name %>
+    <% end %>
+  </li>
+</ul>
+
+<h1>みんなの投稿</h1>
+  <% @microposts.each do |micropost| %>
+  <ul>
+      <li>
+        <%= micropost.user.name %>
+        <%= micropost.title%>
+        <%= micropost.content %>
+        <%= image_tag micropost.display_image if micropost.image.attached? %>
+      </li>
+    <% end %>
+  </ul>
+
+
+
+
 <% else %>
 その他
-<% end %>
--->
-
 <!-- Main -->
 
 <main>
@@ -262,6 +286,6 @@
   </div>
 </main>
 
-
+<% end %>
 
 
