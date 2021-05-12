@@ -16,6 +16,12 @@
         <%= f.text_field :title, class: "input_area", placeholder: "タイトル" %>
       </div>
       <div class="l_form_input">
+        <%= f.fields_for :tags do |tf| %>
+          <%= tf.label :name, "タグ" %>
+          <%= tf.text_field :name, class: "input_area", placeholder: "タグを入力してください" %>
+        <% end %>
+      </div>
+      <div class="l_form_input">
         <%= f.file_field :images, id: "images", multiple: true %>
       </div>
       <div class="l_form_input">

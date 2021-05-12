@@ -1,8 +1,8 @@
 class SaiziesController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
   
   def index
-    @saizies = Saizy.all
+    @saizies = Saizy.includes(tags: :saizy).all
     @microposts = Micropost.all
   end
 
@@ -13,6 +13,7 @@ class SaiziesController < ApplicationController
 
   def new
     @saizy = Saizy.new
+    @saizy.tags.build
   end
 
   def create
@@ -38,10 +39,11 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, images: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, tags_attributes: [ :name ] , images: [])
     end
 
     def require_login
       redirect_to login_path if !logged_in?
     end
+
 end

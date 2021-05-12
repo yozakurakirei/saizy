@@ -3,12 +3,9 @@
     <h2>プロフィールを編集する</h2>
       <%= form_with(model: @user, local: true) do |f| %>
 
-        <div class="gravatar_edit">
-          <a href="https://gravatar.com/emails" 
-             target="_blank" rel="noopener">
-            <%= gravatar_for @user %>
-          </a>
-        </div>
+        <%= f.label :avatar, "プロフィール写真" %>
+        <%= f.file_field :avatar %>
+
 
         <div class="l_form_input">
           <%= f.label :name, "ニックネーム", class: "label_name" %>

@@ -5,6 +5,12 @@
   <li>
       <%= saizy.name %>
       <%= saizy.title %>
+
+      <% saizy.tags.each do |tag| %>
+        <h2>タグ:<%= tag.name %></h2>
+        <%= tag.saizy.size %>
+      <% end %>
+
       <% saizy.images.each do |image| %>
         <%= image_tag(image, width: 400, height: 300) %>
       <% end %>
@@ -13,8 +19,9 @@
   </li>
 </ul>
 
+
 <h1>過去に開催されていた催事</h1>
-<% @saizies.draft.each do |saizy| %>
+<% @saizies.deleted.each do |saizy| %>
   <% saizy.images.each do |image| %>
     <%= image_tag(image, width: 400, height: 300) %>
   <% end %>

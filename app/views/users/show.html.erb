@@ -4,7 +4,11 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar %>
+        <% else %>
+          <%= mage_pack_tag 'media/images/candy-apple.jpeg' %>
+        <% end %>
         <%= @user.name %>
       </h1>
         <!-- ログインしている人の画像 
