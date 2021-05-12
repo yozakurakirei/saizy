@@ -8,6 +8,7 @@ class SaiziesController < ApplicationController
 
   def show
     @saizy = Saizy.find(params[:id])
+    require_login if @saizy.draft?
   end
 
   def new
@@ -37,6 +38,10 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, images: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, images: [])
+    end
+
+    def require_login
+      redirect_to login_path if !logged_in?
     end
 end

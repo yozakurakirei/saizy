@@ -1,7 +1,7 @@
 <% if logged_in? %>
-<h1>催事一覧</h1>
+<h1>開催中の催事一覧</h1>
 <ul>
-  <% @saizies.each do |saizy| %>
+  <% @saizies.published.each do |saizy| %>
   <li>
       <%= saizy.name %>
       <%= saizy.title %>
@@ -13,13 +13,19 @@
   </li>
 </ul>
 
+<h1>過去に開催されていた催事</h1>
+<% @saizies.draft.each do |saizy| %>
+  <% saizy.images.each do |image| %>
+    <%= image_tag(image, width: 400, height: 300) %>
+  <% end %>
+<% end %>
+
 <h1>みんなの投稿</h1>
   <% @microposts.each do |micropost| %>
   <ul>
       <li>
         <%= micropost.user.name %>
         <%= micropost.title%>
-        <%= micropost.content %>
         <%= image_tag micropost.display_image if micropost.image.attached? %>
       </li>
     <% end %>

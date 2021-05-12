@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   
   resources :users
   resources :saizies
+
   resources :account_activations, only: [:edit]
   mount LetterOpenerWeb::Engine,  at: '/letter_opener' if Rails.env.development?
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+
 end
