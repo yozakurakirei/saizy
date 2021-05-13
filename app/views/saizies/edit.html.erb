@@ -59,6 +59,16 @@
                               id: "status", class: "form-control" %>
       </div>
 
+      <h2>カテゴリー選択</h2>
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+        <div>
+          <%= tag.label do %>
+            <%= tag.check_box %>
+            <%= tag.text %>
+          <% end %>
+        </div>
+      <% end %>
+
       <div class="l_form_form_button">
         <%= f.submit "編集完了", class: "form_button" %>  
       </div>

@@ -1,5 +1,5 @@
 class SaiziesController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :mypage]
   
   def index
     @saizies = Saizy.includes(tags: :saizy).all
@@ -39,7 +39,7 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, tags_attributes: [ :name ] , images: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, tags_attributes: [ :name ] , images: [], tag_ids: [])
     end
 
     def require_login

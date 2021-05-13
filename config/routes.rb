@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'pass_reset/new'
   get 'pass_reset/edit'
   get  '/about', to: 'about_pages#about'
+
+  get 'home', to: 'about_pages#home'
   
   # ログイン系
   get  '/signup', to: 'users#signup'

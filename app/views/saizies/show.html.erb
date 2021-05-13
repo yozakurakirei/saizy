@@ -2,6 +2,10 @@
 
 <%= @saizy.title %>
 
+<%= @saizy.tags.each do |tag| %>
+  <h2>タグ</h2><%= tag.name %>
+<% end %>
+
 <% if @saizy.images.attached? %>
 <div class="images">
   <% @saizy.images.each do |image| %>

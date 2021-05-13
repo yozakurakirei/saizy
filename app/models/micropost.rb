@@ -5,8 +5,8 @@ class Micropost < ApplicationRecord
 
   # with_optionでまとめる
   with_options presence: true do
-    validates :user_id, presence: true
-    validates :content, presence: true
+    validates :user_id
+    validates :content
     validates :title, length: { maximum: 140 }
     validates :image, content_type: { in: %w[image/jpeg image/gif image/png],
                                        message: "投稿できるのは .jpeg .gif .pngのみになります" },

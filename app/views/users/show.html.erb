@@ -1,34 +1,42 @@
 <h1>ダッシュボード</h1>
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
       <h1>
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar %>
         <% else %>
-          <%= mage_pack_tag 'media/images/candy-apple.jpeg' %>
+          <%= image_pack_tag 'media/images/candy-apple.jpeg' %>
         <% end %>
         <%= @user.name %>
       </h1>
-        <!-- ログインしている人の画像 
-        <%= link_to gravatar_for(current_user, size: 50), current_user %>
-        -->
+
         <span><%= link_to "プロフィール", current_user %></span>
-        <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+  
         <% if @user.id == current_user.id %>
-        メールアドレス: <%= @user.email %><br>
-        <%= link_to '編集', edit_user_path(@user) %>    
+          メールアドレス: <%= @user.email %><br>
+          <%= link_to '編集', edit_user_path(current_user) %>    
         <% end %>
-        プロフィール: <%= @user.profile %>
-    </section>
-  </aside>
+        プロフィール: <%= current_user.profile %>
 
-  <div>
 
-  </div>
+  <!-- 投稿一覧 -->
+  <h2>投稿一覧</h2>
+    <% @user.saizies.each do |saizy| %>
+      <li class="microposts">
+        <%= saizy.title %>
+        <%= saizy.content %>
+        <%= link_to saizy_path(saizy) do %>
+          <% saizy.images.each do |image| %>
+            <%= image_tag image.variant(resize: "300x300") %>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
 
-  <!-- 投稿フォーム -->
+      <h3>投稿数: <%= @user.saizies.count %></h3>
+
+
+  <!-- micropostフォーム 
+
   <section class="micropost_form">
     <%= render 'shared/micropost_form' %>
   </section>
@@ -44,6 +52,7 @@
     <% end %>
   </div>
 </div>
+  -->
 
 
 

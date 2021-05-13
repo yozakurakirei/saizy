@@ -1,20 +1,32 @@
-# adminユーザー
-User.create!(name:  "admin",
-  email: "admin@example.com",
-  password:              "password",
-  password_confirmation: "password",
-  admin: true,
-  activated: true,
-  activated_at: Time.zone.now)
+# # adminユーザー
+# User.create!(name:  "admin",
+#   email: "admin@example.com",
+#   password:              "password",
+#   password_confirmation: "password",
+#   admin: true,
+#   activated: true,
+#   activated_at: Time.zone.now)
 
-# testユーザー
-User.create!(name:  "test",
-  email: "test@example.com",
-  password:              "password",
-  password_confirmation: "password",
-  admin: false,
-  activated: true,
-  activated_at: Time.zone.now)
+# # testユーザー
+# User.create!(name:  "test",
+#   email: "test@example.com",
+#   password:              "password",
+#   password_confirmation: "password",
+#   admin: false,
+#   activated: true,
+#   activated_at: Time.zone.now)
+
+# タグ
+Tag.create([
+  { name: "洋菓子" },
+  { name: "和菓子" },
+  { name: "お弁当・惣菜" },
+  { name: "グローサリー" },
+  { name: "パン" },
+  { name: "飲料" },
+  { name: "お酒" },
+  { name: "その他" }
+])
 
 
 # # 追加のユーザーをまとめて生成する
