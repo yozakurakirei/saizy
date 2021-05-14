@@ -1,10 +1,22 @@
 <h1>ダッシュボード</h1>
 
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <h1></h1>
+  </div>
+</div>
+
+
+
+
+
+
+
       <h1>
         <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar %>
+          <%= image_tag @user.avatar.variant(resize: "300x300") %>
         <% else %>
-          <%= image_pack_tag 'media/images/candy-apple.jpeg' %>
+          <%= image_pack_tag 'media/images/candy-apple.jpeg'.variant(resize: "300x300") %>
         <% end %>
         <%= @user.name %>
       </h1>
@@ -19,8 +31,8 @@
 
 
   <!-- 投稿一覧 -->
-  <h2>投稿一覧</h2>
-    <% @user.saizies.each do |saizy| %>
+  <h2>公開中の投稿一覧</h2>
+    <% @user.saizies.published.each do |saizy| %>
       <li class="microposts">
         <%= saizy.title %>
         <%= saizy.content %>
@@ -29,12 +41,47 @@
             <%= image_tag image.variant(resize: "300x300") %>
           <% end %>
         <% end %>
+        <%= link_to "編集", edit_saizy_path(saizy) %>
+        <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
       </li>
     <% end %>
 
-      <h3>投稿数: <%= @user.saizies.count %></h3>
+      <h3>投稿数: <%= @user.saizies.published.count %></h3>
 
 
+    <h2>出店終了した投稿一覧</h2>
+    <% @user.saizies.deleted.each do |saizy| %>
+      <li class="microposts">
+        <%= saizy.title %>
+        <%= saizy.content %>
+        <%= link_to saizy_path(saizy) do %>
+          <% saizy.images.each do |image| %>
+            <%= image_tag image.variant(resize: "300x300") %>
+          <% end %>
+        <% end %>
+        <%= link_to "編集", edit_saizy_path(saizy) %>
+        <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
+      </li>
+    <% end %>
+
+      <h3>投稿数: <%= @user.saizies.deleted.count %></h3>
+
+    <h2>下書き一覧</h2>
+        <% @user.saizies.draft.each do |saizy| %>
+      <li class="microposts">
+        <%= saizy.title %>
+        <%= saizy.content %>
+        <%= link_to saizy_path(saizy) do %>
+          <% saizy.images.each do |image| %>
+            <%= image_tag image.variant(resize: "300x300") %>
+          <% end %>
+        <% end %>
+        <%= link_to "編集", edit_saizy_path(saizy) %>
+        <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
+      </li>
+    <% end %>
+
+      <h3>投稿数: <%= @user.saizies.draft.count %></h3>
   <!-- micropostフォーム 
 
   <section class="micropost_form">

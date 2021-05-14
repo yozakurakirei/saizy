@@ -37,6 +37,13 @@ class SaiziesController < ApplicationController
     redirect_to saizy_path(@saizy)
   end
 
+  def destroy
+    saizy = Saizy.find(params[:id])
+    saizy.destroy
+    flash[:info] = "削除しました。"
+    redirect_to saizies_path
+  end
+
   private
     def saizy_params
       params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, tags_attributes: [ :name ] , images: [], tag_ids: [])
