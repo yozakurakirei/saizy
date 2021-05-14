@@ -1,33 +1,14 @@
-<h1>ダッシュボード</h1>
-
-<div class="sidebar">
-  <div class="sidebar-brand">
-    <h1></h1>
-  </div>
-</div>
-
-
-
-
+<div class="wrapper">
+  <div>
+    <h1>ダッシュボード</h1>
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
 
 
-
-      <h1>
-        <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar.variant(resize: "300x300") %>
-        <% else %>
-          <%= image_pack_tag 'media/images/candy-apple.jpeg'.variant(resize: "300x300") %>
-        <% end %>
-        <%= @user.name %>
-      </h1>
-
-        <span><%= link_to "プロフィール", current_user %></span>
-  
-        <% if @user.id == current_user.id %>
-          メールアドレス: <%= @user.email %><br>
-          <%= link_to '編集', edit_user_path(current_user) %>    
-        <% end %>
-        プロフィール: <%= current_user.profile %>
 
 
   <!-- 投稿一覧 -->
@@ -82,6 +63,22 @@
     <% end %>
 
       <h3>投稿数: <%= @user.saizies.draft.count %></h3>
+        <div class="nested colum">
+          <div>こんにちは</div>
+          <div>テスト</div>
+          <div>テスト</div>
+          <div>こんにちは</div>
+          <div>テスト</div>
+          <div>テスト</div>
+        </div>
+        <div class="nested colum">
+          <div>こんにちは</div>
+          <div>テスト</div>
+          <div>テスト</div>
+          <div>こんにちは</div>
+          <div>テスト</div>
+          <div>テスト</div>
+        </div>
   <!-- micropostフォーム 
 
   <section class="micropost_form">
@@ -100,7 +97,41 @@
   </div>
 </div>
   -->
+    </div>
 
 
+<!-- プロフィールページ -->
+    <div>
+      <h1>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar.variant(resize: "300x300") %>
+        <% else %>
+          <%= image_pack_tag 'media/images/candy-apple.jpeg'.variant(resize: "300x300") %>
+        <% end %>
+        <%= @user.name %>
+      </h1>
 
+        <span><%= link_to "プロフィール", current_user %></span>
+  
+        <% if @user.id == current_user.id %>
+          メールアドレス: <%= @user.email %><br>
+          <%= link_to '編集', edit_user_path(current_user) %>    
+        <% end %>
+        プロフィール: <%= current_user.profile %>
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      test.test.test.test.test.test.test.test.
+      <div class="nested">
+        <div>こんにちは</div>
+        <div>テスト</div>
+        <div>テスト</div>
+        <div>こんにちは</div>
+        <div>テスト</div>
+        <div>テスト</div>
+      </div>
+    </div>
+  </div>
 
