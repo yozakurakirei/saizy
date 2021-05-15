@@ -24,3 +24,5 @@ $(function() {
   });
 });
 
+$('#slick1').slick();
+

@@ -5,8 +5,12 @@
 // 共通レイアウト
 body {
     display: flex;
+    color: #555;
     flex-flow: column;
     min-height: 100vh;
+    background-color: #eef8ff;
+    line-height: 1;
+    font-family: "Hiragino Kaku Gothic Pro", sans-serif;
   }
   
   section {
@@ -54,12 +58,6 @@ time, mark, audio, video {
     font-weight:inherit;
 }
 
-body {
-    line-height:1;
-    font-family: "Hiragino Kaku Gothic Pro", sans-serif;
-    background: #fff;
-    color: #243a6f;
-}
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 

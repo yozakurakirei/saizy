@@ -2,30 +2,23 @@
 <h1>開催中の催事一覧</h1>
 <ul>
   <% @saizies.published.each do |saizy| %>
-  <li>
+    <li>
       <%= saizy.name %>
       <%= saizy.title %>
       <% saizy.tags.each do |tag| %>
         <h3>タグ</h3><%= tag.name %>
       <% end %>
-      <% if saizy.images.count > 0 %>
+      <%= link_to saizy_path(saizy) do%>
+        <% if saizy.images.count > 0 %>
           <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+        <% end %>
       <% end %>
-
-
-
-      <!--
-      <% saizy.tags.each do |tag| %>
-        <h2>タグ:<%= tag.name %></h2>
-        <%= tag.saizy.size %>
-      <% end %>
-      -->
 
       <%= link_to user_path(saizy.user_id) do%>
         <%= saizy.user.name %>
       <% end %>
-    <% end %>
-  </li>
+    </li>
+  <% end %>
 </ul>
 
 
@@ -87,7 +80,7 @@
         <div class="col-md-2 product pt-md-3 pr-3">
 <% @saizies.deleted.each do |saizy| %>
   <% saizy.images.each do |image| %>
-    <%= image_tag(image.first, width: 400, height: 300) %>
+    <%= image_tag(image, width: 400, height: 300) %>
   <% end %>
 <% end %>
         </div>

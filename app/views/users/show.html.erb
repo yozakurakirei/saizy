@@ -1,69 +1,105 @@
 <div class="wrapper">
   <div>
-    <h1>ダッシュボード</h1>
-      test.test.test.test.test.test.test.test.
-      test.test.test.test.test.test.test.test.
-      test.test.test.test.test.test.test.test.
-      test.test.test.test.test.test.test.test.
-      test.test.test.test.test.test.test.test.
-      test.test.test.test.test.test.test.test.
 
-
-
-
-  <!-- 投稿一覧 -->
-  <h2>公開中の投稿一覧</h2>
+  <div class="published-post">
+    <div class="links">
+      <ul>
+        <li class="li-list active" data-view="list-view">公開中</li>
+        <li class="li-grid" data-view="grid-view">下書き</li>
+      </ul>
+    </div>
+    <h2>公開中の投稿</h2>
+    <p>投稿数: <%= @user.saizies.published.count %></p>
     <% @user.saizies.published.each do |saizy| %>
-      <li class="microposts">
-        <%= saizy.title %>
-        <%= saizy.content %>
-        <%= link_to saizy_path(saizy) do %>
-          
-        <% if saizy.images.count > 0 %>
-          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-        <% end %>
-        <% end %>
-        <%= link_to "編集", edit_saizy_path(saizy) %>
-        <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
-      </li>
+    <div class="main-view">
+      <div class="view_wrap list-view">
+        <div class="view_item">
+          <div class="vi_left">
+            <%= link_to saizy_path(saizy) do %>
+              <% if saizy.images.count > 0 %>
+                <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="vi-right">
+            <p class="title"><%= saizy.title %></p>
+            <div class="vi-rigth-list">
+              <div class="list-edit">
+                  <%= link_to "編集", edit_saizy_path(saizy) %>
+              </div>
+              <div class="list-destroy">
+                  <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>              
+              </div>     
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
+  </div>
 
-      <h3>投稿数: <%= @user.saizies.published.count %></h3>
-
-
-    <h2>出店終了した投稿一覧</h2>
+  <div class="deleted-post">
+    <h2>出店終了の投稿</h2>
+    <p>投稿数: <%= @user.saizies.deleted.count %></p>
     <% @user.saizies.deleted.each do |saizy| %>
-      <li class="microposts">
-        <%= saizy.title %>
-        <%= saizy.content %>
-        <%= link_to saizy_path(saizy) do %>
-        <% if saizy.images.count > 0 %>
-          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-        <% end %>
-        <% end %>
-        <%= link_to "編集", edit_saizy_path(saizy) %>
-        <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
-      </li>
+    <div class="main-view">
+      <div class="view_wrap list-view">
+        <div class="view_item">
+          <div class="vi_left">
+            <%= link_to saizy_path(saizy) do %>
+              <% if saizy.images.count > 0 %>
+                <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="vi-right">
+            <p class="title"><%= saizy.title %></p>
+            <div class="vi-rigth-list">
+              <div class="list-edit">
+                  <%= link_to "編集", edit_saizy_path(saizy) %>
+              </div>
+              <div class="list-destroy">
+                  <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>              
+              </div>     
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
+  </div>
 
-      <h3>投稿数: <%= @user.saizies.deleted.count %></h3>
-
-    <h2>下書き一覧</h2>
-        <% @user.saizies.draft.each do |saizy| %>
-      <li class="microposts">
-        <%= saizy.title %>
-        <%= saizy.content %>
-        <%= link_to saizy_path(saizy) do %>
-          <% saizy.images.each do |image| %>
-            <%= image_tag image.variant(resize: "300x300") %>
-          <% end %>
-        <% end %>
-        <%= link_to "編集", edit_saizy_path(saizy) %>
-        <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
-      </li>
+  <div class="draft-post">
+    <h2>下書き</h2>
+    <p>投稿数: <%= @user.saizies.draft.count %></p>
+    <% @user.saizies.draft.each do |saizy| %>
+    <div class="main-view">
+      <div class="view_wrap list-view">
+        <div class="view_item">
+          <div class="vi_left">
+            <%= link_to saizy_path(saizy) do %>
+              <% if saizy.images.count > 0 %>
+                <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="vi-right">
+            <p class="title"><%= saizy.title %></p>
+            <div class="vi-rigth-list">
+              <div class="list-edit">
+                  <%= link_to "編集", edit_saizy_path(saizy) %>
+              </div>
+              <div class="list-destroy">
+                  <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>              
+              </div>     
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
-
-      <h3>投稿数: <%= @user.saizies.draft.count %></h3>
+  </div>
+  
         <div class="nested colum">
           <div>こんにちは</div>
           <div>テスト</div>
