@@ -21,4 +21,4 @@ import '../src/application.scss'
 // // Turbolinks.start()
 // ActiveStorage.start()
  
-require.context('../images', true);
+const images = require.context('../images', true);

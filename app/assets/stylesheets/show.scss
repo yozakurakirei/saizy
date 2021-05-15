@@ -1,7 +1,10 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 7fr 3fr;
+  min-height: 100vh;
+  grid-template-columns: 75% 25%;
   grid-gap: 1rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .wrapper > div {
@@ -15,10 +18,21 @@
 .nested {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 100px;
   grid-gap: 1rem;
 }
-.nested > div {
+.nested  > div {
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  margin: 10px;
+}
+.nested2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 0;
+}
+.nested2  > div {
   border: 1px solid #555;
   border-radius: 5px;
   padding: 1rem;
@@ -30,3 +44,32 @@
   padding: 20px;
   margin: 20px;
 }
+
+// プロフィール
+.profile {
+  background-color: #fff;
+
+  .profile-card {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    
+    .card-header {
+      background: #fff;
+      padding: 20px;
+    }
+    .profile-img {
+      display: inline-block;
+      border-radius: 50%;
+    }
+    img {
+      display: block;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+}
+
+
