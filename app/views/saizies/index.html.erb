@@ -8,6 +8,9 @@
       <% saizy.tags.each do |tag| %>
         <h3>タグ</h3><%= tag.name %>
       <% end %>
+      <% if saizy.images.count > 0 %>
+          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+      <% end %>
 
 
 
@@ -17,12 +20,6 @@
         <%= tag.saizy.size %>
       <% end %>
       -->
-
-      <% saizy.images.each do |image| %>
-        <%= link_to saizy_path(saizy) do %>
-        <%= image_tag(image, width: 400, height: 300) %>
-        <% end %>
-      <% end %>
 
       <%= link_to user_path(saizy.user_id) do%>
         <%= saizy.user.name %>
@@ -34,9 +31,9 @@
 
 <h1>過去に開催されていた催事</h1>
 <% @saizies.deleted.each do |saizy| %>
-  <% saizy.images.each do |image| %>
-    <%= image_tag(image, width: 400, height: 300) %>
-  <% end %>
+        <% if saizy.images.count > 0 %>
+          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+        <% end %>
 <% end %>
 
 <h1>みんなの投稿</h1>
@@ -88,23 +85,11 @@
       <div class="slider-three row text-center">
         <!-- image -->
         <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/letao.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>z
-              <div class="pro-price py-2">
-                <h5>
-                  <small><s class="text-secondary">¥2,500</s>円</small>
-                  <small>¥1,728円</small>
-                </h5>
-              </div>
-            </div>
-          </div>
+<% @saizies.deleted.each do |saizy| %>
+  <% saizy.images.each do |image| %>
+    <%= image_tag(image.first, width: 400, height: 300) %>
+  <% end %>
+<% end %>
         </div>
         <div class="col-md-2 product pt-md-3 pr-3">
           <%= image_pack_tag 'media/images/candy-apple.jpeg', class: "img-fluid", alt: "トップページ画像" %>

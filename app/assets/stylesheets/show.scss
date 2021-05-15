@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 3fr 1fr;
   grid-gap: 1rem;
   max-width: 90%;
   margin: 0 auto;
@@ -56,7 +56,6 @@
     
     .card-header {
       background: #fff;
-      padding: 20px;
     }
     .profile-img {
       display: inline-block;
@@ -70,6 +69,47 @@
     }
   }
 
+  .profile-nav-info {
+    height: 140px;
+    .user-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .user-email {
+      font-size: 18px;
+      display: inline-block;
+      .mail-icon {
+        margin-right: 10px;
+      }
+    }
+    .edit-btn {
+      margin-top: 10px;
+      background-color: #2cb696;
+      padding: 10px;
+      border-radius: 5px;
+      &:hover {
+        opacity: 0.7;
+      }
+      a {
+        color: #fff !important;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .card-footer {
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 3fr);
+    }
+    .numbers > div {
+      text-align: center;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+  }
 }
 
 

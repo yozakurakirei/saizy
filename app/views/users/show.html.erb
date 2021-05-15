@@ -18,9 +18,10 @@
         <%= saizy.title %>
         <%= saizy.content %>
         <%= link_to saizy_path(saizy) do %>
-          <% saizy.images.each do |image| %>
-            <%= image_tag image.variant(resize: "300x300") %>
-          <% end %>
+          
+        <% if saizy.images.count > 0 %>
+          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+        <% end %>
         <% end %>
         <%= link_to "編集", edit_saizy_path(saizy) %>
         <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
@@ -36,9 +37,9 @@
         <%= saizy.title %>
         <%= saizy.content %>
         <%= link_to saizy_path(saizy) do %>
-          <% saizy.images.each do |image| %>
-            <%= image_tag image.variant(resize: "300x300") %>
-          <% end %>
+        <% if saizy.images.count > 0 %>
+          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+        <% end %>
         <% end %>
         <%= link_to "編集", edit_saizy_path(saizy) %>
         <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>
@@ -116,8 +117,11 @@
           <h3 class="user-name"><%= @user.name %></h3>
           <p class="user-email">
             <% if @user.id == current_user.id %>
-              <i class="far fa-envelope"></i><%= @user.email %><br>
-              <%= link_to 'プロフィールを編集する', edit_user_path(current_user) %>    
+              <i class="far fa-envelope mail-icon"></i>
+              <%= @user.email %>
+              <div class="edit-btn">
+                <p><%= link_to 'プロフィールを編集する', edit_user_path(current_user) %></p>  
+              </div>
             <% end %>
           </p>
           <p class="user-profile"><%= current_user.profile %></p>
@@ -125,26 +129,22 @@
       </div>
       <div class="card-footer">
         <div class="numbers">
-          <div class="numbers-item">
-            <span></span>投稿数:<%= @user.saizies.count %></span>
-          </div>
-          <div class="numbers-item">
-            <span></span>出店終了:<%= @user.saizies.deleted.count %></span>
-          </div>
-          <div class="numbers-item">
-            <span></span>投稿数:<%= @user.saizies.draft.count %></span>
-          </div>
+          <div>投稿数</div>
+          <div>出店終了</div>
+          <div>下書き</div>
+          <div><%= @user.saizies.count %></div>
+          <div><%= @user.saizies.deleted.count %></div>
+          <div><%= @user.saizies.draft.count %></div>
         </div>
       </div>
     </div>
 
-
-          <span><%= link_to "プロフィール", current_user %></span>
-    
-          
-        <div class="nested2">
-          <div>リスト</div>
-          <div>その他</div>
+    <div class="nested2">
+      <div>
+      リスト
+        <span><%= link_to "プロフィール", current_user %></span>
       </div>
+      <div>その他</div>
     </div>
   </div>
+</div>
