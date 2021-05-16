@@ -1,20 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
-// 変数
-$light-gray: #2b3032a1;
-$primary-color: #fe8769;
-$border: #2b303228;
-$text-color: #ff686b;
-$gugi: "Gugi", cursive;
-$sofia: "Sofia", cursive;
+// top 
+.hero {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-image: url('../images/top-image-sweets-blar.png');
+  background-size: cover;
+  .hero-content {
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #e96161;
+    border-radius: 3px;
+    background-color: #fff7f7;
+    background-size: cover;
+    margin: 3rem;
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: .6rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: .6rem;
+      color: #111;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .text-main {
+      color: #fa7c92;
+    }
+  }
+  .hero-image {
+    display: none;
+    .hero-image img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .hero-action-btn a {
+    padding: .5rem 1.4rem;
+    border-radius: 25px;
+    display: inline-block;
+    &:last-child {
+      margin-left: 1rem;
+      font-weight: bold;
+    }
+  }
+  
+  .btn-main {
+    background-color: #fa7c92 !important;
+    color: #fff !important;
+    border: 1px solid #fa7c92 !important;
+  }
+  .btn-main-outline {
+    background-color: transparent;
+    color: #fa7c92 !important;
+    border: 1px solid #fa7c92 !important;
+  }
+}
+
+.new-post {
+  padding: 1.5rem 0rem;
+  .section-info {
+    text-align: center;
+    padding: 0rem 2rem;
+    margin: 1rem 0;
+    h2 {
+      margin-bottom: .5rem;
+      color: #555;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    p {
+      color: #505050;
+      line-height: 1.5rem;
+    };
+  }
+}
+
+// 投稿のカード
+.post-grid > .post {
+  background-color: #ccc;
+}
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem 1.3rem;
+}
+.post-img {
+  position: relative;
+  img{
+    width: 180px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  .day {
+    position: absolute;
+  }
+}
 
 
-// 共通
-.bg-primary-color{
-  background-color: $primary-color !important;
-}
-.lightblue{
-  color: lightblue;
-}
 
 

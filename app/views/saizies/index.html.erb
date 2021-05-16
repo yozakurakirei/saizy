@@ -44,250 +44,60 @@
 
 
 <% else %>
-その他
 <!-- Main -->
-
 <main>
-  <!-- top slider -->
-  <div class="container-fluid p-0">
-    <div class="site-slider">
-      <div class="slider-one">
-        <%= image_pack_tag 'media/images/shopping.png', class: "img-fluid", alt: "トップページ画像" %> 
-      </div>
-      <div class="slider-btn">
-        <span class="prev position-top"><i class="fas fa-chevron-left"></i></span>
-        <span class="next position-top right-0"><i class="fas fa-chevron-right"></i></span>
-      </div>
-    </div>
-  </div>
-  <!-- /top slider -->
-  
-  <!-- facility area -->
-  <div class="container text-left">
-    <div class="facility">
-      <h2>人気の催事商品</h2>
-      <p class="text-left">
-        百貨店・商業施設・エキナカなど近所の催事に行ってみよう！
+  <!-- top image -->
+  <div class="hero">
+    <div class="hero-content">
+      <h2 class="text-main">Saizy<h2>
+      <h4>美味しい食べ物を <br> みんなに伝えよう！</h4>
+      <p>
+        Saizyは食料品の期間限定ショップを<br>たくさんの人に紹介できるサービスです!<br>
       </p>
-    </div>
-  </div>
-
-  <!-- facility third slider -->
-  <div class="container-fluid">
-    <div class="site-slider-three px-md-3">
-      <div class="slider-three row text-center">
-        <!-- image -->
-        <div class="col-md-2 product pt-md-3 pr-3">
-<% @saizies.deleted.each do |saizy| %>
-  <% saizy.images.each do |image| %>
-    <%= image_tag(image, width: 400, height: 300) %>
-  <% end %>
-<% end %>
-        </div>
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/candy-apple.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <div class="pro-price py-2">
-                <h5>
-                  <small><s class="text-secondary">¥2,500</s>円</small>
-                  <small>¥1,728円</small>
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/omusubi-cake.png', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <div class="pro-price py-2">
-                <h5>
-                  <small><s class="text-secondary">¥2,500</s>円</small>
-                  <small>¥1,728円</small>
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/imano.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <div class="pro-price py-2">
-                <h5>
-                  <small><s class="text-secondary">¥2,500</s>円</small>
-                  <small>¥1,728円</small>
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- image -->
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/ito-kyuemon.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <div class="pro-price py-2">
-                <h5>
-                  <small><s class="text-secondary">¥2,500</s>円</small>
-                  <small>¥1,728円</small>
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="hero-action-btn">
+        <%= link_to '新規登録（無料）', signup_path, class: "btn-main" %>
+        <%= link_to 'ログイン', login_path, class: "btn-main-outline" %>
       </div>
     </div>
-  </div>
-  <!-- /facility third slider -->
-  <!-- /facility area -->
-
-  <!-- facility area -->
-  <div class="container text-left">
-    <div class="facility">
-      <h2>催事開催場所</h2>
+    <div class="hero-image">
+      <%= image_pack_tag 'media/images/top-image.jpeg', alt: "トップページ画像" %>
     </div>
   </div>
-
-  <!-- facility third slider -->
-  <div class="container-fluid">
-    <div class="site-slider-three px-md-3">
-      <div class="slider-three row text-center">
-        <!-- image -->
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/ikspiari.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">イクスピアリ</h6>
-          </div>
-        </div>
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/candy-apple.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-          </div>
-        </div>
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/omusubi-cake.png', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-          </div>
-        </div>
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/imano.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-          </div>
-        </div>
-        <!-- image -->
-        <div class="col-md-2 product pt-md-3 pr-3">
-          <%= image_pack_tag 'media/images/ito-kyuemon.jpeg', class: "img-fluid", alt: "トップページ画像" %>
-          <div class="cart-details">
-            <h6 class="pro-title p-0">Double Fromage | ドゥーブルフロマージュ</h6>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <div class="pro-price py-2">
-                <h5>
-                  <small><s class="text-secondary">¥2,500</s>円</small>
-                  <small>¥1,728円</small>
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- /top image -->
   
-  <!-- new, best and features sellers -->
-  <div class="container">
-    <div class="newseller">
-      <div class="row">
-        <div class="col-md-4 col-sm-6">
-          <h3 class="text-secondary">人気の商品</h3>
-          <div class="row py-3">
-            <!-- item -->
-            <div class="col-md-3 p-0">
-              <div class="items border">
-                <%= image_pack_tag 'media/images/letao.jpeg', class: "img-fluid grid-img" %>
-              </div>
-            </div>
-            <div class="col-md-9 p-0 py-4">
-              <div class="px-4">
-                <h6>ドゥーブルフロマージュ</h6>
-                <div class="rating pb-2">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
+  <!-- new post -->
+  <section class="new-post">
+    <div class="section-info">
+      <h2>新着のSaizy</h2>
+      <p>Posts will be posted here</p>
+    </div>
+
+    <!-- post grid -->
+    <div class="post-grid">
+      <% @saizies.published.each do |saizy| %>
+        <div class="post">
+          <div class="post-img">
+            <%= link_to saizy_path(saizy) do%>
+              <% if saizy.images.count > 0 %>
+                <div class="day">
+                  <%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %>
                 </div>
-                <h5>
-                  <small><s class="text-secondary">¥1780円</s></small>
-                </h5>
-              </div>
-            </div>
-            <!-- item -->
-            <div class="col-md-3 p-0">
-              <div class="items border">
-                <%= image_pack_tag 'media/images/ito-kyuemon.jpeg', class: "img-fluid grid-img" %>
-              </div>
-            </div>
-            <div class="col-md-9 p-0 py-4">
-              <div class="px-4">
-                <h6>ドゥーブルフロマージュ</h6>
-                <div class="rating pb-2">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-                <h5>
-                  <small><s class="text-secondary">¥1780円</s></small>
-                </h5>
-              </div>
-            </div>
+                <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="post-desc">
+            <h3><%= saizy.title %></h3>
+            <p><%= saizy.place %></p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <h3 class="text-secondary">人気の商品</h3>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <h3 class="text-secondary">おすすめスポット</h3>
-        </div>
-      </div>
+      <% end %>
     </div>
-  </div>
-</main>
+    <!-- /post grid -->
+
+  </section>
+  <!-- /new post-->
+  
 
 <% end %>
 
