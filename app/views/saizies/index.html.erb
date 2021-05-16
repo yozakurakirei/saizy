@@ -1,34 +1,69 @@
 <% if logged_in? %>
-<h1>開催中の催事一覧</h1>
-<ul>
-  <% @saizies.published.each do |saizy| %>
-    <li>
-      <%= saizy.name %>
-      <%= saizy.title %>
-      <% saizy.tags.each do |tag| %>
-        <h3>タグ</h3><%= tag.name %>
-      <% end %>
-      <%= link_to saizy_path(saizy) do%>
-        <% if saizy.images.count > 0 %>
-          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+  <section class="new-post">
+    <div class="section-info">
+      <h2>新着のSaizy</h2>
+      <p>Posts will be posted here</p>
+    </div>
+
+    <!-- post grid -->
+    <div class="post-grid">
+      <div id="slider">
+        <% @saizies.published.each do |saizy| %>
+          <div class="post">
+            <div class="post-img">
+              <%= link_to saizy_path(saizy) do%>
+                <% if saizy.images.count > 0 %>
+                  <div class="day">
+                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                  </div>
+                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="post-desc">
+              <h3><%= saizy.title %></h3>
+              <p><%= saizy.place %></p>
+            </div>
+          </div> 
         <% end %>
-      <% end %>
+      </div>
+    </div>
+    <!-- /post grid -->
 
-      <%= link_to user_path(saizy.user_id) do%>
-        <%= saizy.user.name %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-
-<h1>過去に開催されていた催事</h1>
-<% @saizies.deleted.each do |saizy| %>
-        <% if saizy.images.count > 0 %>
-          <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+    <section class="new-post">
+    <div class="section-info">
+      <h2>過去のSaizy</h2>
+      <p>Posts will be posted here</p>
+    </div>
+    <!-- post grid -->
+    <div class="post-grid">
+      <div id="slider-deleted">
+        <% @saizies.deleted.each do |saizy| %>
+          <div class="post">
+            <div class="post-img">
+              <%= link_to saizy_path(saizy) do%>
+                <% if saizy.images.count > 0 %>
+                  <div class="day">
+                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                  </div>
+                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="post-desc">
+              <h3><%= saizy.title %></h3>
+              <p><%= saizy.place %></p>
+            </div>
+          </div> 
         <% end %>
-<% end %>
+      </div>
+    </div>
+    <!-- /post grid -->
 
+  </section>
+  <!-- /new post-->
+
+<!-- cut 
 <h1>みんなの投稿</h1>
   <% @microposts.each do |micropost| %>
   <ul>
@@ -39,6 +74,7 @@
       </li>
     <% end %>
   </ul>
+-->
 
 
 
@@ -74,24 +110,26 @@
 
     <!-- post grid -->
     <div class="post-grid">
-      <% @saizies.published.each do |saizy| %>
-        <div class="post">
-          <div class="post-img">
-            <%= link_to saizy_path(saizy) do%>
-              <% if saizy.images.count > 0 %>
-                <div class="day">
-                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                </div>
-                <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+      <div id="slider">
+        <% @saizies.published.each do |saizy| %>
+          <div class="post">
+            <div class="post-img">
+              <%= link_to saizy_path(saizy) do%>
+                <% if saizy.images.count > 0 %>
+                  <div class="day">
+                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                  </div>
+                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
-          <div class="post-desc">
-            <h3><%= saizy.title %></h3>
-            <p><%= saizy.place %></p>
-          </div>
-        </div>
-      <% end %>
+            </div>
+            <div class="post-desc">
+              <h3><%= saizy.title %></h3>
+              <p><%= saizy.place %></p>
+            </div>
+          </div> 
+        <% end %>
+      </div>
     </div>
     <!-- /post grid -->
 

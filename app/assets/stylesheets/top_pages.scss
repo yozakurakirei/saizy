@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
 // top 
-.top-contents {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .hero {
   margin-top: 2rem;
   display: grid;
@@ -93,16 +88,14 @@
 .post-grid > .post {
 }
 .post-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   grid-gap: 1.5rem 1.3rem;
 }
 .post-img {
   position: relative;
   img{
-    width: 180px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;

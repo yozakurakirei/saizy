@@ -24,5 +24,36 @@ $(function() {
   });
 });
 
-$('#slick1').slick();
+$(function() {
+  $('#slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
+});
+$(function() {
+  $('#slider-deleted').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
+});
 
+$(function() {
+  $('#show-slide-images').slick({
+  });
+})
+// $('#show-slider').slick({
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   asNavFor: '#show-slider',
+//   dots: true,
+//   centerMode: true,
+//   focusOnSelect: true
+// });

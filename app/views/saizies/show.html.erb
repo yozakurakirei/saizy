@@ -1,5 +1,16 @@
 <% if logged_in? %>
 
+<div class="show-image">
+  <% if @saizy.images.attached? %>
+    <div id="show-slide-images">
+      <% @saizy.images.each do |image| %>
+        <%= image_tag image.variant(resize: "300x300") %>
+      <% end %>
+    </div>
+  <% end %> 
+</div>
+
+
 <h2>催事投稿詳細</h2>
 
 <%= @saizy.title %>
@@ -8,13 +19,6 @@
   <h2>タグ</h2><%= tag.name %>
 <% end %>
 
-<% if @saizy.images.attached? %>
-<div class="images">
-  <% @saizy.images.each do |image| %>
-    <%= image_tag image.variant(resize: "300x300") %>
-  <% end %>
-</div>
-<% end %>
 
 <%= @saizy.name %>
 <%= @saizy.place %>
