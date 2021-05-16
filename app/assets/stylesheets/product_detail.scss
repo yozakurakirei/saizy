@@ -1,0 +1,28 @@
+.grid-show {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 3fr 1.5fr;
+  grid-gap: 1rem;
+  width: 90%;
+  margin: auto;
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .6rem;
+  }
+}
+.grid-show > div {
+  background-color: #ccc;
+}
+.grid-show > div:nth-child(odd) {
+  background: #ddd;
+}
+
+#show-slide-image {
+  width: 600px;
+  img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+  }
+}

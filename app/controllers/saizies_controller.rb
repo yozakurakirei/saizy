@@ -8,6 +8,7 @@ class SaiziesController < ApplicationController
 
   def show
     @saizy = Saizy.find(params[:id])
+    @saizies = Saizy.includes(tags: :saizy).all
     require_login if @saizy.draft?
   end
 

@@ -1,68 +1,100 @@
 <% if logged_in? %>
+<!-- left -->
+  <!-- left grid -->
+  <div class="grid-show">
+    <div>
+      <div class="title">
+        <h3><%= @saizy.name %>の催事　　<%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
+      </div>
+      <div class="show-image">
+        <% if @saizy.images.attached? %>
+          <div id="show-slide-image" >
+            <% @saizy.images.each do |image| %>
+              <%= image_tag image.variant(resize: "300x300") %>
+            <% end %>
+          </div>
+        <% end %> 
+      </div>  
 
-<div class="show-image">
-  <% if @saizy.images.attached? %>
-    <div id="show-slide-images">
-      <% @saizy.images.each do |image| %>
-        <%= image_tag image.variant(resize: "300x300") %>
+    <%= @saizy.title %>
+
+    <%= @saizy.tags.each do |tag| %>
+      <h2>タグ</h2><%= tag.name %>
+    <% end %>
+
+
+    <%= @saizy.name %>
+    <%= @saizy.place %>
+    <%= @saizy.open %>〜<%= @saizy.close %>
+    <%= @saizy.start %>〜<%= @saizy.finish %>
+
+    おすすめポイント<%= simple_format @saizy.content %>
+
+    <%= link_to user_path(@saizy.user) do %>
+      投稿者：<%= @saizy.user.name %>
+    <% end %>
+      <% if @saizy.user.id == current_user.id %>
+        <button>
+          <%= link_to '編集', edit_saizy_path(@saizy)  %>
+        </button>
       <% end %>
+
+    <% else %>
+
+      <h2>催事投稿詳細</h2>
+
+    <%= @saizy.title %>
+
+    <%= @saizy.tags.each do |tag| %>
+      <h2>タグ</h2><%= tag.name %>
+    <% end %>
+
+    <% if @saizy.images.attached? %>
+      <div class="images">
+        <% @saizy.images.each do |image| %>
+          <%= image_tag image.variant(resize: "300x300") %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= @saizy.name %>
+    <%= @saizy.place %>
+    <%= @saizy.open %>〜<%= @saizy.close %>
+    <%= @saizy.start %>〜<%= @saizy.finish %>
+
+    おすすめポイント<%= simple_format @saizy.content %>
+
+    <%= link_to user_path(@saizy.user) do %>
+      投稿者：<%= @saizy.user.name %>
+    <% end %>
+
+    <% end %>
+
+    <!-- right bar -->
     </div>
-  <% end %> 
+      <div class="side-card">
+      <div class="side-title">
+        <h3>開催中のSaizy</h3>
+      </div>
+        <div class="side-card-image">
+          <% @saizies.published.each do |saizy| %>
+            <%= link_to saizy_path(saizy) do%>
+              <% if saizy.images.count > 0 %>
+                <div class="day">
+                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                </div>
+                <%= image_tag saizy.images.first.variant(resize: "130x130").processed %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  <div> 
 </div>
 
 
-<h2>催事投稿詳細</h2>
-
-<%= @saizy.title %>
-
-<%= @saizy.tags.each do |tag| %>
-  <h2>タグ</h2><%= tag.name %>
-<% end %>
 
 
-<%= @saizy.name %>
-<%= @saizy.place %>
-<%= @saizy.open %>〜<%= @saizy.close %>
-<%= @saizy.start %>〜<%= @saizy.finish %>
-
-おすすめポイント<%= simple_format @saizy.content %>
-
-<%= link_to user_path(@saizy.user) do %>
-  投稿者：<%= @saizy.user.name %>
-<% end %>
-  <% if @saizy.user.id == current_user.id %>
-    <button>
-      <%= link_to '編集', edit_saizy_path(@saizy)  %>
-    </button>
-  <% end %>
-
-<% else %>
-
-  <h2>催事投稿詳細</h2>
-
-<%= @saizy.title %>
-
-<%= @saizy.tags.each do |tag| %>
-  <h2>タグ</h2><%= tag.name %>
-<% end %>
-
-<% if @saizy.images.attached? %>
-<div class="images">
-  <% @saizy.images.each do |image| %>
-    <%= image_tag image.variant(resize: "300x300") %>
-  <% end %>
-</div>
-<% end %>
-
-<%= @saizy.name %>
-<%= @saizy.place %>
-<%= @saizy.open %>〜<%= @saizy.close %>
-<%= @saizy.start %>〜<%= @saizy.finish %>
-
-おすすめポイント<%= simple_format @saizy.content %>
-
-<%= link_to user_path(@saizy.user) do %>
-  投稿者：<%= @saizy.user.name %>
-<% end %>
-
-<% end %>
