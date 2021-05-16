@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 
 // top 
+.top-contents {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .hero {
   margin-top: 2rem;
   display: grid;
@@ -86,11 +91,11 @@
 
 // 投稿のカード
 .post-grid > .post {
-  background-color: #ccc;
 }
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   grid-gap: 1.5rem 1.3rem;
 }
 .post-img {
@@ -101,13 +106,52 @@
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
   }
   .day {
     position: absolute;
+    span {
+      background-color: #e96161;
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.8rem;
+      padding: .4rem;
+    }
+  }
+}
+.post-desc {
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: .4rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: .4rem;
   }
 }
 
-
-
-
+.is-mobile-menu {
+  padding: 1.5rem;
+  .mobile-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: .7rem 0rem;
+    z-index: 10;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    .menu-item {
+      text-align: center;
+      p {
+        font-size: .8rem;
+        margin-top: .2rem;
+        font-weight: bold;
+        color: #505050;
+      }
+    }
+  }
+}

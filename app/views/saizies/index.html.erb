@@ -45,7 +45,7 @@
 
 <% else %>
 <!-- Main -->
-<main>
+<main class="top-contents">
   <!-- top image -->
   <div class="hero">
     <div class="hero-content">
@@ -80,7 +80,7 @@
             <%= link_to saizy_path(saizy) do%>
               <% if saizy.images.count > 0 %>
                 <div class="day">
-                  <%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %>
+                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
                 </div>
                 <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
               <% end %>
@@ -97,8 +97,8 @@
 
   </section>
   <!-- /new post-->
-  
-
 <% end %>
+</main>
+
 
 

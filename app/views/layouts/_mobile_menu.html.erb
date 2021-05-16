@@ -1,0 +1,61 @@
+<% if logged_in? %>
+  <div class="is-mobile-menu">
+    <div class="mobile-menu">
+      <div class="menu-item">
+        <%= link_to root_path do%>
+          <span><i class="fas fa-home"></i></span>
+          <p><%= link_to 'ホーム', root_path %></p>
+        <% end %>
+      </div>
+      <div class="menu-item">
+        <%= link_to new_saizy_path do%>
+          <span><i class="fas fa-pen"></i></span>
+          <p>投稿する</p>
+        <% end %>
+      </div>
+      <div class="menu-item">
+        <%= link_to edit_user_path(current_user) do%>
+          <span><i class="far fa-user-circle"></i></span>
+          <p>アカウント設定</p>
+        <% end %>
+      </div>
+      <div class="menu-item">
+        <%= link_to logout_path, method: :delete do%>
+        <span><i class="fas fa-sign-out-alt"></i></span>
+        <p>ログアウト</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <div class="is-mobile-menu">
+    <div class="mobile-menu">
+      <div class="menu-item">
+        <%= link_to root_path do%>
+          <span><i class="fas fa-home"></i></span>
+          <p><%= link_to 'ホーム', root_path %></p>
+        <% end %>
+      </div>
+      <div class="menu-item">
+        <%= link_to signup_path do%>
+          <span><i class="fas fa-user-plus"></i></span>
+          <p>新規登録</p>
+        <% end %>
+      </div>
+      <div class="menu-item">
+        <%= link_to login_path do%>
+          <span><i class="fas fa-sign-in-alt"></i></span>
+          <p><%= link_to 'ログイン', login_path %></p>
+        <% end %>
+      </div>
+      <div class="menu-item">
+        <%= link_to "#" do%>
+        <span><i class="fas fa-info-circle"></i></span>
+        <p>お問い合わせ</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
