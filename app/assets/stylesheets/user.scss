@@ -7,3 +7,47 @@
 .gravater-img {
   border-radius: 50%;
 }
+
+// grid practice 
+.test-grid {
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "main sidebar"
+    "content sidebar";
+  grid-gap: 1rem;
+}
+
+.main {
+  background-color: #a7ffeb;
+  grid-area: main;
+}
+.sidebar {
+  background-color: #ccc;
+  grid-area: sidebar;
+}
+.main2 {
+  background-color: #a7ffeb;
+  grid-area: content;
+}
+.sidebar2 {
+  background-color: #ccc;
+  grid-area: sidebar;
+}
+
+// responsive
+@media only screen and (max-width: 670px) {
+  .test-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "main"
+      "content"
+      "sidebar"
+      "sidebar"
+    ;
+  }
+}
