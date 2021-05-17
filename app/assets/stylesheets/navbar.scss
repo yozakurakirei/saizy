@@ -66,18 +66,8 @@ strong {
   font-size: 22px;
 }
 
-
-
-// デバッグ
-.debug {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin: 0 auot;
-  width: 100%;
-  padding: 20px;
-  background: #00c4cc;
-  margin-top: 30px;
-  flex-flow: column;
+@media (max-width: 550px) {
+  .menu-item {
+    font-size: 14px;
+  }
 }
-
