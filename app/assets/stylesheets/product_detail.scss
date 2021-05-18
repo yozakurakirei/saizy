@@ -1,7 +1,7 @@
 #grid-show {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 2fr 1.5fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-areas: 
   "image sidebar"
   "content sidebar";
@@ -22,11 +22,29 @@
   background-color: #ddd;
   grid-area: content;
 }
+
+// 右側のサイドバー
 #sidebar {
   background-color: #ccc;
   grid-area: sidebar;
 }
+.side-t {
+  text-align: center;
+  padding: 1rem;
+}
 
+.side-card {
+  // card
+  display: grid;
+  background-color: #a7ffeb;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  border: 1px solid red;
+  .side-card-flex {
+    display: flex;
+
+  }
+}
 
 #show-slide-image {
   width: 600px;

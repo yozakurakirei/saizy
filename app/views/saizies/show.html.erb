@@ -18,7 +18,7 @@
 
     <!-- left image -->
     <div id="left-content">
-      <%= @saizy.title %>
+      <%= @saizy.title.truncate(30) %>
       <%= @saizy.tags.each do |tag| %>
         <h2>タグ</h2><%= tag.name %>
       <% end %>
@@ -39,31 +39,54 @@
 
     <!-- right bar -->
     <div id="sidebar">
-        <div class="side-title">
-          <h3>開催中のSaizy</h3>
-        </div>
-        <div class="side-card-image">
-          <% @saizies.published.each do |saizy| %>
+      <div class="sidebar-title">
+        <h3 class="side-t">開催中の催事</h3>
+      </div>
+      <% @saizies.published.each do |saizy| %>
+      <div class="side-card">
+        <div class="side-card-flex">
+          <div class="side-image">
             <%= link_to saizy_path(saizy) do%>
-              <% if saizy.images.count > 0 %>
-                <div class="day">
-                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                </div>
-                <%= image_tag saizy.images.first.variant(resize: "140x140").processed %>
-              <% end %>
-                <div class="side-card-description">
-                  <h1><%= @saizy.title %></h1>
-                </div>
+              <%= image_tag saizy.images.first.variant(resize: "140x140").processed %>
             <% end %>
-          <% end %>
+          </div>
+          <div class="side-content">
+            <h3><%= saizy.title %></h3>
+            <p><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %></p>
+            <p><%= saizy.content.truncate(20) %></p>
+          </div>
         </div>
+      <% end %>
+      </div>
+    <div> 
+  </div>
+
+
+
+<!--
+      <div class="side-title">
+        <h3>開催中のSaizy</h3>
+      </div>
+      <div class="side-card">
+        <% @saizies.published.each do |saizy| %>
+          <div class="side-card-flex">
+            <div class="side-card-image">
+              <%= link_to saizy_path(saizy) do%>
+                <% if saizy.images.count > 0 %>
+                  <div class="day">
+                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                  </div>
+                  <%= image_tag saizy.images.first.variant(resize: "140x140").processed %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="side-card-description">
+              <h1><%= saizy.title %></h1>
+              <p><%= saizy.place %></p>
+            </div>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <div id="sidebar2">
-    <p>テスト</p>
-    </div>
-  <div> 
 
-
-
-
-
+    -->
