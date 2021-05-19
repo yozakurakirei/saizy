@@ -7,34 +7,65 @@
       </div>
       <div class="show-image">
         <% if @saizy.images.attached? %>
-          <div id="show-slide-image" >
+          <div class="show-slide-image" >
             <% @saizy.images.each do |image| %>
               <%= image_tag image.variant(resize: "500x500") %>
             <% end %>
           </div>
         <% end %> 
+        <div class="slide-btn">
+          
+        </div>
       </div>  
     </div>
 
     <!-- left image -->
+
+    <!-- 詳細本文 -->
     <div id="left-content">
-      <%= @saizy.title.truncate(30) %>
-      <%= @saizy.tags.each do |tag| %>
-        <h2>タグ</h2><%= tag.name %>
-      <% end %>
-      <%= @saizy.name %>
-      <%= @saizy.place %>
-      <%= @saizy.open %>〜<%= @saizy.close %>
-      <%= @saizy.start %>〜<%= @saizy.finish %>
-      おすすめポイント<%= simple_format @saizy.content %>
-      <%= link_to user_path(@saizy.user) do %>
-        投稿者：<%= @saizy.user.name %>
-      <% end %>
-      <% if @saizy.user.id == current_user.id %>
-        <button>
-          <%= link_to '編集', edit_saizy_path(@saizy)  %>
-        </button>
-      <% end %>
+      <div class="main-content">
+        <dl class="main-text">
+          <dt>開催日程</dt>
+          <dd><%= @saizy.start %>〜<%= @saizy.finish %></dd>
+        </dl>
+        <dl class="main-text">
+          <dt>タイトル</dt>
+          <dd><%= @saizy.title.truncate(30) %></dd>
+        </dl>
+        <dl class="main-text">
+          <dt>ブランド</dt>
+          <dd><%= @saizy.name %></dd>
+        </dl>
+        <dl class="main-text">
+          <dt>場所</dt>
+          <dd><%= @saizy.place %></dd>
+        </dl>
+        <dl class="main-text">
+          <dt>営業時間</dt>
+          <dd><%= @saizy.open %>〜<%= @saizy.close %></dd>
+        </dl>
+      </div>
+        <dl class="main-text-content">
+          <p>おすすめポイント</p>
+          <dd><%= simple_format @saizy.content %></dd>
+        </dl>
+        <dl class="main-text-content">
+          <div><%= link_to user_path(@saizy.user) do %>
+            投稿者：<%= @saizy.user.name %>
+            <% end %>
+          </div>
+        </dl>
+          <%# <%= @saizy.tags.each do |tag| %>
+            <%# <%= tag.name %> 
+          <%# end  %>
+        <div class="edit-btn">
+          <% if @saizy.user.id == current_user.id %>
+            <div class="edit-button">
+              <%= link_to '編集', edit_saizy_path(@saizy) %>      
+            </div>
+          <% end %>        
+        </div>
+      </div>
     </div>
 
     <!-- right bar -->
@@ -59,6 +90,7 @@
       <% end %>
       </div>
     <div> 
+    <div class="sidebar2"></div>
   </div>
 
 

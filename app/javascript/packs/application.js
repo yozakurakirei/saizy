@@ -16,6 +16,7 @@ require("../simple_js/modal.js")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
+import '../slick/custom'
 
 // Rails.start()
 // // Turbolinks.start()
