@@ -1,166 +1,100 @@
+/* Slider */
 
-// slick-slider 
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
 
-// first-slider 
-.site-slider img {
-  width: 100%;
-  height: 30vw;
-  object-fit: cover;
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
-.site-slider {
-  position: relative;
-}
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
-.position-top {
-  position: absolute;
-  top: 50%;
-}
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
 
-.site-slider .slider-btn .prev,
-.site-slider .slider-btn .next {
-  background-color: #fe8769;
-  padding: 1rem 1rem;
-  border-radius: 100%;
-  color: #fff;
-  margin: 0 1rem;
-  opacity: 0;
-  transition: opacity 1s ease;
-  cursor: pointer;
-}
+    &:after {
+        clear: both;
+    }
 
-.site-slider:hover .slider-btn .prev,
-.site-slider:hover .slider-btn .next {
-  opacity: 1;
+    .slick-loading & {
+        visibility: hidden;
+    }
 }
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
 
-.right-0 {
-  right: 0;
-}
+    display: none;
 
-.slick-dots {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 1rem 0;
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-}
+    &.dragging img {
+        pointer-events: none;
+    }
 
-.slick-dots li {
-  margin: 0 0.6rem;
-}
+    .slick-initialized & {
+        display: block;
+    }
 
-.slick-dots button {
-  display: block;
-  width: 0.5rem;
-  height: 0.5rem;
-  padding: 0;
-  border: none;
-  background-color: #fff;
-  text-indent: -99999px;
-  border-radius: 100%;
-}
-.slick-dots li.slick-active button {
-  transform: scale(2.5);
-  box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.205);
-}
+    .slick-loading & {
+        visibility: hidden;
+    }
 
-// second-slider
-.slider-two img {
-  width: 60%;
-  height: 15vw;
-  object-fit: cover;
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
 }
-
-.site-slider-two {
-  position: relative;
-  height: 30%;
-}
-
-.site-slider-two .product {
-  height: 15rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.site-slider-two .product img {
-  width: 100%;
-  margin: auto;
-}
-
-.site-btn.btn-span {
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4rem;
-  background-color: #fff;
-  color: #555;
-}
-
-.slider-two .slick-track .product:hover span {
-  background-color: #e4e4e4;
-}
-
-// facility area
-.container .facility {
-  padding: 1rem 0;
-}
-.container .facility h2 {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 1.7px;
-}
-.container .facility p {
-  padding: 10px 0;
-  font-size: 0.9em;
-}
-
-// third slider
-.site-slider-three {
-  position: relative;
-  margin-bottom: 5rem;
-}
-
-.site-slider-three .product {
-  height: 100%;
-  padding: 0;
-}
-
-.site-slider-three .cart-details {
-  margin-top: 0.5rem;
-  padding: 0.2rem;
-}
-
-.rating i {
-  font-size: 0.7rem;
-  color: lightblue;
-}
-
-.site-slider-three .pro-price span {
-  color: #555;
-}
-
-.pro-title pro-title site-btn:hoveer {
-  background: #fe8769;
-  color: #fff;
-}
-
-.slider-three img {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-
-// grid zone
-.grid-img {
-  width: 100%;
-  height: 6vw;
-}
-
-// show(user)
-#show-slide-images img {
-
+.slick-arrow.slick-hidden {
+    display: none;
 }

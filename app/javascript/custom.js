@@ -46,7 +46,9 @@ $(function() {
 });
 
 $(function() {
-  $('#show-slide-image').slick({
+  $('.show-slide-image').slick({
+    arrow: true,
+    dots: true
   });
 })
 // $('#show-slider').slick({

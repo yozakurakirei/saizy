@@ -76,7 +76,6 @@
 
 // 右側のサイドバー
 #sidebar {
-  width: 100%;
   background-color: #ccc;
   grid-area: sidebar;
 }
@@ -119,12 +118,14 @@
 // responsive
 @media (max-width: 550px) {
   body {
-    width: 100%;
+  }
+  .left-image {
+    width: 550px;
   }
   .show-slide-image {
     margin: 0 auto;
     img {
-      width: 100%;
+      width: 400px;
       height: 250px;
       object-fit: cover;
     }
@@ -167,7 +168,7 @@
     ;
     .show-slide-image {
       img {
-        width: 100%;
+        width: 500px;
         height: 50vw;
       }
     }

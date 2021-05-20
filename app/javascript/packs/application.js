@@ -13,10 +13,10 @@ require("popper.js")
 require("bootstrap")
 require("custom.js")
 require("../simple_js/modal.js")
+require("slick.min")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
-import '../slick/custom'
 
 // Rails.start()
 // // Turbolinks.start()

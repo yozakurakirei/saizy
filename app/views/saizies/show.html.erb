@@ -1,75 +1,69 @@
+<!-- left image -->
+<div id="grid-show">
 
-  <!-- left image -->
-  <div id="grid-show">
-    <div id="left-image">
-      <div class="title">
-        <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
-      </div>
-      <div class="show-image">
-        <% if @saizy.images.attached? %>
-          <div class="show-slide-image" >
-            <% @saizy.images.each do |image| %>
-              <%= image_tag image.variant(resize: "500x500") %>
-            <% end %>
-          </div>
-        <% end %> 
-        <div class="slide-btn">
-          
-        </div>
-      </div>  
+  <div id="left-image">
+    <div class="title">
+      <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
     </div>
-
-    <!-- left image -->
-
-    <!-- 詳細本文 -->
-    <div id="left-content">
-      <div class="main-content">
-        <dl class="main-text">
-          <dt>開催日程</dt>
-          <dd><%= @saizy.start %>〜<%= @saizy.finish %></dd>
-        </dl>
-        <dl class="main-text">
-          <dt>タイトル</dt>
-          <dd><%= @saizy.title.truncate(30) %></dd>
-        </dl>
-        <dl class="main-text">
-          <dt>ブランド</dt>
-          <dd><%= @saizy.name %></dd>
-        </dl>
-        <dl class="main-text">
-          <dt>場所</dt>
-          <dd><%= @saizy.place %></dd>
-        </dl>
-        <dl class="main-text">
-          <dt>営業時間</dt>
-          <dd><%= @saizy.open %>〜<%= @saizy.close %></dd>
-        </dl>
-      </div>
-        <dl class="main-text-content">
-          <p>おすすめポイント</p>
-          <dd><%= simple_format @saizy.content %></dd>
-        </dl>
-        <dl class="main-text-content">
-          <div><%= link_to user_path(@saizy.user) do %>
-            投稿者：<%= @saizy.user.name %>
-            <% end %>
-          </div>
-        </dl>
-          <%# <%= @saizy.tags.each do |tag| %>
-            <%# <%= tag.name %> 
-          <%# end  %>
-        <div class="edit-btn">
-          <% if @saizy.user.id == current_user.id %>
-            <div class="edit-button">
-              <%= link_to '編集', edit_saizy_path(@saizy) %>      
-            </div>
-          <% end %>        
+    <div class="show-image">
+      <% if @saizy.images.attached? %>
+        <div class="show-slide-image" >
+          <% @saizy.images.each do |image| %>
+            <%= image_tag image.variant(resize: "500x500") %>
+          <% end %>
         </div>
+      <% end %> 
+    </div>  
+  </div>
+
+  <!-- 詳細本文 -->
+  <div id="left-content">
+    <div class="main-content">
+      <dl class="main-text">
+        <dt>開催日程</dt>
+        <dd><%= @saizy.start %>〜<%= @saizy.finish %></dd>
+      </dl>
+      <dl class="main-text">
+        <dt>タイトル</dt>
+        <dd><%= @saizy.title.truncate(30) %></dd>
+      </dl>
+      <dl class="main-text">
+        <dt>ブランド</dt>
+        <dd><%= @saizy.name %></dd>
+      </dl>
+      <dl class="main-text">
+        <dt>場所</dt>
+        <dd><%= @saizy.place %></dd>
+      </dl>
+      <dl class="main-text">
+        <dt>営業時間</dt>
+        <dd><%= @saizy.open %>〜<%= @saizy.close %></dd>
+      </dl>
+    </div>
+      <dl class="main-text-content">
+        <p>おすすめポイント</p>
+        <dd><%= simple_format @saizy.content %></dd>
+      </dl>
+      <dl class="main-text-content">
+        <div><%= link_to user_path(@saizy.user) do %>
+          投稿者：<%= @saizy.user.name %>
+          <% end %>
+        </div>
+      </dl>
+        <%# <%= @saizy.tags.each do |tag| %>
+          <%# <%= tag.name %> 
+        <%# end  %>
+      <div class="edit-btn">
+        <% if @saizy.user.id == current_user.id %>
+          <div class="edit-button">
+            <%= link_to '編集', edit_saizy_path(@saizy) %>      
+          </div>
+        <% end %>        
       </div>
     </div>
 
-    <!-- right bar -->
-    <div id="sidebar">
+    <!-- 右側サイドバー -->
+    <div class="sidebar">
       <div class="sidebar-title">
         <h3 class="side-t">開催中の催事</h3>
       </div>
@@ -88,37 +82,9 @@
           </div>
         </div>
       <% end %>
-      </div>
-    <div> 
-    <div class="sidebar2"></div>
-  </div>
-
-
-
-<!--
-      <div class="side-title">
-        <h3>開催中のSaizy</h3>
-      </div>
-      <div class="side-card">
-        <% @saizies.published.each do |saizy| %>
-          <div class="side-card-flex">
-            <div class="side-card-image">
-              <%= link_to saizy_path(saizy) do%>
-                <% if saizy.images.count > 0 %>
-                  <div class="day">
-                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                  </div>
-                  <%= image_tag saizy.images.first.variant(resize: "140x140").processed %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="side-card-description">
-              <h1><%= saizy.title %></h1>
-              <p><%= saizy.place %></p>
-            </div>
-        </div>
-      </div>
-      <% end %>
     </div>
+  </div>
+</div>
 
-    -->
+  <!-- right bar -->
+
