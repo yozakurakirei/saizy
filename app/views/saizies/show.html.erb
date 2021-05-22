@@ -46,19 +46,23 @@
         <dd><%= @saizy.open %>〜<%= @saizy.close %></dd>
       </dl>
     </div>
-      <dl class="main-text-content">
-        <p>おすすめポイント</p>
-        <dd><%= simple_format @saizy.content %></dd>
-      </dl>
-      <dl class="main-text-content">
-        <div><%= link_to user_path(@saizy.user) do %>
-          投稿者：<%= @saizy.user.name %>
-          <% end %>
-        </div>
-      </dl>
-        <%# <%= @saizy.tags.each do |tag| %>
-          <%# <%= tag.name %> 
-        <%# end  %>
+    <dl class="main-text-content">
+      <p>おすすめポイント&#x1f970;</p>
+      <dd><%= simple_format @saizy.content %></dd>
+    </dl>
+    <div class="user">
+      <%= link_to user_path(@saizy.user) do %>
+      <div class="profile-img">
+        <% if @saizy.user.avatar.attached? %>
+          <%= image_tag @saizy.user.avatar.variant(resize: "100x100"), width:150 %>
+        <% else %>
+          <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
+        <% end %>
+      </div>
+      <div class="user-name">
+        投稿者：<%= @saizy.user.name %>
+        <% end %>
+      </div>
       <div class="edit-btn">
         <% if @saizy.user.id == current_user.id %>
           <div class="edit-button">
@@ -66,6 +70,10 @@
           </div>
         <% end %>        
       </div>
+    </div>
+        <%# <%= @saizy.tags.each do |tag| %>
+          <%# <%= tag.name %> 
+        <%# end  %>
     </div>
 
     <!-- 右側サイドバー -->
@@ -89,7 +97,7 @@
             <p><%= saizy.content.truncate(20) %></p>
           </div>
         </div>
-            <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>

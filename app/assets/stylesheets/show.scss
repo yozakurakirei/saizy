@@ -1,187 +1,55 @@
-// user
+// user show
 
-.wrapper {
+#user-show {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 3fr 1fr;
-  grid-gap: 1rem;
-  max-width: 90%;
+  grid-template-columns: 1fr 2fr;
+  width: 80%;
   margin: 0 auto;
-  background-color: #ebecf1;
-}
-
-.wrapper > div {
-  background: #ccc;
-  padding: 2rem;
-}
-.wrapper > div:nth-child(odd) {
-  background: #ddd;
-}
-
-.nested {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+    "profile post"
+    "follow post";
   grid-gap: 1rem;
-}
-.nested  > div {
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 1rem;
-  text-align: center;
-  margin: 10px;
-}
-.nested2 {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 0;
-}
-.nested2  > div {
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 1rem;
-  text-align: center;
-  margin: 10px;
-}
 
-.nested .colum {
-  padding: 20px;
-  margin: 20px;
-}
-
-// プロフィール
-.profile {
-  background-color: #fff;
-
-  .profile-card {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    
-    .card-header {
-      background: #fff;
+  .profile {
+    background-color: #f9fbfe;
+    grid-area: profile;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px rgba(0,0,0,.3);
+    .profile-img{
+      margin: 1rem;
+      img {
+        border-radius: 50%;
+      }
     }
-    .profile-img {
-      display: inline-block;
-      border-radius: 50%;
-    }
-    img {
-      display: block;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-    }
-  }
-
-  .profile-nav-info {
-    height: 140px;
     .user-name {
-      font-size: 28px;
+      font-size: 1.5rem;
+      color: #ff5722;
       font-weight: bold;
-      margin: 10px 0;
+      margin-bottom: 1rem;
     }
     .user-email {
-      font-size: 18px;
-      display: inline-block;
-      .mail-icon {
-        margin-right: 10px;
-      }
+      margin-bottom: 1rem;
     }
     .edit-btn {
-      margin-top: 10px;
-      background-color: #2cb696;
-      padding: 10px;
+      background-color: #fc7045;
       border-radius: 5px;
-      &:hover {
-        opacity: 0.7;
-      }
-      a {
-        color: #fff !important;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .card-footer {
-    .numbers {
-      display: grid;
-      grid-template-columns: repeat(3, 3fr);
-    }
-    .numbers > div {
-      text-align: center;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      font-size: 13px;
-    }
-  }
-}
-
-// article show
-.links {
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 3px;
-  color: #b3b9b9;
-  ul {
-    display: flex;
-    justify-content: center;
-    li { 
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 20px;
-      letter-spacing: 3px;
-      cursor: pointer;
-      &:hover,
-      &:active {
-        color: #4abd3e;
+    
+      p {
+        padding: 1rem;
+        a {
+          color: #fff !important;
+          font-weight: bold;
+        }
       }
     }
   }
-}
-
-.main-view {
-  border-radius: px;
-  padding: 15px;
-  .view_item img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.list-view .view_item {
-  border-bottom: 2px solid #b3b9b9;
-  margin: 5px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  &:last-child {
-    margin-bottom: 0;
-  }
-  .vi_left  {
-    margin-right: 25px;
-  }
-}
-
-.vi-right {
-  display: flex;
-}
-
-.view_item {
-  .title {
-    display: flex;
-    font-weight: bold;
-    font-size: 22px;
-    align-items: center;
-    width: 500px;
-    line-height: 22px;
-  }
-  .vi-rigth-list {
-    display: flex;
-    .list-edit {
-      padding: 10px;
-    }
-    .list-destroy {
-      padding: 10px;
-    }
+  .post {
+    grid-area: post;
+    background-color: #ccc;
   }
 }

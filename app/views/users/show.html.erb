@@ -1,6 +1,35 @@
-<div class="wrapper">
-  <div>
+<div id="user-show">
+  <!-- profile -->
+  <div class="profile">
+    <div class="profile-img">
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
+      <% else %>
+        <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
+      <% end %>
+    </div>
+    <h3 class="user-name"><%= @user.name %></h3>
+    <% if @user.id == current_user.id %>
+      <div class="user-email">
+        <i class="far fa-envelope mail-icon"></i>
+        <%= @user.email %>
+      </div>
+      <div class="edit-btn">
+        <p><%= link_to 'プロフィールを編集する', edit_user_path(current_user) %></p>  
+      </div>
+    <% end %>
+  </div>
+  
 
+
+
+  <!-- post -->
+  <div class="post">
+    post
+  </div>
+</div>
+
+<!-- cut
   <div class="published-post">
     <div class="links">
       <ul>
@@ -100,44 +129,25 @@
     <% end %>
   </div>
   
-        <div class="nested colum">
-          <div>こんにちは</div>
-          <div>テスト</div>
-          <div>テスト</div>
-          <div>こんにちは</div>
-          <div>テスト</div>
-          <div>テスト</div>
-        </div>
-        <div class="nested colum">
-          <div>こんにちは</div>
-          <div>テスト</div>
-          <div>テスト</div>
-          <div>こんにちは</div>
-          <div>テスト</div>
-          <div>テスト</div>
-        </div>
-  <!-- micropostフォーム 
-
-  <section class="micropost_form">
-    <%= render 'shared/micropost_form' %>
-  </section>
-
-  <h2>つぶやき一覧</h2>
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3>投稿数: <%= @user.microposts.count %></h3>
-      <li class="microposts">
-        <%= render @microposts %>
-      </li>
-      <%= will_paginate @microposts %>
-    <% end %>
+  <div class="nested colum">
+    <div>こんにちは</div>
+    <div>テスト</div>
+    <div>テスト</div>
+    <div>こんにちは</div>
+    <div>テスト</div>
+    <div>テスト</div>
+  </div>
+  <div class="nested colum">
+    <div>こんにちは</div>
+    <div>テスト</div>
+    <div>テスト</div>
+    <div>こんにちは</div>
+    <div>テスト</div>
+    <div>テスト</div>
   </div>
 </div>
-  -->
-</div>
 
 
-<!-- プロフィールページ -->
 <div>
   <div class="profile">
     <div class="profile-card">
@@ -152,13 +162,7 @@
         <div class="profile-nav-info">
           <h3 class="user-name"><%= @user.name %></h3>
           <p class="user-email">
-            <% if @user.id == current_user.id %>
-              <i class="far fa-envelope mail-icon"></i>
-              <%= @user.email %>
-              <div class="edit-btn">
-                <p><%= link_to 'プロフィールを編集する', edit_user_path(current_user) %></p>  
-              </div>
-            <% end %>
+
           </p>
           <p class="user-profile"><%= current_user.profile %></p>
         </div>
@@ -184,3 +188,4 @@
     </div>
   </div>
 </div>
+-->

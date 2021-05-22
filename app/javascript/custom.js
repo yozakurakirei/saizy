@@ -32,7 +32,7 @@ $(function() {
     asNavFor: '.show-slide-thumb',
     responsive: [
       {
-        breakpoint: 550,
+        breakpoint: 670,
         setting: {
           arrows: false
         }
