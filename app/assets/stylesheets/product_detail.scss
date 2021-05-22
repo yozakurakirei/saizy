@@ -2,12 +2,14 @@
   display: grid;
   min-height: 100vh;
   grid-template-columns: 2fr 1fr;
+  justify-content: center;
   grid-template-areas: 
   "image sidebar"
   "content sidebar";
   grid-gap: 1rem;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
+
   .title {
     font-size: 2rem;
     font-weight: bold;
@@ -22,7 +24,6 @@
       text-align: center;
       margin-top: 1.5rem;
     }
-    
   }
 }
 
@@ -77,9 +78,6 @@
   grid-area: sidebar;
   padding: 1rem;
   background-color: #fff;
-  .sidebar-title {
-    
-  }
 }
 .side-t {
   text-align: center;
@@ -101,12 +99,9 @@
     justify-content: left;
     padding: 1rem;
     border-bottom: 1px solid #ccc;
-    .side-image {
-    }
     img {
       width: 8rem;
-      height: 15vh;
-      margin-left: 2rem;
+      height: 10vh;
     }
   }
   .side-content {
@@ -122,79 +117,24 @@
 
 // image
 .show-image {
-}
-.show-slide-image {
-  padding: 1rem;
-  img {
-    width: 100px;
-    height: auto;
+  width: 50rem;
+  .show-slide-image {
+    padding: 1rem;
+    img {
+      width: 50rem;
+      height: 33vw;
+    }
   }
 }
 .show-slide-thumb {
-  width: 60rem;
+  width: 50rem;
   display: flex;
   margin: 0 auto;
   img {
-    width: 100%;
-    height: 11rem;
+    width: 50rem;
+    height: 10vw;
     padding: .5rem;
   }
 }
 
 
-// responsive
-@media (max-width: 550px) {
-  body {
-    max-width: 550px;
-    width: 100%;
-  }
-  #grid-show {
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "image"
-      "content"
-      "sidebar"
-      "sidebar"
-    ;
-  }
-  .title {
-    h3 {
-      font-size: 1.5rem;
-      padding: 1rem;
-      text-align: center;
-      line-height: 40px;
-    }
-  }
-  .show-image {
-    .show-slide-image {
-    }
-  }
-  .side-title{
-    h3 {
-      font-size: 1.5rem;
-      padding: 1rem;
-      text-align: center;
-      font-weight: bold;
-    }
-  }
-}
-@media (max-width: 1200px) {
-  #grid-show {
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-      "image"
-      "content"
-      "sidebar"
-      "sidebar"
-    ;
-    .show-slide-image {
-      width: 50rem;
-      img {
-        height: 50vw;
-      }
-    }
-  }
-  
-}
