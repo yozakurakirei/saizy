@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'tab' %>
+
 <div id="user-show">
   <!-- profile -->
   <div class="profile">
@@ -20,12 +22,28 @@
     <% end %>
   </div>
   
-
-
-
   <!-- post -->
   <div class="post">
-    post
+    <div class="post-header">
+      <div class="active">公開中</div>
+      <div>出店終了</div>
+      <div>下書き</div>
+    </div>
+    <div class="post-indicator"></div>
+    <div class="post-body">
+      <div class="active">
+        <h1>公開中の記事一覧</h1>
+        <p>公開中の記事一覧が表示されます</p>
+      </div>
+      <div>
+        <h1>出店終了の記事一覧</h1>
+        <p>出店終了の記事一覧が表示されます</p>
+      </div>
+      <div>
+        <h1>下書きの記事一覧</h1>
+        <p>下書きの記事一覧が表示されます</p>
+      </div>
+    </div>
   </div>
 </div>
 

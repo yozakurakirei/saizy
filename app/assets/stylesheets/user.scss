@@ -8,20 +8,6 @@
   border-radius: 50%;
 }
 
-// grid practice 
-.test-grid {
-  width: 85%;
-  margin: 0 auto;
-  display: grid;
-  min-height: 100vh;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-    "main sidebar"
-    "content sidebar";
-  grid-gap: 1rem;
-}
-
 .main {
   background-color: #a7ffeb;
   grid-area: main;
