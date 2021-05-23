@@ -37,7 +37,7 @@
           <div class="side-card-flex">
             <div class="side-image">
               <%= link_to saizy_path(saizy) do%>
-                <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 50 %>
+                <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
             </div>
             <div class="side-content">
               <h3 class="side-content-title"><%= saizy.title %></h3>
@@ -58,7 +58,7 @@
           <div class="side-card-flex">
             <div class="side-image">
               <%= link_to saizy_path(saizy) do%>
-                <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 50 %>
+                <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
             </div>
             <div class="side-content">
               <h3 class="side-content-title"><%= saizy.title %></h3>
