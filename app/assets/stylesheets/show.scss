@@ -64,6 +64,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
     }
     .tab li {
       color: #888;
@@ -89,6 +91,41 @@
     }
 
     // post content
-
+    .post-top {
+      text-align: left;
+      padding: 1rem;
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: .5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .post-list {
+      display: flex;
+      padding: 1rem;
+      justify-content: left;
+      background-color: #ccc;
+      .post-image {
+        flex: 1;
+      }
+    } 
+    
+    .post-content {
+      flex: 3;
+      padding: 1rem;
+      background-color: aquamarine;
+      .user-image-name {
+        display: flex;
+        .user-image img{
+          border-radius: 50%;
+        }
+        .user-name {
+          margin-left: 1rem;
+        }
+      }
+    }
   }
 }
