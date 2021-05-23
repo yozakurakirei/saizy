@@ -18,15 +18,16 @@
   <body>
     <%= render 'layouts/header' %>
     <!--<%= render 'layouts/second_header' %>-->
-    <%= render 'layouts/modal_login' %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
+
     <section>
       <%= yield %>
     </section>
-    <%= render 'layouts/mobile_menu' %>
+
     <%= render 'layouts/footer' %>
+    <%= render 'layouts/mobile_menu' %>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   </body>
 </html>

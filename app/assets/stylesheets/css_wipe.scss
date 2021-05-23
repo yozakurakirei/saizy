@@ -4,20 +4,25 @@
 
 // 共通レイアウト
 body {
+    width: 100%;
     display: flex;
     color: #555;
     flex-flow: column;
-    min-height: 100vh;
     background-color: #eef8ff;
     font-family: "Hiragino Kaku Gothic Pro", sans-serif;
   }
   
-  section {
-    position: relative;
+header {
     width: 100%;
-    display: flex;
-    flex: 1;
-  }
+}
+footer {
+    width: 100%;
+}
+  
+section {
+    width: 100%;
+    margin: 0 auto;
+}
 
 /* webkit specific styles */
 
