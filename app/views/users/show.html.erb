@@ -1,5 +1,3 @@
-<%= javascript_pack_tag 'tab' %>
-
 <div id="user-show">
   <!-- profile -->
   <div class="profile">
@@ -24,186 +22,81 @@
   
   <!-- post -->
   <div class="post">
-    <div class="post-header">
-      <div class="active">公開中</div>
-      <div>出店終了</div>
-      <div>下書き</div>
-    </div>
-    <div class="post-indicator"></div>
-    <div class="post-body">
-      <div class="active">
-        <h1>公開中の記事一覧</h1>
-        <p>公開中の記事一覧が表示されます</p>
-      </div>
-      <div>
-        <h1>出店終了の記事一覧</h1>
-        <p>出店終了の記事一覧が表示されます</p>
-      </div>
-      <div>
-        <h1>下書きの記事一覧</h1>
-        <p>下書きの記事一覧が表示されます</p>
-      </div>
-    </div>
-  </div>
-</div>
+    <ul class="tab clearfix">
+      <li class="active">公開中</li>
+      <li>出店終了</li>
+      <li>下書き</li>
+    </ul>
+  
+    <div class="area">
+      <ul class="show">
+        <h2>公開中の投稿</h2>
+        <p>投稿数: <%= @user.saizies.published.count %></p>
+        <% @user.saizies.published.each do |saizy| %>
+        <div class="main-view">
+          <div class="view_wrap list-view">
+            <div class="view_item">
+              <div class="vi_left">
+                <%= link_to saizy_path(saizy) do %>
+                  <% if saizy.images.count > 0 %>
+                    <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="vi-right">
+                <p class="title"><%= saizy.title %></p>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </ul>
 
-<!-- cut
-  <div class="published-post">
-    <div class="links">
+      
       <ul>
-        <li class="li-list active" data-view="list-view">公開中</li>
-        <li class="li-grid" data-view="grid-view">下書き</li>
+        <h2>出店終了の投稿</h2>
+        <p>投稿数: <%= @user.saizies.deleted.count %></p>
+        <% @user.saizies.deleted.each do |saizy| %>
+        <div class="main-view">
+          <div class="view_wrap list-view">
+            <div class="view_item">
+              <div class="vi_left">
+                <%= link_to saizy_path(saizy) do %>
+                  <% if saizy.images.count > 0 %>
+                    <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="vi-right">
+                <p class="title"><%= saizy.title %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </ul>
+
+      <ul>
+        <h2>下書きの投稿</h2>
+        <p>投稿数: <%= @user.saizies.draft.count %></p>
+        <% @user.saizies.deleted.each do |saizy| %>
+        <div class="main-view">
+          <div class="view_wrap list-view">
+            <div class="view_item">
+              <div class="vi_left">
+                <%= link_to saizy_path(saizy) do %>
+                  <% if saizy.images.count > 0 %>
+                    <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+                  <% end %>
+                <% end %>
+              </div>
+                <p class="title"><%= saizy.title %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </ul>
     </div>
-    <h2>公開中の投稿</h2>
-    <p>投稿数: <%= @user.saizies.published.count %></p>
-    <% @user.saizies.published.each do |saizy| %>
-    <div class="main-view">
-      <div class="view_wrap list-view">
-        <div class="view_item">
-          <div class="vi_left">
-            <%= link_to saizy_path(saizy) do %>
-              <% if saizy.images.count > 0 %>
-                <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="vi-right">
-            <p class="title"><%= saizy.title %></p>
-            <div class="vi-rigth-list">
-              <div class="list-edit">
-                  <%= link_to "編集", edit_saizy_path(saizy) %>
-              </div>
-              <div class="list-destroy">
-                  <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>              
-              </div>     
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-
-  <div class="deleted-post">
-    <h2>出店終了の投稿</h2>
-    <p>投稿数: <%= @user.saizies.deleted.count %></p>
-    <% @user.saizies.deleted.each do |saizy| %>
-    <div class="main-view">
-      <div class="view_wrap list-view">
-        <div class="view_item">
-          <div class="vi_left">
-            <%= link_to saizy_path(saizy) do %>
-              <% if saizy.images.count > 0 %>
-                <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="vi-right">
-            <p class="title"><%= saizy.title %></p>
-            <div class="vi-rigth-list">
-              <div class="list-edit">
-                  <%= link_to "編集", edit_saizy_path(saizy) %>
-              </div>
-              <div class="list-destroy">
-                  <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>              
-              </div>     
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-
-  <div class="draft-post">
-    <h2>下書き</h2>
-    <p>投稿数: <%= @user.saizies.draft.count %></p>
-    <% @user.saizies.draft.each do |saizy| %>
-    <div class="main-view">
-      <div class="view_wrap list-view">
-        <div class="view_item">
-          <div class="vi_left">
-            <%= link_to saizy_path(saizy) do %>
-              <% if saizy.images.count > 0 %>
-                <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="vi-right">
-            <p class="title"><%= saizy.title %></p>
-            <div class="vi-rigth-list">
-              <div class="list-edit">
-                  <%= link_to "編集", edit_saizy_path(saizy) %>
-              </div>
-              <div class="list-destroy">
-                  <%= link_to "削除", saizy_path(saizy), method: :delete, data: {confirm: "この投稿を削除してよろしいですか？削除したら復旧はできません。"} %>              
-              </div>     
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  
-  <div class="nested colum">
-    <div>こんにちは</div>
-    <div>テスト</div>
-    <div>テスト</div>
-    <div>こんにちは</div>
-    <div>テスト</div>
-    <div>テスト</div>
-  </div>
-  <div class="nested colum">
-    <div>こんにちは</div>
-    <div>テスト</div>
-    <div>テスト</div>
-    <div>こんにちは</div>
-    <div>テスト</div>
-    <div>テスト</div>
   </div>
 </div>
-
-
-<div>
-  <div class="profile">
-    <div class="profile-card">
-      <div class="card-header">
-        <div class="profile-img">
-          <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
-          <% else %>
-            <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
-          <% end %>
-        </div>
-        <div class="profile-nav-info">
-          <h3 class="user-name"><%= @user.name %></h3>
-          <p class="user-email">
-
-          </p>
-          <p class="user-profile"><%= current_user.profile %></p>
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="numbers">
-          <div>投稿数</div>
-          <div>出店終了</div>
-          <div>下書き</div>
-          <div><%= @user.saizies.count %></div>
-          <div><%= @user.saizies.deleted.count %></div>
-          <div><%= @user.saizies.draft.count %></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="nested2">
-      <div>
-      リスト
-        <span><%= link_to "プロフィール", current_user %></span>
-      </div>
-      <div>その他</div>
-    </div>
-  </div>
-</div>
--->

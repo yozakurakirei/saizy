@@ -12,8 +12,9 @@ require("jquery")
 require("popper.js")
 require("bootstrap")
 require("custom.js")
-require("../simple_js/modal.js")
+// require("../simple_js/modal.js")
 require("slick.min")
+require("tab")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'

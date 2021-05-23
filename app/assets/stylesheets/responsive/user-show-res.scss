@@ -1,0 +1,19 @@
+@media (max-width: 670px) {
+  #user-show {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "profile"
+      "post"
+      "post"
+      "follow";
+  }
+  .profile {
+    height: 30rem;
+  }
+  .profile-img {
+    margin: 1rem;
+  }
+  .edit-btn {
+    margin: 1rem;
+  }
+}

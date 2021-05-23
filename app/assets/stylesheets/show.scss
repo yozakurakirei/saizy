@@ -1,5 +1,4 @@
 // user show
-
 #user-show {
   display: grid;
   min-height: 100vh;
@@ -18,6 +17,7 @@
     flex-direction: column;
     // justify-content: center;
     align-items: center;
+    margin-top: 2rem;
     border-radius: 5px;
     box-shadow: 1px 3px 3px rgba(0,0,0,.3);
     .profile-img{
@@ -37,7 +37,7 @@
       margin-bottom: 1rem;
     }
     .edit-btn {
-      background-color: #fc7045;
+      background-color: #ff5722;
       border-radius: 5px;
     
       p {
@@ -53,43 +53,41 @@
   // post list
   .post {
     grid-area: post;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 1rem;
     background-color: #f9fbfe;
-    .post-header {
+    box-shadow: 1px 3px 3px rgba(0,0,0,.3);
+    .tab {
+      border-bottom: 2px solid #ddd;
       display: flex;
-      padding: 1rem;
       justify-content: center;
       align-items: center;
-      border-bottom: 1px solid #ccc;
-      > div {
-        padding: 0rem 3rem;
-        text-align: center;
-        z-index: 2;
-        font-weight: bold;
-        color: #888;
-        cursor: pointer;
-      }
-      div.active {
-        color: #387be2;
-      }
     }
-    .post-indicator {
-      background-color: #ccc;
-      border-radius: 10px;
+    .tab li {
+      color: #888;
+      font-weight: bold;
+      margin: 1rem 2rem 0rem 2rem;
+      padding: .5rem 1rem;
+      cursor: pointer;
+      list-style: none;
+      transition: .3s;
     }
-    .post-body {
-      padding: 1rem;
-      background-color: #98fb98;
-      overflow: hidden;
+    .tab li.active {
+      color: #fff;
+      background: #ff5722;
+      border-radius: 5px;
+      cursor: auto;
     }
-  }
-  .post .post-body > div {
-    opacity: 0;
-    top: -100%;
-    transform: translateY(-10px);
-  }
-  .post .post-body > div.active {
-    transform: translateY(-8px);
-    top: 30px;
-    opacity: 1;
+     
+    .area ul {
+      display: none;
+    }
+    .area ul.show {
+      display: block;
+    }
+
+    // post content
+    
   }
 }

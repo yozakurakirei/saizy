@@ -5,12 +5,8 @@
 </template>
 
 <script>
-import Sample from './components/Sample.vue'
-import PostTab from './components/PostTab'
 export default {
   components: {
-    Sample,
-    PostTab
   },
   data: function() {
     return {
