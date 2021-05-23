@@ -71,27 +71,9 @@
         <% end %>
       </ul>
 
-      <!--
       <ul>
         <h2>下書きの投稿</h2>
-        <p>投稿数: <%= @user.saizies.draft.count %></p>
-        <% @user.saizies.draft.each do |saizy| %>
-        <div class="side-card">
-          <div class="side-card-flex">
-            <div class="side-image">
-              <%= link_to saizy_path(saizy) do%>
-                <%= image_tag saizy.images.first.variant(resize: "140x140").processed %>
-            </div>
-            <div class="side-content">
-              <h3 class="side-content-title"><%= saizy.title %></h3>
-              <p><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></p>
-              <p><%= saizy.content.truncate(20) %></p>
-            </div>
-          </div>
-          <% end %>
-        <% end %>
       </ul>
-      -->
 
 
     </div>
