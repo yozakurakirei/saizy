@@ -29,7 +29,6 @@ $(function() {
     speed: 500,
     fade: true,
     cssEase: 'linear',
-    asNavFor: '.show-slide-thumb',
     responsive: [
       {
         breakpoint: 670,
@@ -39,12 +38,4 @@ $(function() {
       }
     ]
   });
-
-  $('.show-slide-thumb').slick({
-    asNavFor: '.show-slide-image',
-    arrows: false,
-    focusOnSelect: true,
-    slidesToShow: 4,
-    slidesToScroll: 1
-  })
 })
