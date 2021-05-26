@@ -2,12 +2,17 @@
 
 $(function() {
   $('#slider').slick({
-    dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
     centerMode: true,
-    variableWidth: true
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 670,
+        arrows: false
+      }
+    ]
   });
 });
 $(function() {
@@ -29,9 +34,11 @@ $(function() {
     speed: 500,
     fade: true,
     cssEase: 'linear',
+    row: 0,
     responsive: [
       {
         breakpoint: 670,
+
         setting: {
           arrows: false
         }

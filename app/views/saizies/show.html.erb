@@ -1,10 +1,5 @@
 <!-- left image -->
-<div class="show-saizies">
-
-
-
 <div id="grid-show">
-
   <div id="left-image">
     <div class="title">
       <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
@@ -61,13 +56,6 @@
         投稿者：<%= @saizy.user.name %>
         <% end %>
       </div>
-      <div class="edit-btn">
-        <% if @saizy.user.id == current_user.id %>
-          <div class="edit-button">
-            <%= link_to '編集', edit_saizy_path(@saizy) %>      
-          </div>
-        <% end %>        
-      </div>
     </div>
         <%# <%= @saizy.tags.each do |tag| %>
           <%# <%= tag.name %> 
@@ -99,7 +87,6 @@
       <% end %>
     </div>
   </div>
-</div>
 </div>
   <!-- right bar -->
 

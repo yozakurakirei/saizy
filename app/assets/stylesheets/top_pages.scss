@@ -2,7 +2,6 @@
 
 // top 
 .hero {
-  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-image: url('../images/top-image-sweets-blar.png');
@@ -19,6 +18,7 @@
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: .6rem;
+      font-family: 'Balsamiq Sans', cursive;
     }
     h4 {
       font-size: 1.5rem;

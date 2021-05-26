@@ -69,7 +69,19 @@ strong {
   header {
     width: 100%;
   }
+
+  // フッター
   .menu-item {
-    font-size: 14px;
+    font-size: .7rem;
   }
+  .copy-right {
+    padding: 1rem;
+    p {
+      font-size: 0.5rem;
+    }
+    .l-footer-logo {
+      font-size: .7rem;
+    }
+  }
+    
 }

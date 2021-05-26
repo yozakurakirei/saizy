@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <section class="new-post">
+  <div class="new-post">
     <div class="section-info">
       <h2>新着のSaizy</h2>
       <p>Posts will be posted here</p>
@@ -60,25 +60,8 @@
     </div>
     <!-- /post grid -->
 
-  </section>
+  </div>
   <!-- /new post-->
-
-<!-- cut 
-<h1>みんなの投稿</h1>
-  <% @microposts.each do |micropost| %>
-  <ul>
-      <li>
-        <%= micropost.user.name %>
-        <%= micropost.title%>
-        <%= image_tag micropost.display_image if micropost.image.attached? %>
-      </li>
-    <% end %>
-  </ul>
--->
-
-
-
-
 <% else %>
 <!-- Main -->
 <main class="top-contents">
