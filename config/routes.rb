@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to:  'saizies#index'
 
   get 'password_resets/new'
@@ -14,6 +15,11 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  # inquiry
+  get  '/inquiry',         to: 'inquiry#index'
+  post '/inquiry/confirm', to: 'inquiry#confirm'
+  post '/inquiry/thanks',  to: 'inquiry#thanks'
   
   
   # フッター
