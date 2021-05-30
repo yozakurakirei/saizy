@@ -5,76 +5,77 @@
   <li>確認</li>
   <li>完了</li>
 </ul>-->
-
-<div class="new-title">
-    <h2>催事情報入力ページ</h2> 
+<div class="post">
+  <div class="post-title">
+    <h1>催事情報入力ページ</h1> 
   </div>
-<div class="l_form">
-  <div class="l_form_box">
-    <%= form_with(model: @saizy, local: true) do |f| %>
-      <div class="l_form_input">
-        <%= f.label :title, class: "label_name" %>
-        <%= f.text_field :title, class: "input_area", placeholder: "タイトル" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.fields_for :tags do |tf| %>
-          <%= tf.label :name, "タグ" %>
-          <%= tf.text_field :name, class: "input_area", placeholder: "タグを入力してください" %>
-        <% end %>
-      </div>
-      <div class="l_form_input">
-        <%= f.file_field :images, id: "images", multiple: true %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :name, class: "label_name" %>
-        <%= f.text_field :name, class: "input_area", placeholder: "ブランド名" %>
-      </div>
-      
-      <div class="l_form_input">
-        <%= f.label :place, class: "label_name" %>
-        <%= f.text_field :place, class: "input_area", placeholder: "出店場所" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :open, class: "label_name" %>
-        <%= f.time_field :open, class: "input_area", placeholder: "開店時間" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :close, class: "label_name" %>
-        <%= f.time_field :close, class: "input_area", placeholder: "閉店時間" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :start, class: "label_name" %>
-        <%= f.date_field :start, class: "input_area", placeholder: "開始日" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :finish, class: "label_name" %>
-        <%= f.date_field :finish, class: "input_area", placeholder: "終了日" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :content, class: "label_name" %>
-        <%= f.text_field :content, class: "input_area", placeholder: "おすすめポイント" %>
-      </div>
 
+  <%= form_with(model: @saizy, local: true) do |f| %>
+  <table class="post-table">
+    <tbody class="post-body">
+    
+      <tr class="post-item">
+        <th><%= f.label :title, "催事タイトル", class: "post-item-label" %></th>
+        <td><%= f.text_field :title, class: "post-item-input", placeholder: "タイトル" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :name, "ブランド名", class: "post-item-label" %></th>
+        <td><%= f.text_field :name, class: "post-item-input", placeholder: "ブランド名" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :place, "出店場所", class: "post-item-label" %></th>
+        <td><%= f.text_field :place, class: "post-item-input", placeholder: "出店場所" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :open, "開店時間", class: "post-item-label" %></th>
+        <td><%= f.time_field :open, class: "post-item-input", placeholder: "開店時間" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :close, "閉店時間", class: "post-item-label" %></th>
+        <td><%= f.time_field :close, class: "post-item-input", placeholder: "閉店時間" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :start, "開始日", class: "post-item-label" %></th>
+        <td><%= f.date_field :start, class: "post-item-input", placeholder: "開始日" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :finish, "終了日", class: "post-item-label" %></th>
+        <td><%= f.date_field :finish, class: "post-item-input", placeholder: "終了日" %></td>
+      </tr>
+      <tr class="post-item">
+        <th><%= f.label :content, "おすすめポイント", class: "post-item-label" %></th>
+        <td><%= f.text_field :content, class: "post-item-textarea", placeholder: "おすすめポイント" %></td>
+      </tr>
+    </tbody> 
+  </table>
 
-      <h2>カテゴリー選択</h2>
-      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-        <div>
+  <div class="post-other">
+    <h2>カテゴリー選択</h2>
+    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+      <div class="post-tag">
           <%= tag.label do %>
+        <div class="post-tag-list">
             <%= tag.check_box %>
             <%= tag.text %>
-          <% end %>
+          <% end %> 
         </div>
-      <% end %>
-
-      <div class="form-group">
-        <%= f.label :status %><br>
-        <%= f.select :status, [["下書き", "draft"], ["公開する", "published"], ["出店終了", "deleted"]],
-                              id: "status", class: "form-control" %>
-      </div>
-      <div class="l_form_form_button">
-        <%= f.submit "投稿する", class: "form_button" %>  
-      </div>
     <% end %>
+      </div>
+
+    <div class="post-item">
+      <%= f.file_field :images, id: "images", multiple: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :status %><br>
+      <%= f.select :status, [["下書き", "draft"], ["公開する", "published"], ["出店終了", "deleted"]],
+                            id: "status", class: "form-control" %>
+    </div>
+    <div class="l_form_form_button">
+      <%= f.submit "投稿する", class: "form_button" %>  
+    </div>
+    <% end %>
+  </div>
   </div>
 </div>
 
@@ -87,3 +88,14 @@
     $("#saizy_images").val("");
   })
 </script>
+
+<%# 
+<div class="l_form_input">
+  <%= f.fields_for :tags do |tf| 
+    <%= tf.label :name, "タグ" %>
+    <%# tf.text_field :name, class: "input_area", placeholder: "タグを入力してください"
+   end
+</div>
+%>
+
+

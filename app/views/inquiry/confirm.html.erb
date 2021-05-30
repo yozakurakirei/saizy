@@ -1,28 +1,35 @@
-<p>この内容でよろしいですか？</p>
 
-<%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
-  <table class="table">
-    <tr>
+<%= form_with(model: @inquiry, :url => inquiry_thanks_path, local: true) do |f| %>
+  <div class="confirm">
+    <div class="confirm-title">
+      <h1>この内容でよろしいですか？</h1>
+    </div> 
+  <table class="confirm-table">
+    <tr class="confirm-item">
       <th>名前</th>
       <td>
         <%= f.hidden_field :name %>
         <%= @inquiry.name %>
       </td>
     </tr>
-    <tr>
+
+    <tr class="confirm-item">
       <th>メールアドレス</th>
       <td>
         <%= f.hidden_field :email %>
         <%= @inquiry.email %>
       </td>
     </tr>
-    <tr>
+
+    <tr class="confirm-item">
       <th>お問い合わせ内容</th>
       <td>
         <%= f.hidden_field :message %>
         <%= simple_format(@inquiry.message) %>
       </td>
     </tr>
+
   </table>
   <%= f.submit '送信', :class => 'btn btn-primary' %>
 <% end %>
+</div>
