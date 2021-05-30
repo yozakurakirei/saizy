@@ -1,54 +1,26 @@
 // responsive
 @media (max-width: 670px) {
-  .show-saizies {
-    max-width: 670px;
-  }
-
   #grid-show {
     width: 100%;
     box-sizing: border-box;
     gap: 1rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1fr);
     grid-template-areas: 
       "image"
       "content"
       "sidebar"
       "sidebar"
     ;
-    .show-slide-image {
-      width: 100%;
-      img {
-        width: 90rem;
-        height: 60vw;
-      }
-    }
-    .show-slide-thumb {
-      width: 80%;
-      img {
-        width: 25rem;
-        height: 20vw;
-      }
-    }
   }
-  .side-card-flex img {
-    width: 20rem;
-    height: 15vw;
-  } 
-  }
+}
 
-  .side-title{
-    h3 {
-      font-size: 1.5rem;
-      padding: 1rem;
-      text-align: left;
-      font-weight: bold;
-    }
   .left-content {
     overflow: hidden;
   }
-  }
 
 
+
+  
 @media (max-width: 1200px) {
   #grid-show {
     grid-template-columns: 1fr;

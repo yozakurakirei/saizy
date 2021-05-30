@@ -1,5 +1,6 @@
 class SaiziesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :update, :destroy, :mypage]
+
   
   def index
     @saizies = Saizy.includes(tags: :saizy).all.limit(20)

@@ -246,5 +246,6 @@
   ],
   "emmet.includeLanguages": {
     "erb": "html",
- },
+},
+"git.ignoreLimitWarning": true,
 }

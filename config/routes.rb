@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to:  'saizies#index'
 
+  # search
+  get '/search', to: 'saizies#search'  
+
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'pass_reset/new'
