@@ -1,3 +1,10 @@
+<!-- 検索フォーム -->
+<%= search_form_for @search, url: search_saizies_path do |f| %>
+  <%= f.label :name, "ブランド検索" %>
+  <%= f.search_field :name_cont, placeholder: "ブランド名で検索" %>
+  <%= f.submit "検索" %>
+<% end %>
+
 <% if logged_in? %>
   <div class="new-post">
     <div class="section-info">

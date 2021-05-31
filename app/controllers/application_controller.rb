@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  before_action :set_search
+
+  def set_search
+    @search = Saizy.ransack(params[:q])
+    @saerch_saizies = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
+  end
 
   private
     def logged_in_user

@@ -46,6 +46,9 @@ class SaiziesController < ApplicationController
     redirect_to saizies_path
   end
 
+  def search
+  end
+
   private
     def saizy_params
       params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, tags_attributes: [ :name ] , images: [], tag_ids: [])

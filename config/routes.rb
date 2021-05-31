@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   root to:  'saizies#index'
 
-  # search
-  get '/search', to: 'saizies#search'  
-
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'pass_reset/new'
@@ -33,7 +30,11 @@ Rails.application.routes.draw do
   get '/contact', to:'footers#contact'
   
   resources :users
-  resources :saizies
+  resources :saizies do
+    collection do 
+      get :search
+    end
+  end
 
   resources :account_activations, only: [:edit]
   mount LetterOpenerWeb::Engine,  at: '/letter_opener' if Rails.env.development?
