@@ -20,7 +20,7 @@
     <div class="main-content">
       <dl class="main-text">
         <dt>開催日程</dt>
-        <dd><%= @saizy.start %>〜<%= @saizy.finish %></dd>
+        <dd><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %></dd>
       </dl>
       <dl class="main-text">
         <dt>タイトル</dt>

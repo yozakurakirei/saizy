@@ -37,7 +37,7 @@
         <p><%= f.label :message, "3.お問い合わせ内容", class: "inquiry-item-label" %>
         <span class="input-item-label-required">必須</span>
         </p>
-        <%= f.text_field :message, class: "inquiry-item-textarea", placeholder: "お問い合わせ内容をご記載ください", required: true %> 
+        <%= f.text_area :message, class: "inquiry-item-textarea", placeholder: "お問い合わせ内容をご記載ください", required: true %> 
       </div>
       <div class="inquiry-item-button">
         <%= f.submit '確認', class: 'inquiry-btn' %>   

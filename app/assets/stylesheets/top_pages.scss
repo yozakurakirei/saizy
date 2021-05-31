@@ -91,6 +91,10 @@
   align-items: center;
   grid-gap: 1.5rem 1.3rem;
 }
+.post {
+  height: 20rem;
+  background-color: #f9fbfe;
+}
 .post-img {
   position: relative;
   img{
@@ -114,7 +118,7 @@
 }
 .post-desc {
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: .4rem;
     font-weight: bold;
   }
@@ -123,6 +127,11 @@
     margin-bottom: .4rem;
   }
 }
+// slick
+.slick-list {
+  height: 17rem;
+}
+
 
 .is-mobile-menu {
   padding: 1.5rem;

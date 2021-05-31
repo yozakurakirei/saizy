@@ -4,7 +4,7 @@
 
 .inquiry {
   //background-color: #e9e9e9;
-  width: 85%;
+  width: 90%;
   margin: 2rem auto;
   padding: 1rem;
   .inquiry-head h1 {
@@ -60,6 +60,7 @@
   }
 }
 
+textarea::placeholder,
 input::placeholder {
   color: rgb(184, 184, 184);
   padding: 0;
@@ -72,4 +73,15 @@ input::placeholder {
 .confirm {
   width: 85%;
   margin: 0 auto;
+}
+
+// responsive 
+.inquiry{
+  .inquiry-head h1 {
+    font-size: 1.5rem;
+  }
+}
+.inquiry-form .inquiry-item .inquiry-item-label {
+  margin-bottom: .5rem;
+  font-size: .9rem;
 }
