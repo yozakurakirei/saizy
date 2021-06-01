@@ -1,9 +1,11 @@
 @media (max-width: 670px) {
   .hero {
     .hero-content {
+      padding: 1.5rem;
       h4 {
         padding: 0.6rem;
         font-size: 1.3rem;
+        margin-top: 1rem;
       }
       p {
         font-size: .9rem;
@@ -18,7 +20,15 @@
         }
       }
     }
-  }
+    .saizy_search {
+      width: 100%;
+    }
+    .search-input {
+      width: 100%;
+    }
+    .search-button {
+      width: 100%;
+    }
   .post-desc {
     h3 {
       font-size: 1.3rem;
@@ -28,5 +38,6 @@
       font-size: .9rem;
       text-align: center;
     }
+  }
   }
 }

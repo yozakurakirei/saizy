@@ -38,10 +38,6 @@ $(function() {
     responsive: [
       {
         breakpoint: 670,
-
-        setting: {
-          arrows: false
-        }
       }
     ]
   });

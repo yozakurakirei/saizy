@@ -1,9 +1,3 @@
-<!-- 検索フォーム -->
-<%= search_form_for @search, url: search_saizies_path do |f| %>
-  <%= f.label :name, "ブランド検索" %>
-  <%= f.search_field :name_cont, placeholder: "ブランド名で検索" %>
-  <%= f.submit "検索" %>
-<% end %>
 
 <% if logged_in? %>
   <div class="new-post">
@@ -28,8 +22,8 @@
               <% end %>
             </div>
             <div class="post-desc">
-              <h3><%= saizy.title %></h3>
-              <p><%= saizy.place %></p>
+              <h3><%= saizy.title.truncate(10) %></h3>
+              <p><%= saizy.place.truncate(13) %></p>
             </div>
           </div> 
         <% end %>
@@ -58,8 +52,8 @@
               <% end %>
             </div>
             <div class="post-desc">
-              <h3><%= saizy.title %></h3>
-              <p><%= saizy.place %></p>
+              <h3><%= saizy.title.truncate(10) %></h3>
+              <p><%= saizy.place.truncate(13) %></p>
             </div>
           </div> 
         <% end %>
@@ -80,10 +74,8 @@
       <p>
         Saizyは食料品の期間限定ショップを<br>たくさんの人に紹介できるサービスです!<br>
       </p>
-      <div class="hero-action-btn">
-        <%= link_to '新規登録（無料）', signup_path, class: "btn-main" %>
-        <%= link_to 'ログイン', login_path, class: "btn-main-outline" %>
-      </div>
+      <!-- 検索フォーム -->
+      <%= render 'layouts/search_form' %>
     </div>
     <div class="hero-image">
       <%= image_pack_tag 'media/images/top-image.jpeg', alt: "トップページ画像" %>
