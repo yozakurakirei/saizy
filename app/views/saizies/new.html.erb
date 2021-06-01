@@ -6,56 +6,56 @@
   <li>完了</li>
 </ul>-->
 
-<div class="post">
-  <div class="post-title">
+<div class="article">
+  <div class="article-title">
     <h1>催事情報入力ページ</h1> 
   </div>
 
   <%= form_with(model: @saizy, local: true) do |f| %>
-  <table class="post-table">
-    <tbody class="post-body">
+  <table class="article-table">
+    <tbody class="article-body">
     
-      <tr class="post-item">
-        <th><%= f.label :title, "催事タイトル", class: "post-item-label" %></th>
-        <td><%= f.text_field :title, class: "post-item-input", placeholder: "タイトル" %></td>
+      <tr class="article-item">
+        <th><%= f.label :title, "催事タイトル", class: "article-item-label" %></th>
+        <td><%= f.text_field :title, class: "article-item-input", placeholder: "タイトル" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :name, "ブランド名", class: "post-item-label" %></th>
-        <td><%= f.text_field :name, class: "post-item-input", placeholder: "ブランド名" %></td>
+      <tr class="article-item">
+        <th><%= f.label :name, "ブランド名", class: "article-item-label" %></th>
+        <td><%= f.text_field :name, class: "article-item-input", placeholder: "ブランド名" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :place, "出店場所", class: "post-item-label" %></th>
-        <td><%= f.text_field :place, class: "post-item-input", placeholder: "出店場所" %></td>
+      <tr class="article-item">
+        <th><%= f.label :place, "出店場所", class: "article-item-label" %></th>
+        <td><%= f.text_field :place, class: "article-item-input", placeholder: "出店場所" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :open, "開店時間", class: "post-item-label" %></th>
-        <td><%= f.time_field :open, class: "post-item-input", placeholder: "開店時間" %></td>
+      <tr class="article-item">
+        <th><%= f.label :open, "開店時間", class: "article-item-label" %></th>
+        <td><%= f.time_field :open, class: "article-item-input", placeholder: "開店時間" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :close, "閉店時間", class: "post-item-label" %></th>
-        <td><%= f.time_field :close, class: "post-item-input", placeholder: "閉店時間" %></td>
+      <tr class="article-item">
+        <th><%= f.label :close, "閉店時間", class: "article-item-label" %></th>
+        <td><%= f.time_field :close, class: "article-item-input", placeholder: "閉店時間" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :start, "開始日", class: "post-item-label" %></th>
-        <td><%= f.date_field :start, class: "post-item-input", placeholder: "開始日" %></td>
+      <tr class="article-item">
+        <th><%= f.label :start, "開始日", class: "article-item-label" %></th>
+        <td><%= f.date_field :start, class: "article-item-input", placeholder: "開始日" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :finish, "終了日", class: "post-item-label" %></th>
-        <td><%= f.date_field :finish, class: "post-item-input", placeholder: "終了日" %></td>
+      <tr class="article-item">
+        <th><%= f.label :finish, "終了日", class: "article-item-label" %></th>
+        <td><%= f.date_field :finish, class: "article-item-input", placeholder: "終了日" %></td>
       </tr>
-      <tr class="post-item">
-        <th><%= f.label :content, "おすすめポイント", class: "post-item-label" %></th>
-        <td><%= f.text_field :content, class: "post-item-textarea", placeholder: "おすすめポイント" %></td>
+      <tr class="article-item">
+        <th><%= f.label :content, "おすすめポイント", class: "article-item-label" %></th>
+        <td><%= f.text_area :content, class: "article-item-textarea", placeholder: "おすすめポイント" %></td>
       </tr>
     </tbody> 
   </table>
 
-  <div class="post-other">
+  <div class="article-other">
     <h2>カテゴリー選択</h2>
     <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-      <div class="post-tag">
+      <div class="article-tag">
           <%= tag.label do %>
-        <div class="post-tag-list">
+        <div class="article-tag-list">
             <%= tag.check_box %>
             <%= tag.text %>
           <% end %> 
@@ -63,7 +63,7 @@
     <% end %>
       </div>
 
-    <div class="post-item">
+    <div class="article-item">
       <%= f.file_field :images, id: "images", multiple: true %>
     </div>
 

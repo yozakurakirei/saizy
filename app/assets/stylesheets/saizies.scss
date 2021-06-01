@@ -1,3 +1,57 @@
-// Place all the styles related to the Saizies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.article {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  .article-title {
+    width: 100%;
+    h1 {
+      font-size: 2rem;
+      text-align: left;
+      padding: 1rem 0;
+    }
+  }
+  .article-item {
+    th .article-item-label {
+      padding: 1rem 3rem 1rem 0;
+      font-size: 1rem;
+      margin-bottom: .9rem;
+    }
+    td .article-item-input {
+      width: 30rem;
+      padding: .5rem;
+      margin-bottom: .9rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    td .article-item-textarea {
+      width: 30rem;
+      padding: .5rem;
+      min-height: 160px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .article {
+    .article-item {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      th .article-item-label {
+        padding: 0;
+        margin: .5rem;
+      }
+      td .article-item-input {
+        width: 20rem;
+      }
+      td .article-item-textarea {
+        width: 20rem;
+      }
+    }
+  }
+}
