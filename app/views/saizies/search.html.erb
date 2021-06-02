@@ -1,8 +1,43 @@
-<p>検索結果一覧</p>
-<p>実装中です</p>
+<div class="result">
+  <div class="result-top-text">
+    <h1>検索結果</h1>
+  </div>
 
+  <div class="result-flex">
+      <% @saerch_saizies.each do |saizy| %>
+    <div class="result-card">
+      <div class="result-item">
+        <!-- image -->
+        <% if saizy.images.count > 0 %>
+          <div class="result-image">
+            <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+            <%= image_tag saizy.images.first.variant(resize: "500x500").processed %>
+          </div>
+        <% end %>
+        <!-- description -->
+        <div class="result-desc">
+          <h2><%= saizy.title.truncate(18) %></h2>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <%= saizy.place.truncate(18) %>
+          </p>
+        </div>
+      </div>
+    </div>
+      <% end %>
+  </div>
+
+<p>実装中です</p>
+</div>
+
+
+
+
+<!--
 <% @saerch_saizies.each do |f| %>
   <%= f.title %>
   <%= f.name %>
   <%= f.images %>
 <% end %>
+-->
+
