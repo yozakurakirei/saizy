@@ -5,12 +5,10 @@
       <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
     </div>
     <div class="show-image">
-      <div class="show-slide-image" >
         <% if @saizy.images.attached? %>
           <% @saizy.images.each do |image| %>
             <%= image_tag image.variant(resize: "500x500") %>
         <% end %>
-      </div>
     <% end %>
     </div>  
   </div>

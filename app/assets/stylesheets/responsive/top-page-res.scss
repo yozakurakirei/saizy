@@ -20,15 +20,7 @@
         }
       }
     }
-    .saizy_search {
-      width: 100%;
-    }
-    .search-input {
-      width: 100%;
-    }
-    .search-button {
-      width: 100%;
-    }
+
   .post-desc {
     h3 {
       font-size: 1.3rem;
@@ -39,5 +31,22 @@
       text-align: center;
     }
   }
+  }
+  .section-info {
+    border-top: 1px solid #ccc;
+    h2 {
+      padding-top: 2rem;
+    }
+  }
+  .search {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    .search-input {
+      width: 100%;
+    }
+    .search-button {
+      width: 100%;
+    }
   }
 }

@@ -27,17 +27,17 @@ $(function() {
 });
 
 $(function() {
-  $('.show-slide-image').slick({
+  $('.show-image').slick({
     // arrows: true,
     dots: true,
     infinite: true,
     speed: 500,
     fade: true,
     cssEase: 'linear',
-    row: 0,
     responsive: [
       {
         breakpoint: 670,
+        dots: false,
       }
     ]
   });

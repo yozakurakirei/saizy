@@ -111,15 +111,15 @@
     object-fit: cover;
     margin-bottom: .5rem;
   }
-  .day {
-    position: absolute;
-    span {
-      background-color: #e96161;
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.8rem;
-      padding: .4rem;
-    }
+}
+.day {
+  position: absolute;
+  span {
+    background-color: #e96161;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: .4rem;
   }
 }
 .post-desc {

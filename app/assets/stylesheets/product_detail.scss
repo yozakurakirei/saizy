@@ -19,11 +19,26 @@
   max-width: 100%;
   min-width: 0px;
   margin-bottom: 1rem;
+  width: 100%;
+  height: 50%;
+  padding: 1rem;
   .title {
     h3 {
       font-size: 1.5rem;
       text-align: center;
       margin-top: 1.5rem;
+    }
+  }
+  // image
+  .show-image {
+    background-color: #eee;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -138,19 +153,7 @@
   grid-area: sidebar;
 }
 
-// image
-.show-image {
-  .show-slide-image {
-    max-width: 90%;
-    min-width: 0px;
-    margin: 0 auto;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: fil;
-    }
-  }
-}
+
 
 // slick
 .slick-track {
