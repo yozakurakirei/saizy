@@ -17,17 +17,28 @@
 //   console.log(app)
 // })
 
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
-    render:h => h(App)
-  }).$mount()
-  document.body.appendChild(app.$el)
-
-  console.log(app)
+    el: '#hello',
+    data: {
+      message: "こんにちはvueの練習中です"
+    },
+    components: { App }
+  })
 })
+
+// 下記はコメントアウトしたやつ
+// document.addEventListener('DOMContentLoaded', () => {
+//   const app = new Vue({
+//     render:h => h(App)
+//   }).$mount()
+//   document.body.appendChild(app.$el)
+
+//   console.log(app)
+// })
 
 
 // The above code uses Vue without the compiler, which means you cannot

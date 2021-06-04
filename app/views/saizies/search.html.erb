@@ -1,12 +1,13 @@
 <div class="result">
   <div class="result-top-text">
     <h1>検索結果</h1>
-    <% if params[:q]['name_cont'] == "" %>
+    <% if params[:q]['name_cont'] == " " %>
       <p>検索ワードがありません</p>
     <% elsif @saerch_saizies.present? %>
       <p><%= "『#{params[:q][:name_cont]}』の検索結果：  #{@saerch_saizies.count}個の催事が見つかりました" %></p>
     <% else %>
       <p>催事は見つかりませんでした</p>
+      <p>代わりに全部の催事が表示されます。</p>
     <% end %>
   </div>
 

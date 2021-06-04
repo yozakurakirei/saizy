@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <h1>{{ message }}</h1>
+    <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
   data: function() {
     return {
       message: "こんにちはVueです(ｏ'∀')ﾉ"
@@ -17,4 +15,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-size: 2rem;
+  text-align: center;
+  color: red;
+}
 </style>
