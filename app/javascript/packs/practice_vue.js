@@ -95,4 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
       show: true
     }
   })
+
+  new Vue ({
+    created: function() {  // インスタンス作成後、すぐに実行される処理
+      console.log('すぐに呼び出される')
+    }
+  })
 })
