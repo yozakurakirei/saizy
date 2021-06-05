@@ -1,4 +1,4 @@
-<%= stylesheet_pack_tag 'hello_vue' %>
+<%= stylesheet_pack_tag 'vue_application' %>
 <%= javascript_pack_tag 'hello_vue' %>
 <%= javascript_pack_tag 'practice_vue' %>
 
@@ -8,8 +8,33 @@
   <app></app>
 </div>
 
-<div id='practice'>
-  {{ message }}
+<div id="app5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage" class="btn btn-info mt-1">逆読み</button>
 </div>
 
+<div id="app6">
+  <todo-item 
+    v-for="item in groceryList"
+    v-bind:todo="item"
+    v-bind:key="item.id" >
+  </todo-item>
+</div>
+
+<todo-item></todo-item>
+
+<div id="app7">
+  <p>{{ foo }}</p>
+  <button v-on:click="foo = 'baz'">チェンジ</button>
+</div>
+
+<div id="example">
+</div>
+
+<div id="anime1">
+  <button class="btn btn-info" v-on:click="show=!show">切り替え</button>
+  <transition>
+    <p v-if="show">この文字は消えるかな？</p>
+  </transition>
+</div>
 
