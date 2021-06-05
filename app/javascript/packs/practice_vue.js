@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app5 = new Vue({
     el: "#app5",
     data: {
-      message: "パーソルイノベーション"
+      message: "やまもとやまののり"
     },
     methods: {
       reverseMessage: function() {
@@ -101,4 +101,91 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('すぐに呼び出される')
     }
   })
+
+  // ちょっとjs bind
+  const myButton = {
+    content: "OK!",
+    click() {
+      console.log(this)
+      console.log(this.content + "クリックしました")
+    },
+  }
+
+  const yourButton = {
+    content: "No!!"
+  }
+  
+
+  const boundClick = myButton.click.bind(yourButton);
+  boundClick();
+
+
+  const userOne = {
+    firstName: "ゆい",
+    lastName: "新垣"
+  }
+  const userTwo = {
+    firstName: "りほ",
+    lastName: "吉岡"
+  }
+
+  const fullName = function() {
+    return `$(this.lastName), $(this.firstName)`;
+  }
+  
+  const name1 = fullName.bind(userOne);
+  const name2 = fullName.bind(userTwo)
+
+  // vue に戻りました
+  const store = { count: 0 }
+  const app10 = new Vue ({
+    el: "#app10",
+    data: {
+      store: store
+    }
+  }) 
+  store.count++
+
+  new Vue ({
+    el: "#app11",
+    data: {
+      message: {
+        value: "Saizyの世界へようこそ！！"
+      },
+      list: ["堂島ロール", "伊藤久右衛門", "おむすびケーキ"],
+      num: 0
+    }
+  })
+  
+  new Vue ({
+    el: "#app12",
+    data: {
+      count: 0
+    },
+    methods: {
+      click_count() {
+        this.count += 1
+      }
+    }
+  })
+
+  // Still working on this
+
+  new Vue({
+    el: "#app13",
+    
+    template: "#slidemenu",
+    
+    data: {
+        open: false
+    },
+    
+    methods: {
+        toggleNav: function() {
+            this.open = !this.open
+            this.$emit('toggle', this.open)
+        }
+    }
+  })
+
 })

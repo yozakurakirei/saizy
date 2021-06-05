@@ -3,6 +3,30 @@
 <%= javascript_pack_tag 'practice_vue' %>
 
 <%# vue.jsの練習ページ %>
+<div id="app13"></div>
+
+<template id="slidemenu">
+  <div class="menu">
+        <div :class="['menu__burger', {'menu__burger--open': this.open}]" @click="toggleNav">
+            <span class="menu__burger__span"></span>
+        </div>
+        <nav :class="['menu__nav', {'menu__nav--open': this.open}]">
+            <ul class="menu__list">
+                <li class="menu__list__item">
+                    <a href="#" class="menu__link">Link</a>
+                </li>
+                <li class="menu__list__item">
+                    <a href="#" class="menu__link">Link</a>
+                </li>
+            </ul>
+        </nav>    
+    </div>
+</template>
+
+
+
+
+
 <div id='hello'>
   {{ message }}
   <app></app>
@@ -23,11 +47,6 @@
 
 <todo-item></todo-item>
 
-<div id="app7">
-  <p>{{ foo }}</p>
-  <button v-on:click="foo = 'baz'">チェンジ</button>
-</div>
-
 <div id="example">
 </div>
 
@@ -38,3 +57,19 @@
   </transition>
 </div>
 
+<div id="app10">{{ store.count }}</div>
+
+<div id="app11">
+  {{ message.value }}
+  {{ message.value.length }}
+  <p>{{ list }}</p>
+  <p>{{ list.length }}</p>
+  <p>{{ list[num] }}</p>
+</div>
+
+<pre>{{ $data.message }}</pre>
+
+<div id="app12">
+  <p>{{ count }}回クリックしたぜ！</p>
+  <button class="btn btn-info" v-on:click="click_count">カウントを増やす</button>
+</div>
