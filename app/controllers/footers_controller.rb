@@ -7,10 +7,4 @@ class FootersController < ApplicationController
 
   def privacy
   end
-
-  def help
-  end
-
-  def contact
-  end
 end
