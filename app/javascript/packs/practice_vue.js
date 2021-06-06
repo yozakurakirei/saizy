@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app6",
     data: {
       groceryList: [
-        { id: 0, text: "AUBA" },
-        { id: 1, text: "TOMORUBA" },
-        { id: 2, text: "ミイダス" },
+        { id: 0, text: "apple" },
+        { id: 1, text: "lemon" },
+        { id: 2, text: "orange" },
       ]
     }
   })
@@ -188,4 +188,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
+  new Vue({
+    el: "#app14",
+    data: {
+      isChild: false,
+      isActive: true,
+      textColor: 'red',
+      bgColor: 'lightgray'
+    }
+  })
+
+  new Vue({
+    el: "#app15",
+    data: {
+      radius: 50
+    }
+  })
+
+  // 切り替え頻度が高いものはv-showを使用する
+  // 内側にディレクティブやコンポーネントが多用されていたらv-if
+  new Vue({
+    el: "#app16",
+    data: {
+      ok: true
+    }
+  })
+   
+  new Vue({
+    el: "#app17",
+    data: {
+      list: [
+        { id: 1, name: "react", hp: 1000 },
+        { id: 2, name: "dart", hp: 2000 },
+        { id: 3, name: "vue", hp: 100 },
+      ]
+    },
+    mounted: function () {
+      console.log(this.$el)
+     }
+  })
 })

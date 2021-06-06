@@ -1,0 +1,46 @@
+<% provide(:title, "文字カウンター")%>
+
+<%= stylesheet_pack_tag 'hello_vue' %>
+<%= javascript_pack_tag 'counter_vue' %>
+
+
+
+
+<div id="counter">
+  <h1>文字カウンター</h1>
+  <p class="counter-dsc">転職面接用の文字カウンターです</p>
+  <p class="counter-question">Q1. 自己紹介をお願いします</p>
+  <div class="counter-text">
+    <textarea v-model="myText" cols="50" rows="10"></textarea>
+  </div>
+  <p>残り{{ remaining }}文字</p>
+  <p>{{ message }}</p>
+
+  <p class="counter-question">Q2. 職務経歴についてお聞かせください</p>
+  <div class="counter-text">
+    <textarea v-model="myText" cols="50" rows="10"></textarea>
+  </div>
+  <p>残り{{ remaining }}文字</p>
+
+  <p class="counter-question">Q3. 前職へ入社した理由は何ですか？</p>
+  <div class="counter-text">
+    <textarea v-model="myText" cols="50" rows="10"></textarea>
+  </div>
+  <p>残り{{ remaining }}文字</p>
+
+  <p class="counter-question">Q4. 前職を退職された理由は何でしょうか？</p>
+  <div class="counter-text">
+    <textarea v-model="myText" cols="50" rows="10"></textarea>
+  </div>
+  <p>残り{{ remaining }}文字</p>
+  <p class="counter-question">Q5. 弊社を志望した動機を教えてくださ</p>
+  <div class="counter-text">
+    <textarea v-model="myText" cols="50" rows="10"></textarea>
+  </div>
+  <p>残り{{ remaining }}文字</p>
+  <p class="counter-question">Q6. 自己PRをしてください</p>
+  <div class="counter-text">
+    <textarea v-model="myText" cols="50" rows="10"></textarea>
+  </div>
+  <p>残り{{ remaining }}文字</p>
+</div>

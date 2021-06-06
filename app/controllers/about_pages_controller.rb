@@ -6,4 +6,7 @@ class AboutPagesController < ApplicationController
 
   def about
   end
+
+  def counter
+  end
 end

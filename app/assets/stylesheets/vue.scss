@@ -86,3 +86,31 @@
     	}
     }
 }
+
+#counter {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	h1 {
+		font-size: 1.5rem;
+		padding: 1rem 0;
+		font-weight: bold;
+	}
+	.counter-dsc {
+		padding-bottom: 2rem;
+	}
+	.counter-question {
+		padding: 1rem 0;
+	}
+	.counter-text {
+		font-size: 1.3rem;
+		textarea {
+			border: 1px solid #ccc;
+			padding: .5rem;
+			border-radius: 5px;
+			box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+		}
+	}
+	
+}

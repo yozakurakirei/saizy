@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'counters/index'
+  get 'counters/new'
   root to:  'saizies#index'
 
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'pass_reset/new'
   get 'pass_reset/edit'
-  get  '/about', to: 'about_pages#about'
+  get '/about', to: 'about_pages#about'
+  get '/counter', to: 'about_pages#counter'
 
   get 'home', to: 'about_pages#home'
   
