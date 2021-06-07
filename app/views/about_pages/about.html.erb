@@ -97,3 +97,36 @@
   </ul>
 </div>
 
+<div id="app18"> <%# ルート el %>
+  <h1 ref="hello">$el, $refs</h1> <%# ルート以外の要素 refs %>
+</div>
+
+<div id="app19">
+  <button v-on:click="handleClick">カウントアップ</button>
+  <button v-on:click="show=!show">表示・非表示</button>
+  <span ref="count" v-if="show">0</span>
+</div>
+
+<div id="app20" v-cloak>
+  {{ message }}
+</div>
+
+<div id="app21">
+  <button class="btn btn-info" v-on:click="handleClick">クリック</button>
+</div>
+
+<div id="app22">
+  <img src="shopping.png" v-on:load="show=true" v-bind:class="{hide: !show}" alt="image" width="300" height="200">
+</div>
+
+<div id="app23">
+  <input v-bind:value="message" v-on:input="handleInput">
+</div>
+
+<div id="app24">
+  <div v-on:click.right="handler">右クリックしてね</div>
+  <div v-on:click.right.prevent="handler">これが出るのかな？</div>
+</div>
+
+<app26></app26>
+<hello-temp></hello-temp>

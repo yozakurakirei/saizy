@@ -1,6 +1,8 @@
 // vue practice
 import Vue from 'vue/dist/vue.esm'
 import Practice from '../vue_practice/practice.vue'
+// import ComTest from '../components/comTest.vue'
+import HelloTemp from '../components/hello_temp.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -226,5 +228,81 @@ document.addEventListener('DOMContentLoaded', () => {
     mounted: function () {
       console.log(this.$el)
      }
+  })
+
+  new Vue({
+    el: "#app18",
+    mounted: function () {
+      console.log(this.$refs.hello)
+    }
+  })
+
+  new Vue ({
+    el: "#app19",
+    data: {
+      show: true
+    },
+    methods: {
+      handleClick() {
+        const count = this.$refs.count
+        if (count) {
+          count.innerText = parseInt(count.innerText, 10) + 1
+        }
+      }
+    }
+  })
+
+  new Vue ({
+    el: "#app20",
+    data: {
+      message: "v-textで描画しています",
+    },
+    mounted: function() {
+      console.log(this.$el)
+    }
+  })
+
+  new Vue ({
+    el: "#app21",
+    methods: {
+      handleClick: function() {
+        alert("クリックしたよ(ｏ'∀')ﾉ")
+      }
+    }
+  })
+
+  new Vue ({
+    el: "#app23",
+    data: {
+      message: "input要素だよ",
+    },
+    methods: {
+      handleInput: function(event) {
+        this.message = event.target.value
+      }
+    }
+  })
+
+  new Vue ({
+    el: "#app24",
+    methods: {
+      handler: function(comment) {
+        console.log(comment)
+      }
+    }
+  }) 
+
+  // コンポーネント
+  Vue.component('app26', {
+    template: '<p>私のコンポーネント</p>'
+  })
+  
+  new Vue({
+    el: 'app26'
+  })
+
+  new Vue({
+    el: 'hello-temp',
+    components: { HelloTemp }
   })
 })
