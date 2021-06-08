@@ -19,6 +19,7 @@
 
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+import HelloTemp from '../components/hello_temp.vue'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       message: "こんにちはvueの練習中です"
     },
-    components: { App, ComTest }
+    components: { App, HelloTemp }
   })
 })
 
