@@ -2,7 +2,7 @@
 import Vue from 'vue/dist/vue.esm'
 import Practice from '../vue_practice/practice.vue'
 // import ComTest from '../components/comTest.vue'
-import HelloTemp from '../components/hello_temp.vue'
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

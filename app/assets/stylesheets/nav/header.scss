@@ -1,0 +1,92 @@
+header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  display: flex;
+  padding: .8rem;
+  align-items: center;
+}
+
+.header-logo {
+  flex: 1;
+  font-family: 'Balsamiq Sans', cursive;
+  .site-logo {
+    font-size: 2.3rem;
+    justify-content: flex-start;
+    margin-left: 1.5rem;
+  }
+}
+
+.menu-icon {
+  font-size: 2.8rem;
+  padding: .5rem;
+  justify-content: flex-end;
+  display: none;
+}
+
+.header-nav {
+  flex: 5;
+  display: flex;
+  justify-content: flex-end;
+  .header-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 .5rem;
+    li {
+      margin: 0 1rem;
+      font-size: .9rem;
+    }
+  }
+}
+
+// btn 
+.login-btn {
+  padding: 1rem;
+  border-radius: 5px;
+  &:hover {
+    background-color: #fcf2f2; 
+    transition: .5s; 
+  }
+}
+
+.signup-btn {
+  background-color: #ed8f8f;
+  padding: .8rem 1.2rem;
+  border-radius: 5px;
+  color: #fff !important;
+  letter-spacing: 1px;
+  font-weight: bold;
+  &:hover {
+    opacity: .7;
+    transition: .5s;
+  }
+}
+
+@media (max-width: 670px) {
+  .header-nav {
+    display: none;
+  }
+  .header-logo .site-logo {
+    font-size: 1.7rem;
+    margin-left: .5rem;
+  }
+  .header-list {
+    width: 80%;
+    background-color: #ddd;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    display: none;
+  }
+  .signup-btn {
+    background-color: transparent;
+    padding: 0;
+    color: #555 !important;
+    letter-spacing: 0;
+    font-weight: normal;
+  }
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+}

@@ -1,51 +1,20 @@
-<!-- header -->
 <header>
-  <div class="l-header container">
-    <div class="row">
-      <!-- top-dropdown-left -->
-      <div class="col-md-4 col-sm-12 col-12">
-        <div class="btn-group">
-          <button 
-          class="btn border dropdown-toggle my-md-3"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false">
-          Ather
-          </button>
-          <div class="dropdown-menu">
-            <%= link_to 'アパレル', "#", class: "dropdown-item" %>
-            <%= link_to '開発者情報', "#", class: "dropdown-item" %>
-            <%= link_to 'github', "#", class: "dropdown-item" %>
-            <%= link_to 'vue練習', about_path, class: "dropdown-item" %>
-          </div>
-        </div>
-      </div>
-      <!-- center logo -->
-      <div class="col-md-4 col-12 text-center">
-        <%= link_to 'Saizy', root_path, class: "my-md-3 site-logo" %>
-      </div> 
-      <!-- top-dropdwn-right -->
-      <div class="col-md-4 col-12 text-right">
-        <p class="my-md-4 header-links">
-        <% if logged_in? %>
-          
-          <%= link_to 'マイページ', user_path(current_user) %>          
-          <%= link_to '催事投稿', new_saizy_path %>          
-          <%= link_to 'アカウント設定', edit_user_path(current_user) %>          
-          <%= link_to 'ログアウト', logout_path, method: :delete %>          
-        <% else %>
-          <%= link_to 'ログイン', login_path, class: "px-2" %>
-          <%= link_to '新規登録（無料）', signup_path, class: "px-1" %>
-        </p>
-        <% end %>
-      </div>
-    </div>
+  <div class="header-logo">
+    <%= link_to 'Saizy', root_path, class:"site-logo" %>
   </div>
+  <div class="header-nav">
+    <ul class="header-list">
+      <% if logged_in? %>
+        <li><%= link_to 'マイページ', user_path(current_user) %></li>          
+        <li><%= link_to '催事投稿', new_saizy_path %></li>          
+        <li><%= link_to 'アカウント設定', edit_user_path(current_user) %></li>          
+        <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>          
+      <% else %>
+        <li><%= link_to 'ログイン', login_path, class: "login-btn" %></li>
+        <li><%= link_to '新規登録', signup_path, class: "signup-btn" %></li>
+      </p>
+      <% end %>
+    </ul>
+  </div>
+  <div class="fa fa-bars menu-icon"></div>
 </header>
-<!-- /header -->
-
-       
-
-
-
-

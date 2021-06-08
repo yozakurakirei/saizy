@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       message: "こんにちはvueの練習中です"
     },
-    components: { App, HelloTemp }
+    components: { 
+      Header,
+      App, 
+      HelloTemp
+     }
   })
 })
 
