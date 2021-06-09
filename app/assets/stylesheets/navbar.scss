@@ -7,30 +7,13 @@
 }
 
 // header
-.header{
-  background-color: #f8f8f8;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
-.site-logo{
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  font-family: 'Balsamiq Sans', cursive;
-  color: #555;
-  display: inline-block;
-  text-align: center;
-  margin: 0;
-}
-.container .dropdown-toggle,
-.container .dropdown-item{
-  font-size: 0.9em;
-}
 
 // second-header
 .nav-bar {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   background: #f8f8f8;
   .menu-item {
     padding: 20px 20px;
@@ -58,7 +41,7 @@ strong {
   font-size: 22px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 670px) {
   header {
     width: 100%;
   }

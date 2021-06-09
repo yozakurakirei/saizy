@@ -28,28 +28,7 @@
       <li>出店終了</li>
       <li>下書き</li>
     </ul>
-  
-    <div class="area">
-      <ul class="show">
-        <h2>公開中の投稿</h2>
-        <p>投稿数: <%= @user.saizies.published.count %></p>
-        <% @user.saizies.published.each do |saizy| %>
-        <div class="side-card">
-          <div class="side-card-flex">
-            <div class="side-image">
-              <%= link_to saizy_path(saizy) do%>
-                <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-            </div>
-            <div class="side-content">
-              <h3 class="side-content-title"><%= saizy.title %></h3>
-              <p><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></p>
-              <p><%= saizy.content.truncate(20) %></p>
-              <p><%= saizy.updated_at.strftime("%Y年%m月%d日") %>に更新</p>
-            </div>
-          </div>
-          <% end %>
-        <% end %>
-      </ul>
+
 
       <ul>
         <h2>出店終了の投稿</h2>
@@ -77,6 +56,5 @@
       </ul>
 
 
-    </div>
   </div>
 </div>

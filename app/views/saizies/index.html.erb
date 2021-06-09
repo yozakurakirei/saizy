@@ -1,123 +1,44 @@
 <% provide(:title, "Saizyホーム")%>
+<!-- ログイン -->
 <% if logged_in? %>
-  <div class="new-post">
+  <!-- 検索フォーム -->
   <%= render 'layouts/search_form' %>
-    <div class="section-info">
-      <h2>新着のSaizy</h2>
-      <p>Posts will be posted here</p>
-    </div>
-
-    <!-- post grid -->
-    <div class="post-grid">
-      <div id="slider">
-        <% @saizies.published.each do |saizy| %>
-          <div class="post">
-            <div class="post-img">
-              <%= link_to saizy_path(saizy) do%>
-                <% if saizy.images.count > 0 %>
-                  <div class="day">
-                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                  </div>
-                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="post-desc">
-              <h3><%= saizy.title.truncate(18) %></h3>
-              <p><%= saizy.place.truncate(18) %></p>
-            </div>
-          </div> 
-        <% end %>
-      </div>
-    </div>
-    <!-- /post grid -->
-
-    <section class="new-post">
-    <div class="section-info">
-      <h2>過去のSaizy</h2>
-      <p>Posts will be posted here</p>
-    </div>
-    <!-- post grid -->
-    <div class="post-grid">
-      <div id="slider-deleted">
-        <% @saizies.deleted.each do |saizy| %>
-          <div class="post">
-            <div class="post-img">
-              <%= link_to saizy_path(saizy) do%>
-                <% if saizy.images.count > 0 %>
-                  <div class="day">
-                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                  </div>
-                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="post-desc">
-              <h3><%= saizy.title.truncate(18) %></h3>
-              <p><%= saizy.place.truncate(18) %></p>
-            </div>
-          </div> 
-        <% end %>
-      </div>
-    </div>
-    <!-- /post grid -->
+  <!-- 投稿 -->
+  <%= render 'layouts/top_contents/top_contents'%>
+  <!-- 都道府県 -->
+  <%= render 'layouts/top_contents/area' %>
+  <!-- 百貨店・商業施設 -->
+  <h2>百貨店・商業施設</h2>
+  <!-- サービスの案内 -->
+  <h2>催事出店をご検討のみなさまへ</h2>
+  <!-- 通販サイト -->
+  <h2>Saizyブランドの通販</h2>
 
   </div>
-  <!-- /new post-->
+<!-- 非ログインユーザー -->
 <% else %>
-<!-- Main -->
-<main class="top-contents">
-  <!-- top image -->
-  <div class="hero">
-    <div class="hero-content">
-      <h2 class="text-main">Saizy<h2>
-      <h4>美味しい食べ物を <br> みんなに伝えよう！</h4>
-      <p>
-        Saizyは食料品の期間限定ショップを<br>たくさんの人に紹介できるサービスです!<br>
-      </p>
-      <!-- 検索フォーム -->
-      <%= render 'layouts/search_form' %>
-    </div>
-    <div class="hero-image">
-      <%= image_pack_tag 'media/images/top-image.jpeg', alt: "トップページ画像" %>
-    </div>
-  </div>
-  <!-- /top image -->
-  
-  <!-- new post -->
-  <section class="new-post">
-    <div class="section-info">
-      <h2>新着のSaizy</h2>
-      <p>Posts will be posted here</p>
-    </div>
-
-    <!-- post grid -->
-    <div class="post-grid">
-      <div id="slider">
-        <% @saizies.published.each do |saizy| %>
-          <div class="post">
-            <div class="post-img">
-              <%= link_to saizy_path(saizy) do%>
-                <% if saizy.images.count > 0 %>
-                  <div class="day">
-                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                  </div>
-                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="post-desc">
-              <h3><%= saizy.title.truncate(18) %></h3>
-              <p><%= saizy.place.truncate(18) %></p>
-            </div>
-          </div> 
-        <% end %>
+  <main class="top-contents">
+    <!-- top image -->
+    <div class="hero">
+      <div class="hero-content">
+        <h2 class="text-main">Saizy<h2>
+        <h4>美味しい食べ物を <br> みんなに伝えよう！</h4>
+        <p>
+          Saizyは食料品の期間限定ショップを<br>たくさんの人に紹介できるサービスです!<br>
+        </p>
+        <!-- 検索フォーム -->
+        <%= render 'layouts/search_form' %>
+      </div>
+      <div class="hero-image">
+        <%= image_pack_tag 'media/images/top-image.jpeg', alt: "トップページ画像" %>
       </div>
     </div>
-    <!-- /post grid -->
-
+    <!-- 投稿 -->
+    <%= render 'layouts/top_contents/top_contents'%>  
+    <!-- 都道府県 -->
+    <%= render 'layouts/top_contents/area' %>
+    <!-- 百貨店 -->
   </section>
-  <!-- /new post-->
 <% end %>
 </main>
 

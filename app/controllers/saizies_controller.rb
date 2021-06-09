@@ -1,7 +1,6 @@
 class SaiziesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :update, :destroy, :mypage]
 
-  
   def index
     @saizies = Saizy.includes(tags: :saizy).all.limit(20)
     @microposts = Micropost.all
@@ -46,12 +45,16 @@ class SaiziesController < ApplicationController
     redirect_to saizies_path
   end
 
+  def tokyo
+    @saizies = Saizy.all.limit(20)
+  end
+
   def search
   end
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status, tags_attributes: [ :name ] , images: [], tag_ids: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, tags_attributes: [ :name ] , images: [], tag_ids: [])
     end
 
     def require_login

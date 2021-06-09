@@ -119,6 +119,7 @@ GEM
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
+    jp_prefecture (1.0.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
@@ -282,6 +283,7 @@ DEPENDENCIES
   foreman
   image_processing (= 1.9.3)
   jbuilder (~> 2.7)
+  jp_prefecture
   letter_opener_web
   listen (~> 3.3)
   mini_magick (= 4.9.5)

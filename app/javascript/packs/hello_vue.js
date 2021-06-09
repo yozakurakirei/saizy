@@ -20,6 +20,7 @@
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
 import HelloTemp from '../components/hello_temp.vue'
+import Slider from '../components/slider.vue'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Header,
       App, 
       HelloTemp,
+      Slider
      }
   })
 })

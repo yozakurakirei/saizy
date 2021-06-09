@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get '/counter', to: 'about_pages#counter'
 
   get 'home', to: 'about_pages#home'
+
+  # エリア
+  get 'prefectures/tokyo', to: 'saizies#tokyo'
   
   # ログイン系
   get  '/signup', to: 'users#signup'

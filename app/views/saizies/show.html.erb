@@ -62,29 +62,7 @@
     </div>
 
     <!-- 右側サイドバー -->
-    <div class="sidebar">
-      <div class="sidebar-title">
-        <h3 class="side-t">
-          <i class="fas fa-gift session-icon"></i>
-          開催中の催事
-        </h3>
-      </div>
-      <% @saizies.published.each do |saizy| %>
-      <div class="side-card">
-        <div class="side-card-flex">
-          <div class="side-image">
-            <%= link_to saizy_path(saizy) do%>
-              <%= image_tag saizy.images.first.variant(resize: "140x140").processed %>
-          </div>
-          <div class="side-content">
-            <h3 class="side-content-title"><%= saizy.title %></h3>
-            <p><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %></p>
-            <p><%= saizy.content.truncate(20) %></p>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
-    </div>
+    
   </div>
 </div>
   <!-- right bar -->

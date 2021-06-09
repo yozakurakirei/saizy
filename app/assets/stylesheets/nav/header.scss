@@ -12,19 +12,20 @@ header {
   font-family: 'Balsamiq Sans', cursive;
   .site-logo {
     font-size: 2.3rem;
-    justify-content: flex-start;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
 }
 
 .header-item {
   text-align: center;
-  margin: 0 1rem;
+  margin: 0 .5rem;
+  width: 4.7rem;
   p {
     font-size: .8rem;
     margin-top: .2rem;
     font-weight: bold;
     color: #505050;
+    padding: .3rem;
   }
 }
 
@@ -70,7 +71,6 @@ header {
 @media (max-width: 670px) {
   header{
     padding: .5rem;
-    margin: .8rem .5rem;
   }
   .header-logo {
     .site-logo {
@@ -96,42 +96,14 @@ header {
 
   .header-item {
     text-align: center;
-    margin-right: .2rem;
     span {
       font-size: 1rem;
     }
     p {
-      font-size: .3rem;
+      font-size: 9px;
       margin-top: .2rem;
       font-weight: bold;
       color: #505050;
     }
   }
-  // .header-nav {
-  //   justify-content: center;
-  //   position: absolute;
-  //   flex-direction: column;-
-  //   background-color: #ddd;
-  //   right: 0;
-  //   width: 70%;
-  //   min-height: 100vh;
-  //   height: 100vh;
-  //   .header-list {
-  //     display: flex;
-  //     justify-content: flex-end;
-  //     align-items: center;
-  //     flex-direction: column;
-  //     margin: .5rem;
-  //   }
-  // }
-  // .signup-btn {
-  //   background-color: transparent;
-  //   color: #555 !important;
-  //   letter-spacing: 0;
-  //   font-weight: normal;
-  // }
-
-  // .hamburger {
-  //   display: block;
-  // }
 }

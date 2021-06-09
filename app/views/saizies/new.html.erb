@@ -24,6 +24,10 @@
       <tr class="article-item">
         <th><%= f.label :name, "ブランド名", class: "article-item-label" %></th>
         <td><%= f.text_field :name, class: "article-item-input", placeholder: "ブランド名" %></td>
+      </tr>    
+      <tr>
+        <th><%= f.label :area, "出店エリア" %></th>
+        <td class="article-item-select"><%= f.select :area, [["------", "hokkaido"],["北海道", "hokkaido"], ["青森", "aomori"], ["岩手", "iwate"],["宮城", "miyagi"],["秋田", "akita"],["山形", "yamagata"],["福島", "fukusima"],["茨城", "ibaragi"],["栃木", "tochigi"],["群馬", "gunma"],["埼玉", "saitama"],["千葉", "chiba"],["東京", "tokyo"],["神奈川", "kanagawa"],["新潟", "niigata"],["富山", "toyama"],["石川", "ishikawa"],["福井", "fukui"],["山梨", "yamanasi"],["長野", "nagano"],["岐阜", "gifu"],["静岡", "sizuoka"],["愛知", "aichi"],["三重", "mie"],["滋賀", "siga"],["京都", "kyoto"],["大阪", "oosaka"],["兵庫", "hyogo"],["奈良", "nara"],["和歌山", "wakayama"],["鳥取", "tottori"],["島根", "simane"],["岡山", "okayama"],["広島", "hirosima"],["山口", "yamaguchi"],["徳島", "tokushima"],["香川", "kagawa"],["愛媛", "ehime"],["高知", "kouchi"],["福岡", "fukuoka"],["佐賀", "saga"],["長崎", "nagasaki"],["熊本", "kumamoto"],["大分", "ooita"],["宮崎", "miyazaki"],["鹿児島", "kagosima"],["沖縄", "okinawa"]], id: "area", class: "article-item-select" %></td>
       </tr>
       <tr class="article-item">
         <th><%= f.label :place, "出店場所", class: "article-item-label" %></th>
@@ -52,28 +56,16 @@
     </tbody> 
   </table>
 
-  <div class="article-other">
-    <h2>カテゴリー選択</h2>
-    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-      <div class="article-tag">
-          <%= tag.label do %>
-        <div class="article-tag-list">
-            <%= tag.check_box %>
-            <%= tag.text %>
-          <% end %> 
-        </div>
-    <% end %>
-      </div>
-
     <div class="article-item">
       <%= f.file_field :images, id: "images", multiple: true %>
     </div>
 
     <div class="form-group">
-      <%= f.label :status %><br>
+      <%= f.label :status, "記事ステータス" %><br>
       <%= f.select :status, [["下書き", "draft"], ["公開する", "published"], ["出店終了", "deleted"]],
                             id: "status", class: "form-control" %>
     </div>
+
     <div class="l_form_form_button">
       <%= f.submit "投稿する", class: "form_button" %>  
     </div>
