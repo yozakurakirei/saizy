@@ -3,7 +3,7 @@
   <div class="header container">
     <div class="row">
       <!-- top-dropdown-left -->
-      <div class="col-md-4 col-sm-12 col-12">
+      <div class="col-md-4 col-sm-12 col-12 bg-primary">
         <div class="btn-group">
           <button 
           class="btn border dropdown-toggle my-md-3"
@@ -21,11 +21,14 @@
         </div>
       </div>
       <!-- center logo -->
-      <div class="col-md-4 col-12 text-center">
+      <div class="col-md-4 col-12 text-center bg-dark">
         <%= link_to 'Saizy', root_path, class: "my-md-3 site-logo" %>
       </div> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
       <!-- top-dropdwn-right -->
-      <div class="col-md-4 col-12 text-right">
+      <div class="col-md-4 col-12 text-right bg-info">
         <p class="my-md-4">
         <% if logged_in? %>
           

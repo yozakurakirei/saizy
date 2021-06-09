@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     components: { 
       Header,
       App, 
-      HelloTemp
+      HelloTemp,
      }
   })
 })

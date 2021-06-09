@@ -17,11 +17,15 @@ header {
   }
 }
 
-.menu-icon {
-  font-size: 2.8rem;
-  padding: .5rem;
-  justify-content: flex-end;
-  display: none;
+.header-item {
+  text-align: center;
+  margin: 0 1rem;
+  p {
+    font-size: .8rem;
+    margin-top: .2rem;
+    font-weight: bold;
+    color: #505050;
+  }
 }
 
 .header-nav {
@@ -64,29 +68,70 @@ header {
 }
 
 @media (max-width: 670px) {
+  header{
+    padding: .5rem;
+    margin: .8rem .5rem;
+  }
+  .header-logo {
+    .site-logo {
+      font-size: 1.7rem;
+    }
+  }
   .header-nav {
-    display: none;
+    .header-list {
+      margin: 0;
+      li {
+        font-size: .8rem;
+      }
+    }
   }
-  .header-logo .site-logo {
-    font-size: 1.7rem;
-    margin-left: .5rem;
-  }
-  .header-list {
-    width: 80%;
-    background-color: #ddd;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    display: none;
+  .login-btn {
+    padding: .5rem;
+    border-radius: 5px;
   }
   .signup-btn {
-    background-color: transparent;
-    padding: 0;
-    color: #555 !important;
-    letter-spacing: 0;
-    font-weight: normal;
+    padding: 10px 10px;
+    border-radius: 5px;
   }
-  .menu-icon {
-    display: block;
-    cursor: pointer;
+
+  .header-item {
+    text-align: center;
+    margin-right: .2rem;
+    span {
+      font-size: 1rem;
+    }
+    p {
+      font-size: .3rem;
+      margin-top: .2rem;
+      font-weight: bold;
+      color: #505050;
+    }
   }
+  // .header-nav {
+  //   justify-content: center;
+  //   position: absolute;
+  //   flex-direction: column;-
+  //   background-color: #ddd;
+  //   right: 0;
+  //   width: 70%;
+  //   min-height: 100vh;
+  //   height: 100vh;
+  //   .header-list {
+  //     display: flex;
+  //     justify-content: flex-end;
+  //     align-items: center;
+  //     flex-direction: column;
+  //     margin: .5rem;
+  //   }
+  // }
+  // .signup-btn {
+  //   background-color: transparent;
+  //   color: #555 !important;
+  //   letter-spacing: 0;
+  //   font-weight: normal;
+  // }
+
+  // .hamburger {
+  //   display: block;
+  // }
 }

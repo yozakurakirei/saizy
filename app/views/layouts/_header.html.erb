@@ -2,19 +2,45 @@
   <div class="header-logo">
     <%= link_to 'Saizy', root_path, class:"site-logo" %>
   </div>
-  <div class="header-nav">
-    <ul class="header-list">
-      <% if logged_in? %>
-        <li><%= link_to 'マイページ', user_path(current_user) %></li>          
-        <li><%= link_to '催事投稿', new_saizy_path %></li>          
-        <li><%= link_to 'アカウント設定', edit_user_path(current_user) %></li>          
-        <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>          
-      <% else %>
-        <li><%= link_to 'ログイン', login_path, class: "login-btn" %></li>
-        <li><%= link_to '新規登録', signup_path, class: "signup-btn" %></li>
-      </p>
+  <% if logged_in? %>
+    <div class="header-item">
+      <%= link_to root_path do%>
+        <span><i class="fas fa-home"></i></span>
+        <p><%= link_to 'ホーム', root_path %></p>
       <% end %>
-    </ul>
-  </div>
-  <div class="fa fa-bars menu-icon"></div>
+    </div>
+    <div class="header-item">
+      <%= link_to new_saizy_path do%>
+        <span><i class="fas fa-pen"></i></span>
+        <p>投稿</p>
+      <% end %>
+    </div>
+    <div class="header-item">
+      <%= link_to user_path(current_user) do%>
+        <span><i class="far fa-user-circle"></i></span>
+        <p>マイページ</p>
+      <% end %>
+    </div>
+    <div class="header-item">
+      <%= link_to logout_path, method: :delete do%>
+      <span><i class="fas fa-sign-out-alt"></i></span>
+      <p>ログアウト</p>
+      <% end %>
+    </div>
+    <% else %>
+    <div class="header-nav">
+      <ul class="header-list">
+          <li><%= link_to 'ログイン', login_path, class: "login-btn" %></li>
+          <li><%= link_to '新規登録', signup_path, class: "signup-btn" %></li>
+        </p>
+        <% end %>
+      </ul>
+    </div>
 </header>
+
+<!-- 
+  <li><%= link_to 'マイページ', user_path(current_user) %></li>          
+  <li><%= link_to '催事投稿', new_saizy_path %></li>          
+  <li><%= link_to 'アカウント設定', edit_user_path(current_user) %></li>          
+  <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>    
+ -->
