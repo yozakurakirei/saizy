@@ -96,6 +96,9 @@
 .post-grid {
   align-items: center;
   grid-gap: 1.5rem 1.3rem;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .post {
   height: 25rem;

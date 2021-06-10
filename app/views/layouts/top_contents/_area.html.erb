@@ -1,11 +1,53 @@
 <div class="prefectures">
   <h2>人気のエリアから探す</h2>
-  <%= link_to '東京都', prefectures_tokyo_path %>
-  <%= link_to '神奈川県', prefectures_tokyo_path %>
-  <%= link_to '千葉県', prefectures_tokyo_path %>
-  <%= link_to '埼玉県', prefectures_tokyo_path %>
-  <%= link_to '大阪', prefectures_tokyo_path %>
-  <%= link_to '名古屋', prefectures_tokyo_path %>
-  <%= link_to '札幌', prefectures_tokyo_path %>
-  <%= link_to '福岡', prefectures_tokyo_path %>
+  <div class="prefectures-flex">
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/sinjyuku.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">東京都</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/yokohama.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">神奈川</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/chiba.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">千葉</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/oomiya.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">埼玉</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/sinjyuku.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">大阪</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/sinjyuku.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">京都</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/sinjyuku.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">名古屋</p>
+      <% end %>
+    </div>
+    <div class="prifectures-item">
+      <%= link_to prefectures_tokyo_path do %>
+        <%= image_pack_tag 'media/images/sinjyuku.jpeg', alt: "トップページ画像", class: "prifectures-img" %>
+        <p class="prifectures-title">札幌</p>
+      <% end %>
+    </div>
+  </div>
 </div>
