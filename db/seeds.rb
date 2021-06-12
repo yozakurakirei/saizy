@@ -1,20 +1,20 @@
-# # adminユーザー
-# User.create!(name:  "admin",
-#   email: "admin@example.com",
-#   password:              "password",
-#   password_confirmation: "password",
-#   admin: true,
-#   activated: true,
-#   activated_at: Time.zone.now)
+# adminユーザー
+User.create!(name:  "admin",
+  email: "admin@example.com",
+  password:              "password",
+  password_confirmation: "password",
+  admin: true,
+  activated: true,
+  activated_at: Time.zone.now)
 
-# # testユーザー
-# User.create!(name:  "test",
-#   email: "test@example.com",
-#   password:              "password",
-#   password_confirmation: "password",
-#   admin: false,
-#   activated: true,
-#   activated_at: Time.zone.now)
+# testユーザー
+User.create!(name:  "test",
+  email: "test@example.com",
+  password:              "password",
+  password_confirmation: "password",
+  admin: false,
+  activated: true,
+  activated_at: Time.zone.now)
 
 # タグ
 Tag.create([

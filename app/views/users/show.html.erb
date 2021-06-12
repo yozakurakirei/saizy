@@ -1,12 +1,14 @@
 <% provide(:title, @user.name+"さんのページ")%>
-<div id="user-show">
+<div class="user-show">
   <!-- profile -->
   <div class="profile">
     <div class="profile-img">
       <% if @user.avatar.attached? %>
         <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
       <% else %>
-        <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
+      <div class="default-img">
+        <i class="fas fa-user default-user"></i>
+      </div>
       <% end %>
     </div>
     <h3 class="user-name"><%= @user.name %></h3>
@@ -16,13 +18,17 @@
         <%= @user.email %>
       </div>
       <div class="edit-btn">
-        <p><%= link_to 'プロフィールを編集する', edit_user_path(current_user) %></p>  
+        <%= link_to 'プロフィールを編集する', edit_user_path(current_user) %>  
       </div>
     <% end %>
   </div>
   
   <!-- post -->
-  <div class="post">
+  <div class="user-post">
+    <div class="user-post-title">
+      <h1>マイページ</h1>
+    </div>
+
     <ul class="tab clearfix">
       <li class="active">公開中</li>
       <li>出店終了</li>

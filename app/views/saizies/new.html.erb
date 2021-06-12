@@ -1,6 +1,6 @@
 <% provide(:title, "新規投稿")%>
 
-確認画面を実装したい 
+確認画面を実装したい + プレビュー画面
 <!--<ul class="nav">
   <li><%= link_to "やり方", 'https://web-begginer-log.com/rails-confirm/', target: :_blank, rel: "noopener noreferrer" %></li>
   <li>入力</li>
@@ -13,48 +13,52 @@
     <h1>催事情報入力ページ</h1> 
   </div>
 
-  <%= form_with(model: @saizy, local: true) do |f| %>
-  <table class="article-table">
-    <tbody class="article-body">
-    
-      <tr class="article-item">
-        <th><%= f.label :title, "催事タイトル", class: "article-item-label" %></th>
-        <td><%= f.text_field :title, class: "article-item-input", placeholder: "タイトル" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :name, "ブランド名", class: "article-item-label" %></th>
-        <td><%= f.text_field :name, class: "article-item-input", placeholder: "ブランド名" %></td>
-      </tr>    
-      <tr>
-        <th><%= f.label :area, "出店エリア" %></th>
-        <td class="article-item-select"><%= f.select :area, [["------", "hokkaido"],["北海道", "hokkaido"], ["青森", "aomori"], ["岩手", "iwate"],["宮城", "miyagi"],["秋田", "akita"],["山形", "yamagata"],["福島", "fukusima"],["茨城", "ibaragi"],["栃木", "tochigi"],["群馬", "gunma"],["埼玉", "saitama"],["千葉", "chiba"],["東京", "tokyo"],["神奈川", "kanagawa"],["新潟", "niigata"],["富山", "toyama"],["石川", "ishikawa"],["福井", "fukui"],["山梨", "yamanasi"],["長野", "nagano"],["岐阜", "gifu"],["静岡", "sizuoka"],["愛知", "aichi"],["三重", "mie"],["滋賀", "siga"],["京都", "kyoto"],["大阪", "oosaka"],["兵庫", "hyogo"],["奈良", "nara"],["和歌山", "wakayama"],["鳥取", "tottori"],["島根", "simane"],["岡山", "okayama"],["広島", "hirosima"],["山口", "yamaguchi"],["徳島", "tokushima"],["香川", "kagawa"],["愛媛", "ehime"],["高知", "kouchi"],["福岡", "fukuoka"],["佐賀", "saga"],["長崎", "nagasaki"],["熊本", "kumamoto"],["大分", "ooita"],["宮崎", "miyazaki"],["鹿児島", "kagosima"],["沖縄", "okinawa"]], id: "area", class: "article-item-select" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :place, "出店場所", class: "article-item-label" %></th>
-        <td><%= f.text_field :place, class: "article-item-input", placeholder: "出店場所" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :open, "開店時間", class: "article-item-label" %></th>
-        <td><%= f.time_field :open, class: "article-item-input", placeholder: "開店時間" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :close, "閉店時間", class: "article-item-label" %></th>
-        <td><%= f.time_field :close, class: "article-item-input", placeholder: "閉店時間" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :start, "開始日", class: "article-item-label" %></th>
-        <td><%= f.date_field :start, class: "article-item-input", placeholder: "開始日" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :finish, "終了日", class: "article-item-label" %></th>
-        <td><%= f.date_field :finish, class: "article-item-input", placeholder: "終了日" %></td>
-      </tr>
-      <tr class="article-item">
-        <th><%= f.label :content, "おすすめポイント", class: "article-item-label" %></th>
-        <td><%= f.text_area :content, class: "article-item-textarea", placeholder: "おすすめポイント" %></td>
-      </tr>
-    </tbody> 
-  </table>
+<%= form_with(model: @saizy, local: true) do |f| %>
+  <div class="article-body">
+  
+    <div class="article-item">
+      <div><%= f.label :title, "催事タイトル", class: "article-item-label" %></div>
+      <div><%= f.text_field :title, class: "article-item-input", placeholder: "タイトル" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :name, "ブランド名", class: "article-item-label" %></div>
+      <div><%= f.text_field :name, class: "article-item-input", placeholder: "ブランド名" %></div>
+    </div>    
+    <div class="article-item">
+      <div><%= f.label :name, "都道府県", class: "article-item-label" %></div>
+      <div class="article-item-select"><%= f.select :area, [["------", "hokkaido"],["北海道", "hokkaido"], ["青森", "aomori"], ["岩手", "iwate"],["宮城", "miyagi"],["秋田", "akita"],["山形", "yamagata"],["福島", "fukusima"],["茨城", "ibaragi"],["栃木", "tochigi"],["群馬", "gunma"],["埼玉", "saitama"],["千葉", "chiba"],["東京", "tokyo"],["神奈川", "kanagawa"],["新潟", "niigata"],["富山", "toyama"],["石川", "ishikawa"],["福井", "fukui"],["山梨", "yamanasi"],["長野", "nagano"],["岐阜", "gifu"],["静岡", "sizuoka"],["愛知", "aichi"],["三重", "mie"],["滋賀", "siga"],["京都", "kyoto"],["大阪", "oosaka"],["兵庫", "hyogo"],["奈良", "nara"],["和歌山", "wakayama"],["鳥取", "tottori"],["島根", "simane"],["岡山", "okayama"],["広島", "hirosima"],["山口", "yamaguchi"],["徳島", "tokushima"],["香川", "kagawa"],["愛媛", "ehime"],["高知", "kouchi"],["福岡", "fukuoka"],["佐賀", "saga"],["長崎", "nagasaki"],["熊本", "kumamoto"],["大分", "ooita"],["宮崎", "miyazaki"],["鹿児島", "kagosima"],["沖縄", "okinawa"]], id: "area", class: "article-item-select" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :place, "出店場所", class: "article-item-label" %></div>
+      <div><%= f.text_field :place, class: "article-item-input", placeholder: "出店場所" %></div>
+    </div>
+
+    <div class="article-item">
+      <div class="article-item-side">
+        <%= f.label :open, "営業時間", class: "article-item-label-side" %>
+        <%= f.time_field :open, class: "article-item-input-side" %>
+      </div>
+      <div class="article-item-side">
+        <%= f.label :open, "　〜　" %>
+        <%= f.time_field :close, class: "article-item-input-side" %>
+      </div>
+    </div>
+    <div class="article-item">
+      <div class="article-item-side">
+        <%= f.label :start, "開催期間", class: "article-item-label-side" %>
+        <%= f.date_field :start, class: "article-item-input-side" %>
+      </div>
+      <div class="article-item-side">
+        <%= f.label :finish, "　〜　" %>
+        <%= f.date_field :finish, class: "article-item-input-side" %>
+      </div>
+    </div>
+
+    <div class="article-item">
+      <div><%= f.label :content, "おすすめポイント", class: "article-item-label" %></div>
+      <div><%= f.text_area :content, class: "article-item-textarea", placeholder: "おすすめポイントを書いてください" %></div>
+    </div>
+  </div> 
 
     <div class="article-item">
       <%= f.file_field :images, id: "images", multiple: true %>
@@ -66,8 +70,9 @@
                             id: "status", class: "form-control" %>
     </div>
 
-    <div class="l_form_form_button">
-      <%= f.submit "投稿する", class: "form_button" %>  
+    <div class="article-button">
+      <%= f.submit 'プレビュー', class: "article-preview" %>
+      <%= f.submit "投稿する", class: "article-btn" %>  
     </div>
     <% end %>
   </div>
@@ -84,14 +89,3 @@
     $("#saizy_images").val("");
   })
 </script>
-
-<%# 
-<div class="l_form_input">
-  <%= f.fields_for :tags do |tf| 
-    <%= tf.label :name, "タグ" %>
-    <%# tf.text_field :name, class: "input_area", placeholder: "タグを入力してください"
-   end
-</div>
-%>
-
-
