@@ -58,17 +58,16 @@
       <div><%= f.label :content, "おすすめポイント", class: "article-item-label" %></div>
       <div><%= f.text_area :content, class: "article-item-textarea", placeholder: "おすすめポイントを書いてください" %></div>
     </div>
-  </div> 
-
     <div class="article-item">
-      <%= f.file_field :images, id: "images", multiple: true %>
+      <%= f.label :start, "イメージ画像", class: "article-item-label" %>
+      <%= f.file_field :images, id: "images", multiple: true, class: "article-item-input"  %>
     </div>
-
-    <div class="form-group">
-      <%= f.label :status, "記事ステータス" %><br>
+    <div class="article-item">
+      <%= f.label :status, "記事ステータス", class: "article-item-label" %>
       <%= f.select :status, [["下書き", "draft"], ["公開する", "published"], ["出店終了", "deleted"]],
-                            id: "status", class: "form-control" %>
+                            id: "status", class: "article-item-input" %>
     </div>
+  </div> 
 
     <div class="article-button">
       <%= f.submit 'プレビュー', class: "article-preview" %>

@@ -81,12 +81,23 @@
     font-size: 1rem;
     margin-right: 2rem;
     border-radius: 5px;
+    border: 2px solid #ed8f8f;
+    background-color: #fff;
+    color: #ed8f8f;
+    font-weight: bold;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
   .article-btn {
     width: 10rem;
     padding: .5rem 1rem;
     font-size: 1rem;
     border-radius: 5px;
+    background-color: #ed8f8f;
+    border: none;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
 }
 
@@ -117,7 +128,7 @@
     flex-direction: column;
     align-items: center;
     .article-item-label-side {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
     }

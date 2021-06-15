@@ -1,52 +1,56 @@
 <% provide(:title, "新規登録")%>
 <!-- login -->
-<div class="l_form">
-  <div class="l_form_box">
-    <h2>Saizyアカウントを作りましょう！</h2>
-      <%= form_with(model: @user, local: true) do |f| %>
+<div class="form-area">
+  <div class="form-title">
+    <h2>アカウント作成</h2>
+  </div>
 
-      <div class="l_form_input">
-        <%= f.label :name, "ニックネーム", class: "label_name" %>
-        <%= f.text_field :name, class: "input_area", placeholder: "ニックネーム" %>
-        <% if @user.errors.include?(:name) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %></p>
-        <% end %>
-      </div>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div class="form-item">
+      <%= f.label :name, "ニックネーム", class: "form-label" %>
+      <%= f.text_field :name, class: "form-input", placeholder: "ニックネーム" %>
+      <% if @user.errors.include?(:name) %>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:name).first %></p>
+      <% end %>
+    </div>
 
-      <div class="l_form_input">
-        <%= f.label :email, "メールアドレス", class: "label_name" %>
-        <%= f.email_field :email, class: "input_area", placeholder: "Eメール" %>
-        <% if @user.errors.include?(:email) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
-        <% end %>
-      </div>
+    <div class="form-item">
+      <%= f.label :email, "メールアドレス", class: "form-label" %>
+      <%= f.email_field :email, class: "form-input", placeholder: "Eメール" %>
+      <% if @user.errors.include?(:email) %>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:email).first %></p>
+      <% end %>
+    </div>
 
-      <div class="l_form_input">
-        <%= f.label :password, "パスワード", class: "label_name" %>
-        <%= f.password_field :password, class: "input_area", placeholder: "英数字6桁以上" %>
-        <% if @user.errors.include?(:password) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %></p>
-        <% end %>
-      </div>
+    <div class="form-item">
+      <%= f.label :password, "パスワード", class: "form-label" %>
+      <%= f.password_field :password, class: "form-input", placeholder: "英数字6桁以上" %>
+      <% if @user.errors.include?(:password) %>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %></p>
+      <% end %>
+    </div>
 
-      <div class="l_form_input">
-        <%= f.label :password_confirmation, "パスワードの確認", class: "label_name" %>
-        <%= f.password_field :password_confirmation, class: "input_area", placeholder: "パスワードの確認" %>
-        <% if @user.errors.include?(:password_confirmation) %>
-          <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
-        <% end %>
-      </div>
+    <div class="form-item">
+      <%= f.label :password_confirmation, "パスワードの確認", class: "form-label" %>
+      <%= f.password_field :password_confirmation, class: "form-input", placeholder: "パスワードの確認" %>
+      <% if @user.errors.include?(:password_confirmation) %>
+        <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+      <% end %>
+    </div>
 
-      <div class="l_form_form_button">
-        <%= f.submit "新規登録", class: "form_button" %>  
+    <div class="form-item">
+      <div class="form-btn">
+        <%= f.submit "新規登録", class: "form-button" %>  
       </div>
-      <div class="l_form_form_link">
+    </div>
+    <div class="form-item">
+      <div class="form-text-dsc">
         <p>アカウントをお持ちの方は<%= link_to 'こちら', login_path %>へ</p>
         <p>ログインすると<%= link_to '利用規約', policy_path %>と<%= link_to 'プライバシーポリシー', privacy_path%>
         に同意したことになります。  
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
 
