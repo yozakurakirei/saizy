@@ -1,69 +1,67 @@
 <% provide(:title, @saizy.name+"さんの催事")%>
-<!-- left image -->
-<div id="grid-show">
-  <div id="left-image">
-    <div class="title">
-      <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
-    </div>
-    <div class="show-image">
-        <% if @saizy.images.attached? %>
-          <% @saizy.images.each do |image| %>
-            <%= image_tag image.variant(resize: "500x500") %>
-        <% end %>
-    <% end %>
-    </div>  
+<div class="show-area">
+
+  <div class="show-title">
+    <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
   </div>
-
-  <!-- 詳細本文 -->
-  <div id="left-content">
-    <div class="main-content">
-      <dl class="main-text">
-        <dt>開催日程</dt>
-        <dd><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %></dd>
-      </dl>
-      <dl class="main-text">
-        <dt>タイトル</dt>
-        <dd><%= @saizy.title.truncate(30) %></dd>
-      </dl>
-      <dl class="main-text">
-        <dt>ブランド</dt>
-        <dd><%= @saizy.name %></dd>
-      </dl>
-      <dl class="main-text">
-        <dt>場所</dt>
-        <dd><%= @saizy.place %></dd>
-      </dl>
-      <dl class="main-text">
-        <dt>営業時間</dt>
-        <dd><%= @saizy.open %>〜<%= @saizy.close %></dd>
-      </dl>
-    </div>
-    <dl class="main-text-content">
-      <p>おすすめポイント&#x1f970;</p>
-      <dd><%= simple_format @saizy.content %></dd>
-    </dl>
-    <div class="user">
-      <%= link_to user_path(@saizy.user) do %>
-      <div class="profile-img">
-        <% if @saizy.user.avatar.attached? %>
-          <%= image_tag @saizy.user.avatar.variant(resize: "100x100"), width:150 %>
-        <% else %>
-          <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
+  <!-- left image -->
+  <div class="show-box">
+    <div class="show-image-area">
+      <% if @saizy.images.attached? %>
+        <% @saizy.images.each do |image| %>
+          <%= image_tag image.variant(resize: "500x500") %>
         <% end %>
-      </div>
-      <div class="user-name">
-        投稿者：<%= @saizy.user.name %>
-        <% end %>
-      </div>
-    </div>
-        <%# <%= @saizy.tags.each do |tag| %>
-          <%# <%= tag.name %> 
-        <%# end  %>
+      <% end %>
     </div>
 
-    <!-- 右側サイドバー -->
+    <!-- 詳細本文 -->
+    <div class="show-content-area">
+        <div class="main-text">
+          <div>開催日程</div>
+          <div><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %></div>
+        </div>
+        <div class="main-text">
+          <div>タイトル</div>
+          <div><%= @saizy.title.truncate(30) %></div>
+        </div>
+        <div class="main-text">
+          <div>ブランド</div>
+          <div><%= @saizy.name %></div>
+        </div>
+        <div class="main-text">
+          <div>場所</div>
+          <div><%= @saizy.place %></div>
+        </div>
+        <div class="main-text">
+          <div>営業時間</div>
+          <div><%= @saizy.open %>〜<%= @saizy.close %></div>
+        </div>
+      
+      <div class="show-point-area">
+        <p>おすすめポイント&#x1f970;</p>
+        <div><%= simple_format @saizy.content %></div>
+      </div>
+      <div class="user">
+        <%= link_to user_path(@saizy.user) do %>
+        <div class="profile-img">
+          <% if @saizy.user.avatar.attached? %>
+            <%= image_tag @saizy.user.avatar.variant(resize: "100x100"), width:150 %>
+          <% else %>
+            <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
+          <% end %>
+        </div>
+        <div class="user-name">
+          投稿者：<%= @saizy.user.name %>
+          <% end %>
+        </div>
+      </div>
+          <%# <%= @saizy.tags.each do |tag| %>
+            <%# <%= tag.name %> 
+          <%# end  %>
+      </div>
+
+      <!-- 右側サイドバー -->
     
   </div>
-</div>
   <!-- right bar -->
-
+</div>

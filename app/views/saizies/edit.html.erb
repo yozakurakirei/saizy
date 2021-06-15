@@ -1,14 +1,15 @@
 <% provide(:title, "投稿編集")%>
 
-<h2>編集画面</h2>
+<div class="form-area">
+  <div class="form-title">
+    <h2>投稿を編集する</h2>
+  </div>
 
-<div class="l_form">
-  <div class="l_form_box">
-    <%= form_with(model: @saizy, local: true) do |f| %>
-      <div class="l_form_input">
-        <%= f.label :title, class: "label_name" %>
-        <%= f.text_field :title, class: "input_area" %>
-      </div>
+  <%= form_with(model: @saizy, local: true) do |f| %>
+  <div class="form-item">
+    <%= f.label :title, class: "label_name" %>
+    <%= f.text_field :title, class: "input_area" %>
+  </div>
       <div class="l_form_input">
         <%= f.label :name, class: "label_name" %>
         <%= f.text_field :name, class: "input_area" %>
@@ -75,6 +76,6 @@
         <%= f.submit "編集完了", class: "form_button" %>  
       </div>
     <% end %>
-  </div>
+
 </div>
 

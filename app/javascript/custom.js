@@ -26,19 +26,19 @@ $(function() {
   });
 });
 
-$(function() {
-  $('.show-image').slick({
-    // arrows: true,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
-    responsive: [
-      {
-        breakpoint: 670,
-        dots: false,
-      }
-    ]
-  });
-})
+// $(function() {
+//   $('.show-image').slick({
+//     // arrows: true,
+//     dots: true,
+//     infinite: true,
+//     speed: 500,
+//     fade: true,
+//     cssEase: 'linear',
+//     responsive: [
+//       {
+//         breakpoint: 670,
+//         dots: false,
+//       }
+//     ]
+//   });
+// })

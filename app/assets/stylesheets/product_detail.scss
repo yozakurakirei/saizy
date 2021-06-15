@@ -1,167 +1,217 @@
 // saizies show
 
-#grid-show {
-  display: grid;
-  min-height: 100vh;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas: 
-  "image sidebar"
-  "content sidebar";
-
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: .6rem;
-  }
-}
-#left-image {
-  grid-area: image;
-  max-width: 100%;
-  min-width: 0px;
-  margin-bottom: 1rem;
-  width: 100%;
-  height: 50%;
-  padding: 1rem;
-  .title {
+.show-area {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .show-title {
+    margin: 2rem 0 1rem 0;
     h3 {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-top: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
     }
   }
-  // image
-  .show-image {
-    background-color: #eee;
-    width: 90%;
-    margin: 0 auto;
-    height: 100%;
-    img {
+  .show-box {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+    .show-image-area {
+      flex: 1;
+      background-color: #ccc;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-
-// 詳細本文
-#left-content {
-  grid-area: content;
-  width: 90%;
-  margin: 2rem auto;
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    .main-text {
-      display: flex;
-      align-items: center;
-      margin: 1rem;
-      border-bottom: 1px solid #ccc;
-      dt {
-        flex: 1;
-        font-size: 1rem;
-        font-weight: bold;
-      }
-      dd {
-        flex: 2;
-        text-align: left;
-        height: auto;
-      }
-    }
-  }
-  .main-text-content {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-  }
-  .user {
-    display: flex;
-    align-items: center;
-    .profile-img {
-      padding: 1rem;
       img {
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .show-content-area {
+      flex: 1;
+      background-color: #ddd;
+      height: 100%;
+      .main-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
-  .edit-btn {
-    padding: 1rem;
-    .edit-button {
-      background-color: #eb6100;
-      padding: 1rem;
-      margin-left: 5rem;
-      border-radius: 5px;
-      a {
-        color: #fff !important;
-        letter-spacing: 2px;
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-
-// 右側のサイドバー
-.sidebar {
-  grid-area: sidebar;
-  padding: 1rem;
-  background-color: #fff;
-}
-.side-t {
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-  font-weight: 400;
-  .session-icon {
-    color: #eb6100;
-    margin-right: .3rem;
-  }
-}
-
-.side-card {
-  // card
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  .side-card-flex {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 1rem 1rem .5rem 1rem;
-    border-bottom: 1px solid #ccc;
-    img {
-      width: 6rem;
-      height: 7vh;
-    }
-  }
-  .side-content {
-    padding: 0 1rem;
-    .side-content-title {
-      font-size: 1rem;
-    }
-    p {
-      font-size: .8rem;
-    }
-  }
-}
-.sidebar2 {
-  grid-area: sidebar;
 }
 
 
 
-// slick
-.slick-track {
-  height: 50vh;
-}
-.slick-list {
-  min-height: 17rem;
-}
+
+// #grid-show {
+//   display: grid;
+//   min-height: 100vh;
+//   grid-template-columns: 2fr 1fr;
+//   grid-template-areas: 
+//   "image sidebar"
+//   "content sidebar";
+
+//   .title {
+//     font-size: 2rem;
+//     font-weight: bold;
+//     margin-bottom: .6rem;
+//   }
+// }
+// #left-image {
+//   grid-area: image;
+//   max-width: 100%;
+//   min-width: 0px;
+//   margin-bottom: 1rem;
+//   width: 100%;
+//   height: 50%;
+//   padding: 1rem;
+//   .title {
+//     h3 {
+//       font-size: 1.5rem;
+//       text-align: center;
+//       margin-top: 1.5rem;
+//     }
+//   }
+//   // image
+//   .show-image {
+//     background-color: #eee;
+//     width: 90%;
+//     margin: 0 auto;
+//     height: 100%;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+//   }
+// }
+
+// // 詳細本文
+// #left-content {
+//   grid-area: content;
+//   width: 90%;
+//   margin: 2rem auto;
+//   .main-content {
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     .main-text {
+//       display: flex;
+//       align-items: center;
+//       margin: 1rem;
+//       border-bottom: 1px solid #ccc;
+//       dt {
+//         flex: 1;
+//         font-size: 1rem;
+//         font-weight: bold;
+//       }
+//       dd {
+//         flex: 2;
+//         text-align: left;
+//         height: auto;
+//       }
+//     }
+//   }
+//   .main-text-content {
+//     display: flex;
+//     flex-direction: column;
+//     padding: 1rem;
+//     p {
+//       font-size: 1.2rem;
+//       margin-bottom: 1rem;
+//     }
+//   }
+//   .user {
+//     display: flex;
+//     align-items: center;
+//     .profile-img {
+//       padding: 1rem;
+//       img {
+//         border-radius: 50%;
+//         width: 70px;
+//         height: 70px;
+//       }
+//     }
+//   }
+//   .edit-btn {
+//     padding: 1rem;
+//     .edit-button {
+//       background-color: #eb6100;
+//       padding: 1rem;
+//       margin-left: 5rem;
+//       border-radius: 5px;
+//       a {
+//         color: #fff !important;
+//         letter-spacing: 2px;
+//         font-size: 1rem;
+//       }
+//     }
+//   }
+// }
+
+
+// // 右側のサイドバー
+// .sidebar {
+//   grid-area: sidebar;
+//   padding: 1rem;
+//   background-color: #fff;
+// }
+// .side-t {
+//   text-align: center;
+//   font-size: 1.5rem;
+//   padding: 1rem;
+//   font-weight: 400;
+//   .session-icon {
+//     color: #eb6100;
+//     margin-right: .3rem;
+//   }
+// }
+
+// .side-card {
+//   // card
+//   display: grid;
+//   grid-template-columns: repeat(1, 1fr);
+//   .side-card-flex {
+//     display: flex;
+//     justify-content: left;
+//     align-items: center;
+//     padding: 1rem 1rem .5rem 1rem;
+//     border-bottom: 1px solid #ccc;
+//     img {
+//       width: 6rem;
+//       height: 7vh;
+//     }
+//   }
+//   .side-content {
+//     padding: 0 1rem;
+//     .side-content-title {
+//       font-size: 1rem;
+//     }
+//     p {
+//       font-size: .8rem;
+//     }
+//   }
+// }
+// .sidebar2 {
+//   grid-area: sidebar;
+// }
+
+
+
+// // slick
+// .slick-track {
+//   height: 50vh;
+// }
+// .slick-list {
+//   min-height: 17rem;
+// }
 
 
 
