@@ -1,4 +1,12 @@
+<%= stylesheet_pack_tag 'hello_vue' %>
+<%= javascript_pack_tag 'hello_vue' %>
+<%= javascript_pack_tag 'saizy_vue' %>
+
 <% provide(:title, "アカウント編集")%>
+
+<div id="saizy">
+  {{ message }}
+</div>
 
 <div class="form-area">
   <div class="form-title">
@@ -7,9 +15,24 @@
   <%= form_with(model: @user, local: true) do |f| %>
 
   <div class="form-item">
-    <%= f.label :avatar, "プロフィール写真", class: "form-label" %>
-    <%= f.file_field :avatar, class: "form-input" %>
+    <div class="user-image">
+      <%= image_tag @user.avatar.variant(resize: "300x300"), width:200 %>
+    </div>
   </div>
+
+    <div id="single-preview">
+      <div class="form-item">
+        <%= f.label :avatar, "プロフィールイメージ", class: "form-label", for: "my-file" %>
+        <%= f.file_field :avatar, class: "form-input", accept: "image/*", "v-on:change": "previewImage", id: "my-file" %>
+
+        
+        <div class="border p-2 mt-3">
+          <template v-if="preview">
+            <img :src="preview" class="img-fluid" />
+          </template>
+        </div>
+      </div>
+    </div>
 
     <div class="form-item">
       <%= f.label :name, "ニックネーム", class: "form-label" %>
@@ -38,5 +61,8 @@
       </div>
     </div>
   <% end %>
+
+
+  
   </div>
 </div>
