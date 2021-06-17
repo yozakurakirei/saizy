@@ -26,19 +26,28 @@ $(function() {
   });
 });
 
-// $(function() {
-//   $('.show-image').slick({
-//     // arrows: true,
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     fade: true,
-//     cssEase: 'linear',
-//     responsive: [
-//       {
-//         breakpoint: 670,
-//         dots: false,
-//       }
-//     ]
-//   });
-// })
+//サムネイル
+
+$(function() {
+  var sliderThumbnail = new Swiper('.slider-thumbnail', {
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+  
+  //スライダー
+  var slider = new Swiper('.show-slider', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: sliderThumbnail
+    }
+  });
+})
+
+
+
+	

@@ -1,16 +1,22 @@
 * {
   box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
 }
 
 // 共通レイアウト
+html {
+}
 body {
     width: 100%;
     color: #555;
-    background-color: #eef8ff;
     font-family: "Hiragino Kaku Gothic Pro", sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #faefef !important;
   }
+section {
+}
   
 header {
     width: 100%;

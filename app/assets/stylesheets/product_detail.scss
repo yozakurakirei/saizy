@@ -1,12 +1,13 @@
 // saizies show
 
 .show-area {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #fff;
   .show-title {
     margin: 2rem 0 1rem 0;
     h3 {
@@ -16,7 +17,7 @@
   }
   .show-box {
     width: 100%;
-    height: 450px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +25,7 @@
     margin: 1rem;
     .show-image-area {
       flex: 1 1 50%;
-      background-color: #ccc;
+      background-color: #f9f9f9;
       width: 100%;
       height: 100%;
       img {
@@ -33,12 +34,14 @@
         height: 100%;
         object-fit: cover;
       }
+
     }
     .show-content-area {
       flex: 1 1 50%;
       height: 100%;
       padding: 1rem;
       align-items: center;
+      background-color: #ddd;
       .show-content-box {
         border: 3px solid #ed8f8f;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -88,6 +91,35 @@
           }
         }
       }
+    }
+  }
+}
+
+// swiper 
+.swiper-container {
+  width: 100%;
+  
+  //スライダー
+  &.slider {
+    height: 65vh;
+  }
+  
+  //サムネイル
+  &.slider-thumbnail {
+    height: 20vh;
+    
+    .swiper-wrapper {
+        
+        .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: .5;
+            overflow: hidden;
+
+            &.swiper-slide-thumb-active {
+                opacity: 1;
+            }
+        }
     }
   }
 }

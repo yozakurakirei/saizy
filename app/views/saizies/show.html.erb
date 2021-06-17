@@ -1,4 +1,7 @@
 <% provide(:title, @saizy.name+"さんの催事")%>
+
+
+
 <div class="show-area">
 
   <div class="show-title">
@@ -7,11 +10,31 @@
   <!-- left image -->
   <div class="show-box">
     <div class="show-image-area">
-      <% if @saizy.images.attached? %>
-        <% @saizy.images.each do |image| %>
-          <%= image_tag image.variant(resize: "500x500") %>
+      <div class="swiper-container show-slider">
+        <div class="swiper-wrapper">
+          <% if @saizy.images.attached? %>
+            <% @saizy.images.each do |image| %>
+              <div class="swiper-slide">
+                <%= image_tag image.variant(resize: "500x500") %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>  
+    <%# サムネイル %>
+    <div class="swiper-container slider-thumbnail">
+      <div class="swiper-wrapper">
+        <% if @saizy.images.attached? %>
+          <% @saizy.images.each do |image| %>
+            <div class="swiper-slide">
+              <%= image_tag image.variant(resize: "500x500") %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+    </div>
     </div>
 
     <!-- 詳細本文 -->
