@@ -10,10 +10,10 @@
   <!-- left image -->
   <div class="show-box">
     <div class="show-image-area">
+    <% if @saizy.images.attached? %>
+      <% @saizy.images.each do |image| %>
       <div class="swiper-container show-slider">
         <div class="swiper-wrapper">
-          <% if @saizy.images.attached? %>
-            <% @saizy.images.each do |image| %>
               <div class="swiper-slide">
                 <%= image_tag image.variant(resize: "500x500") %>
               </div>
@@ -28,13 +28,13 @@
       <div class="swiper-wrapper">
         <% if @saizy.images.attached? %>
           <% @saizy.images.each do |image| %>
-            <div class="swiper-slide">
-              <%= image_tag image.variant(resize: "500x500") %>
-            </div>
+              <div class="swiper-slide">
+                <%= image_tag image.variant(resize: "500x500") %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
     </div>
 
     <!-- 詳細本文 -->
