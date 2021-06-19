@@ -195,6 +195,15 @@
   }
 
 // responsive
+@media only screen and (max-width: 1200px) {
+  .show-area {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "post"
+    "side";
+  }
+}
+
 @media only screen and (max-width: 670px) {
   .show-area {
     width: 95%;
