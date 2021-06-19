@@ -194,4 +194,79 @@
   }
   }
 
-
+// responsive
+@media only screen and (max-width: 670px) {
+  .show-area {
+    width: 95%;
+    padding: .5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "post"
+      "side";
+      .show-main {
+        padding: 0;
+        .show-title {
+          margin: 1rem 0;
+          p {
+            font-size: 1.1rem;
+          }
+        }
+        .show-box {
+  
+          .show-content-area {
+            .show-content-box {
+              margin-top: 1rem;
+              .main-text {
+                margin-top: 1rem;
+                .main-text-title {
+                  font-size: 1rem;
+                  margin: 0;
+                  padding-bottom: .5rem;
+                }
+                .main-text-dsc {
+                  padding-bottom: .5rem;
+                  font-size: .8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .aside {
+        .aside-title {
+          margin: 1rem 0;
+          p {
+            font-size: 1.1rem;
+          }
+        }
+        .aside-content {
+          border-bottom: 3px solid #ed8f8f;
+          .aside-image-area {
+            width: 130px;
+          }
+        }
+        .aside-dsc {
+          .aside-des-tag {
+            h1 {
+              font-size: .8rem;
+              .aside-icon {
+                font-size: .8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  .day span {
+    font-size: .6rem;
+  }
+  .swiper-container.show-slider {
+    height: 30vh;
+    object-fit: cover;
+  }
+  
+  //サムネイル
+  &.swiper-container.slider-thumbnail {
+    height: 10vh;
+  }
+}
