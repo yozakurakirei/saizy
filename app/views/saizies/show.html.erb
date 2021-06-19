@@ -7,7 +7,8 @@
   <div class="show-main">
   
     <div class="show-title">
-      <h3><%= @saizy.name %>の催事<br><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</h3>
+      <p><%= @saizy.name %>の催事</p>
+      <p><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</p>
     </div>
     <!-- image area -->
     <div class="show-box">
@@ -89,28 +90,35 @@
 
   <%# right side %>
   <div class="aside">
-    サイドバー領域
     <div class="aside-title">
-      <h2>その他のSaizy</h2>
+      <p>その他のSaizy</p>
     </div>
     <%# sidebar-content %>
     <% @saizies.published.each do |saizy| %>
+      <%= link_to saizy_path(saizy) do%>
       <div class="aside-content">
         <div class="aside-image-area">
-          <%= link_to saizy_path(saizy) do%>
             <% if saizy.images.count > 0 %>
               <div class="day">
                 <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
               </div>
-              <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
+              <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
             <% end %>
-          <% end %>
+
         </div>
         <div class="aside-dsc">
-          <h3><%= saizy.title.truncate(18) %></h3>
-          <p><%= saizy.place.truncate(18) %></p>
+          <div class="aside-des-tag">
+            <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
+          </div>
+          <div class="aside-des-tag">
+            <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
+          </div>
+          <div class="aside-des-tag">
+            <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
+          </div>
         </div>
       </div>
+                <% end %>
     <% end %>
   </div>
 </div>
