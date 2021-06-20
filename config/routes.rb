@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get 'pass_reset/new'
   get 'pass_reset/edit'
   get '/about', to: 'about_pages#about'
-  get '/counter', to: 'about_pages#counter'
 
+
+  # cut予定
   get 'home', to: 'about_pages#home'
 
   # エリア
@@ -35,7 +36,12 @@ Rails.application.routes.draw do
   get '/help', to:'footers#help'
   get '/contact', to:'footers#contact'
   
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :saizies do
     collection do 
       get :search
@@ -46,5 +52,6 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine,  at: '/letter_opener' if Rails.env.development?
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]
 
 end

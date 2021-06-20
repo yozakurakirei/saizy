@@ -12,13 +12,19 @@
   <div class="form-title">
     <h2>プロフィールを編集する</h2>
   </div>
-  <%= form_with(model: @user, local: true) do |f| %>
 
   <div class="form-item">
     <div class="user-image">
-      <%= image_tag @user.avatar.variant(resize: "300x300"), width:200 %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
+      <% else %>
+      <div class="default-img">
+        <i class="fas fa-user default-user"></i>
+      </div>
+      <% end %>
     </div>
   </div>
+  <%= form_with(model: @user, local: true) do |f| %>
 
     <div id="single-preview">
       <div class="form-item">

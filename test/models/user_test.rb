@@ -1,30 +1,30 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  def setup
-    @user = User.new(name: "admin", email: "admin@example.com",
-                     password: "password", password_confirmation: "password")
-  end
+  # def setup
+  #   @user = User.new(name: "admin", email: "admin@example.com",
+  #                    password: "password", password_confirmation: "password")
+  # end
 
-  test "name blank is not good" do
-    @user.name = " "
-    assert_not @user.valid?
-  end
+  # test "name blank is not good" do
+  #   @user.name = " "
+  #   assert_not @user.valid?
+  # end
 
-  test "email blank is not good" do
-    @user.name = " "
-    assert_not @user.valid?
-  end
+  # test "email blank is not good" do
+  #   @user.name = " "
+  #   assert_not @user.valid?
+  # end
 
-  test "neme limit" do
-    @user.name = "a" * 31
-    assert_not @user.valid?
-  end
+  # test "neme limit" do
+  #   @user.name = "a" * 31
+  #   assert_not @user.valid?
+  # end
 
-  test "email limit" do
-    @user.email = "a" * 244 + "@example.com"
-    assert_not @user.valid?
-  end
+  # test "email limit" do
+  #   @user.email = "a" * 244 + "@example.com"
+  #   assert_not @user.valid?
+  # end
 
   # test "do not pass strage email" do
   #   valid_adds = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
@@ -45,25 +45,25 @@ class UserTest < ActiveSupport::TestCase
   #   end  
   # end
 
-  test "Duplicate names emails are not allowed" do
-    dupricate_user = @user.dup
-    @user.save
-    assert_not dupricate_user.valid?
-  end
+  # test "Duplicate names emails are not allowed" do
+  #   dupricate_user = @user.dup
+  #   @user.save
+  #   assert_not dupricate_user.valid?
+  # end
 
-  test "password blank is not good" do
-    @user.password = @user.password_confirmation = " " * 6
-    assert_not @user.valid?
-  end
+  # test "password blank is not good" do
+  #   @user.password = @user.password_confirmation = " " * 6
+  #   assert_not @user.valid?
+  # end
 
-  test "password must be 6 characters or more" do
-    @user.password = @user.password_confirmation = "a" * 5
-    assert_not @user.valid?
-  end
+  # test "password must be 6 characters or more" do
+  #   @user.password = @user.password_confirmation = "a" * 5
+  #   assert_not @user.valid?
+  # end
 
-  test "authentication? no digest for false" do
-    assert_not @user.authenticated?(:remember, '')
-  end
+  # test "authentication? no digest for false" do
+  #   assert_not @user.authenticated?(:remember, '')
+  # end
 
   # 削除のテスト
   # test "user micropost destroy" do
@@ -74,4 +74,14 @@ class UserTest < ActiveSupport::TestCase
   #     @user.destroy
   #   end
   # end
+
+  test "should follow and unfollow a user" do
+    michael = users(:michael)
+    archer = users(:archer)
+    assert_not michael.following?(archer)
+    michael.follow(archer)
+    assert michael.following?(archer)
+    michael.unfollow(archer)
+    assert_not michael.following?(archer)
+  end
 end

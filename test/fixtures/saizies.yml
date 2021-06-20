@@ -3,7 +3,21 @@
 one:
   content: MyText
   user: one
+  title: "こんにちは"
+  place: "アメリカ"
+  open: 10:00
+  close: 20:00
+  start: 2021/01/01
+  finish: 2021/12/31
+  name: "saizy"
 
 two:
   content: MyText
   user: two
+  title: "こんばんわ"
+  place: "イタリア"
+  open: 10:00
+  close: 20:00
+  start: 2021/01/01
+  finish: 2021/12/31
+  name: "saizy"
