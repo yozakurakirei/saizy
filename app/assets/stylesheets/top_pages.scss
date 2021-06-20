@@ -2,13 +2,12 @@
 
 // top 
 .hero {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
   background-image: url('../images/top-image-sweets-blar.png');
   background-size: cover;
   .hero-content {
     padding: 2rem 4rem;
-    max-width: 60rem;
+    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
     text-align: center;
     border: 2px solid #eee;
@@ -164,6 +163,27 @@
         margin-top: .2rem;
         font-weight: bold;
         color: #505050;
+      }
+    }
+  }
+}
+
+
+// responsive 
+@media(max-width: 670px) {
+  .hero {
+    .hero-content {
+      height: 350px;
+      padding: 1rem;
+      h2 {
+        width: 100%;
+        font-size: 1.5rem;
+      }
+      h4 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: .8rem;
       }
     }
   }

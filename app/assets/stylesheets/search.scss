@@ -1,6 +1,10 @@
 // search form
+.saizy_search {
+  width: 100%;
+}
+
 .search-area {
-  width: 80%;
+  width: 100%;
   margin: 2rem auto 1rem auto;
 
   .search-box {
@@ -10,7 +14,7 @@
     flex-direction: column;
     width: 100%;
     .search-input {
-      width: 60%;
+      width: 90%;
       margin: 1rem auto;
       height: 3rem;
       border: 1px solid #ccc;
@@ -18,7 +22,7 @@
       padding: .5rem 1rem;
     }  
     .search-button {
-      width: 60%;
+      width: 90%;
       margin: 0 auto;
       height: 3rem;
       background-color: #ed8f8f;
@@ -89,13 +93,12 @@
 
 // responsive tab
 @media(max-width: 1000px) {
-  .result-card {
-    }
 }
 
 
 // responsive
 @media(max-width: 670px) {
-  .result-card {
+  .search-area {
+    margin: 1rem auto 1rem auto;
   }
 }

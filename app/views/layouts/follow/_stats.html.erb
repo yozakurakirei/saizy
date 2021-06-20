@@ -2,14 +2,14 @@
   <div class="status">
     <%= link_to following_user_path(@user) do %>
       <div id="following">
-        <p>フォロー</p>
-        <%= @user.following.count %>
+        <p class="status-title">フォロー</p>
+        <p class="status-count"><%= @user.following.count %></p>
       </div>
     <% end %>
     <%= link_to followers_user_path(@user) do %>
       <div id="followers">
-        <p>フォロワー</p>
-        <%= @user.followers.count %>
+        <p class="status-title">フォロワー</p>
+        <p class="status-count"><%= @user.followers.count %></p>
       </div>
     <% end %>
   </div>

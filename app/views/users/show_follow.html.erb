@@ -1,31 +1,35 @@
 <% provide(:title, @user.name+"さんの"+@title) %>
 
-<div class="follow-title">
-  <h1><%= @title %></h1>
-  <% if @count == 0 %>
-    <p>フォローしているユーザーはいません</p>
-  <% elsif @counts == 0 %>
-    <p>まだフォローされていません</p>
+<div class="follow">
+  <div class="follow-title">
+    <h1><%= @title %></h1>
+    <% if @count == 0 %>
+      <p>フォローしているユーザーはいません</p>
+    <% elsif @counts == 0 %>
+      <p>まだフォローされていません</p>
+    <% end %>
+  </div>
+
+  <%= link_to @user do %>
+    <% @users.each do |user| %>
+      <% if @users.any? %>
+        <div class="follow-img-area">
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar.variant(resize: "300x300"), width:150 %>
+          <% else %>
+          <div class="profile-default">
+            <i class="fas fa-user default-user"></i>
+          </div>
+          <% end %>
+        </div>
+        <div class="follow-content">
+          <h1><%= user.name %></h1>
+          <p><%= user.profile %></p>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
-
-<%= link_to @user do %>
-  <% if @users.any? %>
-    <div class="follow-img-area">
-      <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
-      <% else %>
-      <div class="profile-default">
-        <i class="fas fa-user default-user"></i>
-      </div>
-      <% end %>
-    </div>
-    <div class="follow-content">
-      <h1><%= @user.name %></h1>
-      <p><%= @user.profile %></p>
-    </div>
-  <% end %>
-<% end %>
 
 <!--  
 <%= link_to @user do %>
