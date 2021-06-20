@@ -5,6 +5,7 @@
 
 .search-area {
   width: 100%;
+  max-width: 1000px;
   margin: 2rem auto 1rem auto;
 
   .search-box {
@@ -13,8 +14,9 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+    max-width: 1000px;
     .search-input {
-      width: 90%;
+      width: 100%;
       margin: 1rem auto;
       height: 3rem;
       border: 1px solid #ccc;
@@ -22,7 +24,7 @@
       padding: .5rem 1rem;
     }  
     .search-button {
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
       height: 3rem;
       background-color: #ed8f8f;
