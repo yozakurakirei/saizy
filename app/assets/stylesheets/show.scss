@@ -92,6 +92,35 @@
   }
 }
 
+// tab
+#tabBox {
+  margin: 1rem 0;
+  #tabs {
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    input {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      display: inline-block;
+      padding: 1rem;
+      margin: 0 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #e6988b;
+      letter-spacing: 1px;
+    }
+    #contents {
+      border-top: 2px solid #e6988b;
+    }
+  }
+}
+
 // responsive 
 @media only screen and (max-width: 670px) {
   .user-show {

@@ -35,6 +35,11 @@
         color: #505050;
         padding: .3rem;
       }
+        &:hover {
+        border-radius: 5px;
+        background-color: #fcf2f2;
+        transition: .5s;
+      }
     }
     
     .header-nav {

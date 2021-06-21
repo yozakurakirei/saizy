@@ -96,29 +96,29 @@
     <%# sidebar-content %>
     <% @saizies.published.each do |saizy| %>
       <%= link_to saizy_path(saizy) do%>
-      <div class="aside-content">
-        <div class="aside-image-area">
-            <% if saizy.images.count > 0 %>
-              <div class="day">
-                <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-              </div>
-              <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
-            <% end %>
+        <div class="aside-content">
+          <div class="aside-image-area">
+              <% if saizy.images.count > 0 %>
+                <div class="day">
+                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                </div>
+                <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
+              <% end %>
 
+          </div>
+          <div class="aside-dsc">
+            <div class="aside-des-tag">
+              <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
+            </div>
+            <div class="aside-des-tag">
+              <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
+            </div>
+            <div class="aside-des-tag">
+              <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
+            </div>
+          </div>
         </div>
-        <div class="aside-dsc">
-          <div class="aside-des-tag">
-            <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
-          </div>
-          <div class="aside-des-tag">
-            <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
-          </div>
-          <div class="aside-des-tag">
-            <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
-          </div>
-        </div>
-      </div>
-                <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
