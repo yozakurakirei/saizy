@@ -84,4 +84,23 @@ class UserTest < ActiveSupport::TestCase
     michael.unfollow(archer)
     assert_not michael.following?(archer)
   end
+
+  test "saizy post" do 
+    michael = users(:michael)
+    archer = users(:archer)
+    lana = users(:lana)
+
+    # フォロー相手の投稿を確認
+    lana.saizies.each do |post_following|
+      assert michael.feed.include?(post_following)
+    end
+    # 自分の投稿を確認
+    michael.saizies.each do |post_self|
+      assert.michael.feed.include?(post_self)
+    end
+    # フォローしていない人
+    archer.saizies.each do |post_unfollowed|
+      assert.archer.feed.include?(post_unfollowed)
+    end
+  end
 end

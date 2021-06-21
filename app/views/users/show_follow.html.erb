@@ -10,9 +10,9 @@
     <% end %>
   </div>
 
-  <%= link_to @user do %>
     <% @users.each do |user| %>
       <% if @users.any? %>
+      <%= link_to user do %>
         <div class="follow-img-area">
           <% if user.avatar.attached? %>
             <%= image_tag user.avatar.variant(resize: "300x300"), width:150 %>
