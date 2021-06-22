@@ -9,7 +9,7 @@
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #f9f9f9;
+  background-color: #f6f6f4;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -82,42 +82,51 @@
 
 .user-post {
   grid-area: post;
-  padding: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 5px;
   .user-post-title {
-    border-bottom: 2px solid #e6988b;
+    margin-bottom: 1rem;
     h1 {
       font-size: 1.5rem;
       margin-bottom: .4rem;
+      font-weight: bold;
     }
   }
 }
 
 // tab
 #tabBox {
-  margin: 1rem 0;
+  padding: 1rem;
   #tabs {
     display: flex;
-    margin: 1rem;
+    margin: 1rem 0;
     align-items: center;
-    justify-content: center;
     text-align: center;
+    border-bottom: 2px solid #e6988b;
     input {
       display: none;
     }
     label {
       cursor: pointer;
       display: inline-block;
-      padding: 1rem;
+      padding: .5rem;
       margin: 0 1rem;
       font-size: 1rem;
       font-weight: bold;
       color: #fff;
       background-color: #e6988b;
       letter-spacing: 1px;
+      border-radius: 5px 5px 0 0 ;
     }
-    #contents {
-      border-top: 2px solid #e6988b;
-    }
+  }
+  .contents-area {
+  padding: 1rem;
+  h2 {
+    font-size: 1.5rem;
+  }
   }
 }
 

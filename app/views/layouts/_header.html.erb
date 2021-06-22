@@ -16,26 +16,29 @@
         <p>投稿</p>
       <% end %>
     </div>
-    <div class="header-item">
+    <div class="header-item" id="dropdown" @click.stop.prevent="toggle()">
       <%= link_to user_path(current_user) do%>
         <span><i class="far fa-user-circle"></i></span>
         <p>マイページ</p>
       <% end %>
-    </div>
+      </div>
     <div class="header-item">
       <%= link_to logout_path, method: :delete do%>
       <span><i class="fas fa-sign-out-alt"></i></span>
       <p>ログアウト</p>
       <% end %>
     </div>
-    <% else %>
-    <div class="header-nav">
-      <ul class="header-list">
-          <li><%= link_to 'ログイン', login_path, class: "login-btn" %></li>
-          <li><%= link_to '新規登録', signup_path, class: "signup-btn" %></li>
-        </p>
-        <% end %>
-      </ul>
+  </div>
+  <% else %>
+  <div class="header-right">
+    <div class="header-list">
+      <div class="login-btn-area">
+        <%= link_to 'ログイン', login_path, class: "login-btn" %>
+      </div>
+      <div class="signup-btn-area">
+        <%= link_to '新規登録', signup_path, class: "signup-btn" %>
+      </div>
     </div>
   </div>
+  <% end %>
 </header>

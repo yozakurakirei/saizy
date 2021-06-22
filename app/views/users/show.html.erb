@@ -32,6 +32,9 @@
       <div class="edit-btn">
         <%= link_to 'プロフィールを編集する', edit_user_path(current_user) %>  
       </div>
+      <div class="edit-btn">
+        <%= link_to 'パスワードを再設定する', password_resets_new_path %>  
+      </div>
     <% else %>
     <% end %>
   </div>
@@ -42,88 +45,86 @@
       <h1>マイページ</h1>
     </div>
 
-  <div id="tabBox">
-    <div id="tabs">
-        <input type="radio" value="1" id="tab1" v-model="isActive"></input>
-        <label for="tab1">公開中</label>
-        <input type="radio" value="2" id="tab2" v-model="isActive"></input>
-        <label for="tab2">出店終了</label>
-        <input type="radio" value="3" id="tab3" v-model="isActive"></input>
-        <label for="tab3">下書き</label>
-    </div>
+    <div id="tabBox">
+      <div id="tabs">
+          <input type="radio" value="1" id="tab1" v-model="isActive"></input>
+          <label for="tab1">公開中(<%= @user.saizies.published.count %>)</label>
+          <input type="radio" value="2" id="tab2" v-model="isActive"></input>
+          <label for="tab2">出店終了(<%= @user.saizies.deleted.count %>)</label>
+          <% if @user.id == current_user.id %>
+            <input type="radio" value="3" id="tab3" v-model="isActive"></input>
+            <label for="tab3">下書き(<%= @user.saizies.draft.count %>)</label>
+          <% end %>
+      </div>
 
-    <ul id="contents">
-      <li v-if="isActive == '1' ">
-        <h2>公開中</h2>
-        <p>投稿数: <%= @user.saizies.published.count %></p>
+      <div class="contents-area">
+    
+      <ul id="contents">
+        <li v-if="isActive == '1' ">
+          <div class="aside">
+            <% @user.saizies.published.each do |saizy| %>
+              <%= link_to saizy_path(saizy) do%>
+              <div class="aside-content">
+                  <div class="aside-image-area">
+                    <% if saizy.images.count > 0 %>
+                      <div class="day">
+                        <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                      </div>
+                      <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
+                    <% end %>
+                  </div>
+                  <div class="aside-dsc">
+                    <div class="aside-des-tag">
+                      <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
+                    </div>
+                    <div class="aside-des-tag">
+                      <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
+                    </div>
+                    <div class="aside-des-tag">
+                      <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
+                    </div>
+                  </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
+
+        <li v-if="isActive == '2' ">
+          <div class="aside">
+            <% @user.saizies.deleted.each do |saizy| %>
+              <%= link_to saizy_path(saizy) do%>
+              <div class="aside-content">
+                  <div class="aside-image-area">
+                    <% if saizy.images.count > 0 %>
+                      <div class="day">
+                        <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                      </div>
+                      <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
+                    <% end %>
+                  </div>
+                  <div class="aside-dsc">
+                    <div class="aside-des-tag">
+                      <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
+                    </div>
+                    <div class="aside-des-tag">
+                      <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
+                    </div>
+                    <div class="aside-des-tag">
+                      <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
+                    </div>
+                  </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
+
+        <li v-if="isActive == '3' ">
         <div class="aside">
-          <% @user.saizies.published.each do |saizy| %>
+          <% @user.saizies.draft.each do |saizy| %>
             <%= link_to saizy_path(saizy) do%>
             <div class="aside-content">
-                <div class="aside-image-area">
-                  <% if saizy.images.count > 0 %>
-                    <div class="day">
-                      <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                    </div>
-                    <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
-                  <% end %>
-                </div>
-                <div class="aside-dsc">
-                  <div class="aside-des-tag">
-                    <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
-                  </div>
-                  <div class="aside-des-tag">
-                    <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
-                  </div>
-                  <div class="aside-des-tag">
-                    <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
-                  </div>
-                </div>
-            </div>
-            <% end %>
-          <% end %>
-        </div>
-      </li>
-
-      <li v-if="isActive == '2' ">
-        <h2>出店終了</h2>
-        <p>投稿数: <%= @user.saizies.deleted.count %></p>
-        <div class="aside">
-          <% @user.saizies.deleted.each do |saizy| %>
-            <%= link_to saizy_path(saizy) do%>
-            <div class="aside-content">
-                <div class="aside-image-area">
-                  <% if saizy.images.count > 0 %>
-                    <div class="day">
-                      <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                    </div>
-                    <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
-                  <% end %>
-                </div>
-                <div class="aside-dsc">
-                  <div class="aside-des-tag">
-                    <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
-                  </div>
-                  <div class="aside-des-tag">
-                    <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
-                  </div>
-                  <div class="aside-des-tag">
-                    <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
-                  </div>
-                </div>
-            </div>
-            <% end %>
-          <% end %>
-        </div>
-      </li>
-
-      <li v-if="isActive == '3' ">
-      <h2>下書き</h2>
-      <p>投稿数: <%= @user.saizies.draft.count %></p>
-      <div class="aside">
-        <% @user.saizies.draft.each do |saizy| %>
-          <%= link_to saizy_path(saizy) do%>
-          <div class="aside-content">
               <div class="aside-image-area">
                 <% if saizy.images.count > 0 %>
                   <div class="day">
@@ -144,12 +145,12 @@
                 </div>
               </div>
             </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
+        </li>
+      </ul>
       </div>
-      </li>
-    </ul>
-  </div>
-
+    </div>
   </div>
 </div>
