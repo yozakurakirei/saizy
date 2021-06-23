@@ -47,14 +47,14 @@
 
     <div id="tabBox">
       <div id="tabs">
-          <input type="radio" value="1" id="tab1" v-model="isActive"></input>
-          <label for="tab1">公開中(<%= @user.saizies.published.count %>)</label>
-          <input type="radio" value="2" id="tab2" v-model="isActive"></input>
-          <label for="tab2">出店終了(<%= @user.saizies.deleted.count %>)</label>
-          <% if @user.id == current_user.id %>
-            <input type="radio" value="3" id="tab3" v-model="isActive"></input>
-            <label for="tab3">下書き(<%= @user.saizies.draft.count %>)</label>
-          <% end %>
+        <input type="radio" value="1" id="tab1" v-model="isActive"></input>
+        <label for="tab1">公開中(<%= @user.saizies.published.count %>)</label>
+        <input type="radio" value="2" id="tab2" v-model="isActive"></input>
+        <label for="tab2">出店終了(<%= @user.saizies.deleted.count %>)</label>
+        <% if @user.id == current_user.id %>
+          <input type="radio" value="3" id="tab3" v-model="isActive"></input>
+          <label for="tab3">下書き(<%= @user.saizies.draft.count %>)</label>
+        <% end %>
       </div>
 
       <div class="contents-area">

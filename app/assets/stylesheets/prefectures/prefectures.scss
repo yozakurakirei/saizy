@@ -1,0 +1,43 @@
+.prefectures {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 350px auto;
+  grid-template-rows: 300px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-areas: 
+    "left-top right"
+    "left-secound right";
+  background-color: #f6f6f4;
+  // prefectures-left-top
+  .prefectures-left-top {
+    grid-area: left-top;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 1rem;
+    .left-top-title {
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-bottom: 3px solid #e96161;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  .user-ranking {
+    grid-area: left-secound;
+    background-color: #ddd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .prefectures-article {
+    grid-area: right;
+    background-color: #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+}

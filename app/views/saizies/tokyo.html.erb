@@ -1,10 +1,61 @@
-<h1>東京都のSaizy</h1>
-<p>東京都の催事一覧になります。</p>
-<p>東京エリアには有数の百貨店・商業施設があります。</p>
-<p>コロナ禍の状況で以前と比較すると催事出店数は減ってしまいましたが、</p>
-<p>多くのお客様が来店する施設では常に期間限定ショップが賑わっています。</p>
-<% @saizies.tokyo.each do |saizy| %>
-  <%= link_to saizy_path(saizy) do %>
-    <h3><%= saizy.title.truncate(18) %></h3>
-  <% end %>
-<% end %>
+<% provide(:title, "東京都の催事")%>
+
+<div class="prefectures">
+  <div class="prefectures-left-top">
+    <div class="left-top-title">
+      <h1>東京都のSaizy</h1>
+    </div>
+    <div class="left-top-dsc">
+      <p>東京都の催事一覧になります。</p>
+      <p>東京エリアには有数の百貨店・商業施設があります。</p>
+      <p>コロナ禍の状況で以前と比較すると催事出店数は減ってしまいましたが、</p>
+      <p>多くのお客様が来店する施設では常に期間限定ショップが賑わっています。</p>
+    </div>
+  </div>
+  <div class="user-ranking">
+    <p>百貨店</p>
+  </div>
+
+  <div class="prefectures-right-top">
+    
+  </div>
+
+  <div class="prefectures-article">
+    <div class="result">
+      <div class="result-flex">
+        <% @saizies.tokyo.each do |saizy| %>
+        <div class="result-card">
+          <!-- image -->
+          <div class="result-image">
+            <%= link_to saizy_path(saizy) do%>
+              <% if saizy.images.count > 0 %>
+                <div class="day">
+                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+                </div>
+                <%= image_tag saizy.images.first.variant(resize: "500x500").processed %>
+              <% end %>
+          </div>
+          <!-- description -->
+          <div class="result-desc">
+            <h2><%= saizy.title.truncate(18) %></h2>
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+              <%= saizy.place.truncate(18) %>
+            </p>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
