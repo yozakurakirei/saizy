@@ -5,8 +5,6 @@
 
 .search-area {
   width: 100%;
-  max-width: 1000px;
-  margin: 2rem auto 1rem auto;
 
   .search-box {
     display: flex;
@@ -19,8 +17,8 @@
       width: 100%;
       margin: 1rem auto;
       height: 3rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
       padding: .5rem 1rem;
     }  
     .search-button {
@@ -32,6 +30,11 @@
       color: #fff;
       letter-spacing: 2px;
       font-weight: bold;
+      border-radius: 8px;
+      &:hover {
+        opacity: .7;
+        transition: .5s;
+      }
     }  
   }
 }

@@ -41,3 +41,16 @@
   }
 
 }
+
+// responsive 
+@media only screen and (max-width: 670px) {
+  .prefectures {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 1fr 350px;
+    grid-template-areas:
+      "prefectures-left-top"
+      "right"
+      "left-secound";
+  } 
+}

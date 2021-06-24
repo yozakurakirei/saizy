@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         flash[:info] = "ログインしました！"
-        redirect_back_or user
+        redirect_back_or root_url
       else
         message = "まだ登録は完了しておりません"
         message += "メールをお送りしました！チェックをお願いします！"

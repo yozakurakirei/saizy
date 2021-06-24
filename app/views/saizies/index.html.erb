@@ -2,45 +2,53 @@
 <!-- ログイン -->
 <% if logged_in? %>
   <!-- 検索フォーム -->
-  <%= render 'layouts/search_form' %>
-  <!-- 投稿 -->
-  <%= render 'layouts/top_contents/top_contents'%>
-  <!-- 都道府県 -->
-  <%= render 'layouts/top_contents/area' %>
-  <!-- 百貨店・商業施設 -->
-  <h2>百貨店・商業施設</h2>
-  <!-- サービスの案内 -->
-  <h2>催事出店をご検討のみなさまへ</h2>
-  <!-- 通販サイト -->
-  <h2>Saizyブランドの通販</h2>
+  <div class="top-page">
 
-  </div>
-<!-- 非ログインユーザー -->
-<% else %>
-  <main class="top-contents">
-    <!-- top image -->
-    <div class="hero">
-      <div class="hero-content">
-        <h2 class="text-main">Saizy<h2>
-        <h4>美味しい食べ物を <br> みんなに伝えよう！</h4>
-        <p>
-          Saizyは食料品の期間限定ショップを<br>たくさんの人に紹介できるサービスです!<br>
-        </p>
-        <!-- 検索フォーム -->
-        <%= render 'layouts/search_form' %>
-      </div>
-      <div class="hero-image">
-        <%= image_pack_tag 'media/images/top-image.jpeg', alt: "トップページ画像" %>
-      </div>
+    <div class="top-first">
+      <h1><i class="fas fa-search top-icon"></i>検索してみる</h1>
+      <%= render 'layouts/search_form' %>
     </div>
     <!-- 投稿 -->
-    <%= render 'layouts/top_contents/top_contents'%>  
+    <div class="top-secound">
+      <%= render 'layouts/top_contents/top_contents'%>
+    </div>
     <!-- 都道府県 -->
-    <%= render 'layouts/top_contents/area' %>
-    <!-- 百貨店 -->
-  </section>
-<% end %>
-</main>
+    <%# <%= render 'shared/feed' %>
+    <div class="top-third">
+      <%= render 'layouts/top_contents/area' %>
+    </div>
+
+    <div class="instagram-area">
+      <p>インスタグラムAPI実装予定</p>
+    </div>
+
+  </div>
+  <!-- 非ログインユーザー -->
+  <% else %>
+    <main class="top-contents">
+      <!-- top image -->
+      <div class="hero">
+        <div class="hero-content">
+          <h2 class="text-main">Saizy<h2>
+          <h4>美味しい食べ物を <br> みんなに伝えよう！</h4>
+          <p>
+            Saizyは食料品の期間限定ショップを<br>たくさんの人に紹介できるサービスです!<br>
+          </p>
+          <!-- 検索フォーム -->
+          <%= render 'layouts/search_form' %>
+        </div>
+        <div class="hero-image">
+          <%= image_pack_tag 'media/images/top-image.jpeg', alt: "トップページ画像" %>
+        </div>
+      </div>
+      <!-- 投稿 -->
+      <%= render 'layouts/top_contents/top_contents'%>  
+      <!-- 都道府県 -->
+      <%= render 'layouts/top_contents/area' %>
+      <!-- 百貨店 -->
+    </section>
+  <% end %>
+</div>
 
 
 
