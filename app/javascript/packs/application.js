@@ -14,6 +14,7 @@ require("popper.js")
 require("custom.js")
 // require("../simple_js/modal.js")
 require("slick.min")
+require("map")
 require("tab")
 
 import '@fortawesome/fontawesome-free/js/all'
@@ -24,3 +25,11 @@ import '../src/application.scss'
 // ActiveStorage.start()
  
 const images = require.context('../images', true);
+
+// googlemaps
+window.initMap = function(...args) {
+  const event = document.createEvent("Events")
+  event.initEvent("google-maps-callback", true, true)
+  event.args = args
+  window.dispatchEvent(event)
+}

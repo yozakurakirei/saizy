@@ -35,6 +35,10 @@ class Saizy < ApplicationRecord
     validates :place, length: { maximum: 100 }
   end
 
+  # googlemaps
+  geocoded_by :place
+  after_validation :geocode, if: :place_changed?
+
   private 
     def find_or_create_tag
       tag_array = []
