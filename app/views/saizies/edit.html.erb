@@ -1,80 +1,72 @@
 <% provide(:title, "投稿編集")%>
 
-<div class="form-area">
-  <div class="form-title">
+<div class="article">
+  <div class="article-title">
     <h2>投稿を編集する</h2>
   </div>
 
   <%= form_with(model: @saizy, local: true) do |f| %>
-  <div class="form-item">
-    <%= f.label :title, class: "label_name" %>
-    <%= f.text_field :title, class: "input_area" %>
-  </div>
-      <div class="l_form_input">
-        <%= f.label :name, class: "label_name" %>
-        <%= f.text_field :name, class: "input_area" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.fields_for :tags do |tf| %>
-          <%= tf.label :name, "タグ" %>
-          <%= tf.text_field :name, class: "input_area" %>
-        <% end %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :place, class: "label_name" %>
-        <%= f.text_field :place, class: "input_area" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :open, class: "label_name" %>
-        <%= f.text_field :open, class: "input_area" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :close, class: "label_name" %>
-        <%= f.text_field :close, class: "input_area" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :start, class: "label_name" %>
-        <%= f.date_field :start, class: "input_area" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :finish, class: "label_name" %>
-        <%= f.date_field :finish, class: "input_area" %>
-      </div>
-      <div class="l_form_input">
-        <%= f.label :content, class: "label_name" %>
-        <%= f.text_field :content, class: "input_area" %>
-      </div>
+  <div class="article-body">
+    <div class="article-item">
+      <div><%= f.label :title, "催事タイトル", class: "article-item-label" %></div>
+      <div><%= f.text_field :title, class: "article-item-input" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :name, "ブランド名", class: "article-item-label" %></div>
+      <div><%= f.text_field :name, class: "article-item-input" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :name, "都道府県", class: "article-item-label" %></div>
+      <div class="article-item-select"><%= f.select :area, [["------", "hokkaido"],["北海道", "hokkaido"], ["青森", "aomori"], ["岩手", "iwate"],["宮城", "miyagi"],["秋田", "akita"],["山形", "yamagata"],["福島", "fukusima"],["茨城", "ibaragi"],["栃木", "tochigi"],["群馬", "gunma"],["埼玉", "saitama"],["千葉", "chiba"],["東京", "tokyo"],["神奈川", "kanagawa"],["新潟", "niigata"],["富山", "toyama"],["石川", "ishikawa"],["福井", "fukui"],["山梨", "yamanasi"],["長野", "nagano"],["岐阜", "gifu"],["静岡", "sizuoka"],["愛知", "aichi"],["三重", "mie"],["滋賀", "siga"],["京都", "kyoto"],["大阪", "oosaka"],["兵庫", "hyogo"],["奈良", "nara"],["和歌山", "wakayama"],["鳥取", "tottori"],["島根", "simane"],["岡山", "okayama"],["広島", "hirosima"],["山口", "yamaguchi"],["徳島", "tokushima"],["香川", "kagawa"],["愛媛", "ehime"],["高知", "kouchi"],["福岡", "fukuoka"],["佐賀", "saga"],["長崎", "nagasaki"],["熊本", "kumamoto"],["大分", "ooita"],["宮崎", "miyazaki"],["鹿児島", "kagosima"],["沖縄", "okinawa"]], id: "area", class: "article-item-select" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :place, "出店場所", class: "article-item-label" %></div>
+      <div><%= f.text_field :place, class: "article-item-input" %></div>
+    </div>
 
-      <% if @saizy.images.attached? %>
-      <div class="images">
-        <% @saizy.images.each do |image| %>
-          <%= image_tag image.variant(resize: "300x300") %>
-        <% end %>
-      </div>
+    <div class="article-item">
+      <div><%= f.label :open, "開店時間", class: "article-item-label" %></div>
+      <div><%= f.text_field :open, class: "article-item-input" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :close, "閉店時間", class: "article-item-label" %></div>
+      <div><%= f.text_field :close, class: "article-item-input" %></div>
+    </div>
+
+    <div class="article-item">
+      <div><%= f.label :start, "開始日" ,class: "article-item-label" %></div>
+      <div><%= f.date_field :start, class: "article-item-input" %></div>
+    </div>
+    <div class="article-item">
+      <div><%= f.label :finish, "終了日" ,class: "article-item-label" %></div>
+      <div><%= f.date_field :finish, class: "article-item-input" %></div>
+    </div>
+
+    <div class="article-item">
+      <div><%= f.label :content, "おすすめポイント", class: "article-item-label" %></div>
+      <div><%= f.text_area :content, class: "article-item-textarea" %></div>
+    </div>
+
+    <% if @saizy.images.attached? %>
+    <div class="images">
+      <% @saizy.images.each do |image| %>
+        <%= image_tag image.variant(resize: "300x300") %>
       <% end %>
-      <div class="l_form_input">
-        <%= f.file_field :images, id: "images", multiple: true %>
-      </div>
+    </div>
+    <% end %>
+    <div class="l_form_input">
+      <%= f.file_field :images, id: "images", multiple: true %>
+    </div>
 
-      <div class="form-group">
-        <%= f.label :status %><br>
-        <%= f.select :status, [["下書き", "draft"], ["公開する", "published"], ["出店終了", "deleted"]],
-                              id: "status", class: "form-control" %>
-      </div>
+    <div class="article-item">
+      <%= f.label "記事ステータス", class: "article-item-label" %>
+      <%= f.select :status, [["下書き", "draft"], ["公開する", "published"], ["出店終了", "deleted"]],
+                            id: "status", class: "form-control" %>
+    </div>
 
-      <h2>カテゴリー選択</h2>
-      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-        <div>
-          <%= tag.label do %>
-            <%= tag.check_box %>
-            <%= tag.text %>
-          <% end %>
-        </div>
-      <% end %>
-
-      <div class="l_form_form_button">
-        <%= f.submit "編集完了", class: "form_button" %>  
-      </div>
+    <div class="article-button">
+      <%= f.submit "編集完了", class: "article-btn" %>  
+    </div>
     <% end %>
 
 </div>

@@ -77,7 +77,8 @@
               <% end %>
             </div>
             <div class="user-post-name">
-              投稿者：<%= @saizy.user.name %>
+              <p>投稿者：<%= @saizy.user.name %></p>
+              <p><%= time_ago_in_words(@saizy.created_at) %>前に投稿</p>
               <% end %>
             </div>
           </div>
@@ -85,6 +86,17 @@
           <div class="google-maps">
             <div class="maps-title">アクセス</div>
             <div id="map"></div>
+          </div>
+          <div class="edit-destroy">
+            <% if current_user?(@saizy.user) %>
+            <div class="edit-btn">
+              <%= link_to "編集する", edit_saizy_path(@saizy) %>
+            </div>
+            <div class="destroy-btn">
+              <%= link_to "削除", saizy_path, method: :delete,
+                                             data: { confirm: "削除しますか？削除すると元に戻せません。" } %>
+            </div>
+            <% end %>
           </div>
         </div>
         </div>
