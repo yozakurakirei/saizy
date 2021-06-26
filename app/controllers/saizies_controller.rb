@@ -29,17 +29,17 @@ class SaiziesController < ApplicationController
   end
 
   def edit
-    @saizy = Saizy.find_by(params[:id])
+    @saizy = Saizy.find(params[:id])
   end
 
   def update
-    @saizy = Saizy.find_by(params[:id])
+    @saizy = Saizy.find(params[:id])
     @saizy.update(saizy_params)
     redirect_to saizy_path(@saizy)
   end
 
   def destroy
-    @saizy = Saizy.find_by(params[:id])
+    @saizy = Saizy.find(params[:id])
     @saizy.destroy
     flash[:info] = "削除しました。"
     redirect_to saizies_path
