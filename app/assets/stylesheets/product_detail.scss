@@ -242,6 +242,7 @@
           }
         }
       }
+
       .aside {
         .aside-title {
           margin: 1rem 0;
@@ -280,3 +281,19 @@
     height: 10vh;
   }
 }
+// googlemaps
+.google-maps {
+  width: 100%;
+  margin-top: 1.2rem;
+  .maps-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin-left: 1rem;
+  }
+  #map {
+    height: 500px;
+    width: 100%;
+  }
+}
+
