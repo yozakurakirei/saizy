@@ -6,7 +6,7 @@ class SaiziesController < ApplicationController
   end
 
   def show
-    @saizy = Saizy.find_by(params[:id])
+    @saizy = Saizy.find(params[:id])
     @saizies = Saizy.all.limit(20)
     require_login if @saizy.draft?
   end
