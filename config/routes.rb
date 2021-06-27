@@ -48,11 +48,10 @@ Rails.application.routes.draw do
     collection do 
       get :search
     end
-  end
-
-  resources :saizies do
     resource :likes, only: [:create, :destroy]
   end
+
+
 
   resources :account_activations, only: [:edit]
   mount LetterOpenerWeb::Engine,  at: '/letter_opener' if Rails.env.development?
