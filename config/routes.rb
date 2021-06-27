@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'similars/index'
   get 'likes/create'
   get 'likes/destroy'
   get 'counters/index'
@@ -58,5 +59,5 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
-
+  resources :similars,            only: [:index]
 end

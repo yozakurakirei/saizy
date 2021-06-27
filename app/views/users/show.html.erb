@@ -43,25 +43,35 @@
   <div class="user-post">
     <div class="user-post-title">
       <h1>マイページ</h1>
-      <%= link_to 'いいねした', likes_user_path %>
     </div>
 
     <div id="tabBox">
       <div id="tabs">
-        <input type="radio" value="1" id="tab1" v-model="isActive"></input>
-        <label for="tab1">公開中(<%= @user.saizies.published.count %>)</label>
-        <input type="radio" value="2" id="tab2" v-model="isActive"></input>
-        <label for="tab2">出店終了(<%= @user.saizies.deleted.count %>)</label>
         <% if @user.id == current_user.id %>
-          <input type="radio" value="3" id="tab3" v-model="isActive"></input>
-          <label for="tab3">下書き(<%= @user.saizies.draft.count %>)</label>
+          <input type="radio" value="1" id="tab1" v-model="isActive"></input>
+          <label for="tab1">いいね済み</label>
+        <% end %>
+        <input type="radio" value="2" id="tab2" v-model="isActive"></input>
+        <label for="tab2">公開中(<%= @user.saizies.published.count %>)</label>
+        <input type="radio" value="3" id="tab3" v-model="isActive"></input>
+        <label for="tab3">出店終了(<%= @user.saizies.deleted.count %>)</label>
+        <% if @user.id == current_user.id %>
+          <input type="radio" value="4" id="tab4" v-model="isActive"></input>
+          <label for="tab4">下書き(<%= @user.saizies.draft.count %>)</label>
         <% end %>
       </div>
 
       <div class="contents-area">
     
       <ul id="contents">
+
         <li v-if="isActive == '1' ">
+          <div class="aside">
+            <%= link_to 'いいねした', likes_user_path %>
+          </div>
+        </li>
+
+        <li v-if="isActive == '2' ">
           <div class="aside">
             <% @user.saizies.published.each do |saizy| %>
               <%= link_to saizy_path(saizy) do%>
@@ -91,7 +101,7 @@
           </div>
         </li>
 
-        <li v-if="isActive == '2' ">
+        <li v-if="isActive == '3' ">
           <div class="aside">
             <% @user.saizies.deleted.each do |saizy| %>
               <%= link_to saizy_path(saizy) do%>
@@ -121,7 +131,7 @@
           </div>
         </li>
 
-        <li v-if="isActive == '3' ">
+        <li v-if="isActive == '4' ">
         <div class="aside">
           <% @user.saizies.draft.each do |saizy| %>
             <%= link_to saizy_path(saizy) do%>
