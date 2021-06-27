@@ -11,6 +11,7 @@ class LikesController < ApplicationController
     @like.destroy
   end
 
+
   private
     def set_saizy
       @saizy = Saizy.find_by(id: params[:saizy_id])

@@ -8,10 +8,10 @@
     <div class="show-title">
       <p><%= @saizy.name %>の催事</p>
       <p><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</p>
-      <div class="like-area" id="like_<%= @saizy.id %>">
-        <%= render 'likes/like', saizy: @saizy %>
-      </div>
     </div>
+      <div class="like-area" id="like_<%= @saizy.id %>">
+        <%= render partial: 'likes/like', locals: {saizy: @saizy} %>
+      </div>
     <!-- image area --> 
     <div class="show-box">
       <div class="show-image-area">
