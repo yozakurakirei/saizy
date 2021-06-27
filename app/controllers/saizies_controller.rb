@@ -2,19 +2,17 @@ class SaiziesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :update, :destroy, :mypage]
 
   def index
-    @saizies = Saizy.includes(tags: :saizy).all.limit(20)
-    @microposts = Micropost.all
+    @saizies = Saizy.all.limit(20)
   end
 
   def show
     @saizy = Saizy.find(params[:id])
-    @saizies = Saizy.includes(tags: :saizy).all.limit(20)
+    @saizies = Saizy.all.limit(20)
     require_login if @saizy.draft?
   end
 
   def new
     @saizy = Saizy.new
-    @saizy.tags.build
   end
 
   def create
@@ -35,6 +33,7 @@ class SaiziesController < ApplicationController
   def update
     @saizy = Saizy.find(params[:id])
     @saizy.update(saizy_params)
+    flash[:info] = "編集が完了しました"
     redirect_to saizy_path(@saizy)
   end
 
@@ -54,7 +53,7 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, tags_attributes: [ :name ] , images: [], tag_ids: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, images: [])
     end
 
     def require_login

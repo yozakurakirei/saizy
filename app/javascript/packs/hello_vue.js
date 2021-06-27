@@ -19,20 +19,19 @@
 
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
-import HelloTemp from '../components/hello_temp.vue'
 import Slider from '../components/slider.vue'
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
+
+  const app = new Vue ({
     el: '#hello',
     data: {
       message: "こんにちはvueの練習中です"
     },
     components: { 
-      Header,
       App, 
-      HelloTemp,
       Slider
      }
   })

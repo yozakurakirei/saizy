@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_151106) do
+ActiveRecord::Schema.define(version: 2021_06_27_061436) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2021_06_25_151106) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "saizy_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["saizy_id"], name: "index_likes_on_saizy_id"
+    t.index ["user_id", "saizy_id"], name: "index_likes_on_user_id_and_saizy_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "microposts", force: :cascade do |t|
@@ -77,6 +87,7 @@ ActiveRecord::Schema.define(version: 2021_06_25_151106) do
     t.integer "area", default: 0, null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "likes_count"
     t.index ["user_id", "created_at"], name: "index_saizies_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_saizies_on_user_id"
   end
@@ -84,21 +95,6 @@ ActiveRecord::Schema.define(version: 2021_06_25_151106) do
   create_table "sessions", force: :cascade do |t|
     t.string "email"
     t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer "tag_id", null: false
-    t.integer "saizy_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["saizy_id"], name: "index_taggings_on_saizy_id"
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -122,8 +118,8 @@ ActiveRecord::Schema.define(version: 2021_06_25_151106) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "saizies"
+  add_foreign_key "likes", "users"
   add_foreign_key "microposts", "users"
   add_foreign_key "saizies", "users"
-  add_foreign_key "taggings", "saizies"
-  add_foreign_key "taggings", "tags"
 end

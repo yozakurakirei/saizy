@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
+  get 'likes/destroy'
   get 'counters/index'
   get 'counters/new'
   root to:  'saizies#index'
@@ -46,6 +48,10 @@ Rails.application.routes.draw do
     collection do 
       get :search
     end
+  end
+
+  resources :saizies do
+    resource :likes, only: [:create, :destroy]
   end
 
   resources :account_activations, only: [:edit]

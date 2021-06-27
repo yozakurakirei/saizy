@@ -1,7 +1,6 @@
 <% provide(:title, @saizy.name+"さんの催事")%>
 
 
-
 <div class="show-area">
   <%# main contents %>
   <div class="show-main">
@@ -9,6 +8,9 @@
     <div class="show-title">
       <p><%= @saizy.name %>の催事</p>
       <p><%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</p>
+      <div class="like-area" id="like_<%= @saizy.id %>">
+        <%= render 'likes/like', saizy: @saizy %>
+      </div>
     </div>
     <!-- image area --> 
     <div class="show-box">
@@ -79,6 +81,7 @@
             <div class="user-post-name">
               <p>投稿者：<%= @saizy.user.name %></p>
               <p><%= time_ago_in_words(@saizy.created_at) %>前に投稿</p>
+              <p><%= time_ago_in_words(@saizy.updated_at) %>前に編集しました</p>
               <% end %>
             </div>
           </div>

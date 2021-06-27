@@ -2,8 +2,10 @@ class Saizy < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   has_many_attached :images
-  has_many :taggings, dependent: :destroy
-  has_many :tags, through: :taggings
+
+  has_many :likes, dependent: :destroy
+  has_many :like_users, through: :likes, source: :user
+  
   enum status: { draft: 0, published: 1, deleted: 2 } # 追加
   enum area: {
     default:0,hokkaido:1,aomori:2,iwate:3,miyagi:4,akita:5,yamagata:6,fukusima:7,
@@ -16,9 +18,6 @@ class Saizy < ApplicationRecord
     fukuoka:40,saga:41,nagasaki:42,kumamoto:43,ooita:44,miyazaki:45,kagosima:46, 
     okinawa:47
   }
-  
-  accepts_nested_attributes_for :tags, :reject_if => proc { |att| att[:name].blank?}
-  before_save :find_or_create_tag
   
   validates :status, inclusion: { in: Saizy.statuses.keys }
 
