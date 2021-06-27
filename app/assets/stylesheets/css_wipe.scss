@@ -29,6 +29,30 @@ section {
     min-height: 100vh;
 }
 
+// お気に入りボタン
+.like-icon {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+    border-radius: 5px;
+    .icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+        .btn-on {
+            color: #ed8f8f;
+        }
+        .btn-off {
+            color: #ccc;
+        }
+    }
+    .text {
+        font-size: 1rem;
+    }
+}
+
+
+
 /* webkit specific styles */
 
 input[type="color"]::-webkit-color-swatch {

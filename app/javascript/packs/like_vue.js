@@ -2,14 +2,21 @@
 
 import Vue from 'vue/dist/vue.esm'
 
-import LikeButton from '../components/Like/LikeButton.vue'
-
+const VueStar = window['VueStar'];
 document.addEventListener('DOMContentLoaded', () => {
-    // いいねボタン
-    new Vue ({
-      el: '#like',
-      components: {
-        LikeButton
-      },
-    })
+  Vue.component('VueStar', VueStar) 
+  // いいねボタン
+  const like = new Vue ({
+    el: '#like',
+    mounted: function(){
+      this.$refs.ThumbsUp.$data.active = true;
+      console.log(this.$refs.ThumbsUp.$data);
+    },
+    methods: {
+      handleClick () {
+        console.log(this.$refs.ThumbsUp.$data);
+        //do something
+      }
+    }
+  })
 })

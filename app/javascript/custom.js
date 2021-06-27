@@ -17,7 +17,6 @@ $(function() {
 });
 $(function() {
   $('#slider-deleted').slick({
-    dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
@@ -25,6 +24,13 @@ $(function() {
     variableWidth: true
   });
 });
+$(function() {
+  $('.area-card').slick({
+    dots: false,
+    slidesToShow: 2,
+    centerMode: true
+  })
+})
 
 //サムネイル
 

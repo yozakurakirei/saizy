@@ -1,0 +1,8 @@
+<h1>いいね一覧</h1>
+
+<% current_user.like_saizies.each do |saizy| %>
+  <%= link_to saizy_path(saizy) do %>
+    <%= saizy.name %>
+    
+  <% end %>
+<% end %>

@@ -1,39 +1,36 @@
 <% if logged_in? %>
   <% if current_user.likes.find_by(saizy_id: saizy.id) %>
     <%= link_to saizy_likes_path(saizy.id), method: :delete, remote: true do %>
-      <div class="text">
-        <p>いいね</p>
-      </div>
+    <div class="like-icon">
       <div class="icon">
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart btn-on"></i>
       </div>
-      <div class="count">
-        <%= @saizy.likes.count %>
+      <% end %>
+      <div class="text">
+        <p><%= @saizy.likes.count %>いいね</p>
       </div>
-    <% end %>
+    </div>
   <% else %>
     <%= link_to saizy_likes_path(saizy.id), method: :post, remote: true do %>
-      <div class="text">
-        <p>いいね</p>
-      </div>
+    <div class="like-icon">
       <div class="icon">
-        <i class="fas fa-heart"></i>
+        <i class="fas fa-heart btn-off"></i>
       </div>
-      <div class="count">
-        <%= @saizy.likes.count %>
+      <% end %>
+      <div class="text">
+        <p><%= @saizy.likes.count %>いいね</p>
       </div>
-    <% end %>
+    </div>
   <% end %>
 <% else %>
   <%= link_to login_path do %>
-    <div class="text">
-      <p>いいね</p>
-    </div>
+  <div class="like-icon">
     <div class="icon">
-      <i class="fas fa-heart"></i>
+      <i class="fas fa-heart btn-on"></i>
     </div>
-    <div class="count">
-      <%= @saizy.likes.count %>
+    <% end %>
+    <div class="text">
+      <p><%= @saizy.likes.count %>いいね</p>
     </div>
-  <% end %>
+  </div>
 <% end %>
