@@ -1,0 +1,37 @@
+<% if current_user.likes.count > 0 %>
+
+  <div class="side-like">
+    <div class="side-like-title">
+      <h2>お気に入り</h2>
+    </div>
+    <% current_user.like_saizies.each do |saizy| %>
+      <%= link_to saizy_path(saizy) do %>
+        <div class="side-like">
+          <div class="side-like-image">
+            <% if saizy.images.count > 0 %>
+              <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+            <% end %>
+          </div>
+          <div class="side-like-content">
+            <div class="side-like-title">
+              <%= saizy.name.truncate(13) %>
+            </div>
+            <div class="side-like-place">
+              <%= saizy.place.truncate(13) %>
+              <div class="heart-icon">
+                <div class="icon">
+                  <i class="fas fa-heart heart-show-icon"></i>
+                  <%= saizy.likes.count %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%# いいねしていなかったら %>
+  <% else %>
+  <h2>おすすめのSaizy</h2>
+<% end %>
+

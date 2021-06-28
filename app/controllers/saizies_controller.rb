@@ -1,5 +1,6 @@
 class SaiziesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :update, :destroy, :mypage]
+  before_action :call_client
 
   def index
     @saizies = Saizy.all.limit(20)
@@ -58,5 +59,17 @@ class SaiziesController < ApplicationController
 
     def require_login
       redirect_to login_path if !logged_in?
+    end
+
+    def call_client
+      require 'paapi'
+      @client = Paapi::Client.new(access_key: Rails.application.credentials[:pa_api][:access_key_id],
+                                  secret_key: Rails.application.credentials[:pa_api][:secret_key],
+                                  market: :jp,
+                                  partner_tag: Rails.application.credentials[:pa_api][:associate_tag])
+    end
+
+    def keyword_params
+      params.require(:keyword)
     end
 end

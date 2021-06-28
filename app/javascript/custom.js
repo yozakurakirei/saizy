@@ -27,8 +27,8 @@ $(function() {
 $(function() {
   $('.area-card').slick({
     dots: false,
-    slidesToShow: 2,
-    centerMode: true
+    slidesToShow: 3,
+    centerMode: true,
   })
 })
 

@@ -260,8 +260,57 @@
     border-radius: 5px;
     grid-area: left3;
   }
-  .instagram-area {
+  // トップ右サイドバー
+  .like-area {
     grid-area: right;
+    .side-like {
+      width: 100%;
+      padding: 1rem;
+      .side-like-title {
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+      .side-like {
+        width: 100%;
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .side-like-content {
+          width: 100%;
+          flex: 1;
+          margin-left: 1.1rem;
+          .side-like-title {
+            width: 100%;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #767676;
+          }
+          .side-like-place {
+            font-size: .8rem;
+            width: 100%;
+            color: #8e8e8e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .heart-icon {
+              margin: 0 1rem;
+              display: flex;
+              justify-content: flex-end;
+              .heart-show-icon {
+                color: #e96161;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .top-icon {
     margin-right: 1rem;
