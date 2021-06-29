@@ -227,7 +227,7 @@
 .top-page {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 340px;
   grid-template-rows: 200px 800px 1fr;
   width: 90%;
   max-width: 1000px;
@@ -263,6 +263,7 @@
   // トップ右サイドバー
   .like-area {
     grid-area: right;
+    margin-left: 1rem;
     .side-like {
       width: 100%;
       padding: 1rem;

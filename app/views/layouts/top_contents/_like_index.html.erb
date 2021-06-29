@@ -17,7 +17,9 @@
               <%= saizy.name.truncate(13) %>
             </div>
             <div class="side-like-place">
-              <%= saizy.place.truncate(13) %>
+              <div class="place-icon">
+                <i class="fas fa-map-marker-alt mr-1"></i><%= saizy.place.truncate(13) %>
+              </div>
               <div class="heart-icon">
                 <div class="icon">
                   <i class="fas fa-heart heart-show-icon"></i>
@@ -30,8 +32,10 @@
       <% end %>
     <% end %>
   </div>
+  <%= render 'layouts/top_contents/ranking' %>
   <%# いいねしていなかったら %>
   <% else %>
-  <h2>おすすめのSaizyを実装予定</h2>
+  <%= render 'layouts/top_contents/ranking' %>
+  
 <% end %>
 

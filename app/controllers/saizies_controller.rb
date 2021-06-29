@@ -1,13 +1,17 @@
 class SaiziesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :update, :destroy, :mypage]
+  
 
   def index
     @saizies = Saizy.all.limit(20)
+    @impressions = Saizy.order(impressions_count: 'DESC')
+    @pv_ranking = Saizy.find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(5).pluck(:impressionable_id))
   end
 
   def show
     @saizy = Saizy.find(params[:id])
     @saizies = Saizy.all.limit(20)
+    impressionist(@saizy, nil, unique: [:session_hash])
     require_login if @saizy.draft?
   end
 

@@ -1,0 +1,32 @@
+<div class="side-like">
+  <div class="side-like-title">
+    <h2>人気ランキング</h2>
+  </div>
+  <% @pv_ranking.each do |saizy| %>
+    <%= link_to saizy_path(saizy) do %>
+      <div class="side-like">
+        <div class="side-like-image">
+          <% if saizy.images.count > 0 %>
+            <%= image_tag saizy.images.first.variant(resize: "100x100").processed %>
+          <% end %>
+        </div>
+        <div class="side-like-content">
+          <div class="side-like-title">
+            <%= saizy.name.truncate(13) %>
+          </div>
+          <div class="side-like-place">
+            <div class="place-icon">
+              <i class="fas fa-map-marker-alt mr-1"></i><%= saizy.place.truncate(13) %>
+            </div>
+            <div class="heart-icon">
+              <div class="icon">
+                <i class="fas fa-heart heart-show-icon"></i>
+                <%= saizy.likes.count %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>  
+  <% end %>
+</div>

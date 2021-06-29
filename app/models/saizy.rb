@@ -5,6 +5,8 @@ class Saizy < ApplicationRecord
 
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
+
+  is_impressionable counter_cache: true
   
   enum status: { draft: 0, published: 1, deleted: 2 } # 追加
   enum area: {
