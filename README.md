@@ -10,11 +10,12 @@ email: test@example.com<br>
 password: password<br>
 
 ## 開発環境
-| フロントエンド| Vue(アニメーションを少しだけ), webpacker|
-| バックエンド| Ruby|
+| ---- | ----| 
+|フロントエンド| Vue(アニメーションを少しだけ), webpacker|
+|バックエンド| Ruby|
 |フレームワーク|Ruby on Rails6|
 |デプロイ|Heroku|
-<br>
+
 
 
 
