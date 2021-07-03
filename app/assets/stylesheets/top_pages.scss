@@ -241,6 +241,7 @@
     "left5 right";
   padding: 1rem;
   .top-first {
+    width: 100%;
     background-color: #fff;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     padding: 1rem 2rem;
@@ -251,6 +252,7 @@
     }
   }
   .top-secound {
+    width: 100%;
     background-color: #fff;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     border-radius: 5px;
@@ -263,6 +265,7 @@
     grid-area: left5;
   }
   .top-tag {
+    width: 100%;
     background-color: #fff;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     padding: 1rem 2rem;
@@ -278,6 +281,7 @@
     }
   }
   .top-third {
+    width: 100%;
     background-color: #fff;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     border-radius: 5px;
@@ -345,11 +349,13 @@
   .top-page {
     width: 100%;
     grid-template-columns: 1fr;
+    grid-template-rows: 200px 200px 380px 380px 1fr;
     grid-template-areas: 
     "left1"
     "left4"
     "left2"
     "left3"
+    "left5"
     "right";
   }
   .area {
