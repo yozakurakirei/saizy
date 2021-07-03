@@ -10,6 +10,7 @@ email: test@example.com<br>
 password: password<br>
 
 ## 開発環境
+|領域|使用技術|
 | ---- | ---- | 
 |フロントエンド| Vue(アニメーションを少しだけ), webpacker|
 |バックエンド| Ruby|
