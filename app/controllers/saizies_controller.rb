@@ -59,7 +59,29 @@ class SaiziesController < ApplicationController
     redirect_to saizies_path
   end
 
+  # 都道府県別ページ
   def tokyo
+    @saizies = Saizy.all.limit(20)
+  end
+  def chiba
+    @saizies = Saizy.all.limit(20)
+  end
+  def kanagawa
+    @saizies = Saizy.all.limit(20)
+  end
+  def saitama
+    @saizies = Saizy.all.limit(20)
+  end
+  def oosaka
+    @saizies = Saizy.all.limit(20)
+  end
+  def kyoto
+    @saizies = Saizy.all.limit(20)
+  end
+  def nagoya
+    @saizies = Saizy.all.limit(20)
+  end
+  def sapporo
     @saizies = Saizy.all.limit(20)
   end
 

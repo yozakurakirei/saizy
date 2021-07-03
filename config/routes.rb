@@ -20,6 +20,13 @@ Rails.application.routes.draw do
 
   # エリア
   get 'prefectures/tokyo', to: 'saizies#tokyo'
+  get 'prefectures/chiba', to: 'saizies#chiba'
+  get 'prefectures/kanagawa', to: 'saizies#kanagawa'
+  get 'prefectures/saitama', to: 'saizies#saitama'
+  get 'prefectures/oosaka', to: 'saizies#oosaka'
+  get 'prefectures/kyoto', to: 'saizies#kyoto'
+  get 'prefectures/nagoya', to: 'saizies#nagoya'
+  get 'prefectures/hokkaido', to: 'saizies#hokkaido'
   
   # ログイン系
   get  '/signup', to: 'users#signup'

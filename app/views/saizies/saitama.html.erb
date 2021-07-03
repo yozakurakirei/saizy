@@ -1,12 +1,12 @@
-<% provide(:title, "東京都の催事")%>
+<% provide(:title, "埼玉の催事")%>
 
 <div class="prefectures">
   <div class="prefectures-left-top">
     <div class="left-top-title">
-      <h1>東京都のSaizy</h1>
+      <h1>埼玉県のSaizy</h1>
     </div>
     <div class="left-top-dsc">
-      <p>東京都の催事一覧になります。</p>
+      <p>埼玉県の催事一覧になります。</p>
       <p>東京エリアには有数の百貨店・商業施設があります。</p>
       <p>コロナ禍の状況で以前と比較すると催事出店数は減ってしまいましたが、</p>
       <p>多くのお客様が来店する施設では常に期間限定ショップが賑わっています。</p>
@@ -18,14 +18,12 @@
 
   <div class="prefectures-article">
     <div class="result">
-      <% if @saizies.tokyo.count === 0 %>
-        <p>まだ投稿はありません</p>
-      <% else %>
-      <div class="result-count">
-        <%= @saizies.tokyo.count %>件の投稿
-      </div>
+      <% if @saizies.saitama.count === 0 %>
+        <p>まだ埼玉県の投稿はありません</p>
+        <p>早速投稿してみませんか？</p>
+      <% end %>
       <div class="result-flex">
-        <% @saizies.tokyo.each do |saizy| %>
+        <% @saizies.saitama.each do |saizy| %>
         <div class="result-card">
           <!-- image -->
           <div class="result-image">
@@ -49,7 +47,6 @@
         </div>
         <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

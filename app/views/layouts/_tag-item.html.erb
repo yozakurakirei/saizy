@@ -1,7 +1,7 @@
 <div class="tag-item">
   <% @tags.each do |tag| %>
     <div class="tag-item-text">
-      <%= link_to "#{tag.name} (#{tag.taggings.count})",tag_path(tag: tag.name) %>
+      <i class="fas fa-tags top-icon mr-1"></i><%= link_to "#{tag.name} (#{tag.taggings.count})",tag_path(tag: tag.name) %>
     </div>
   <% end %>
 </div>

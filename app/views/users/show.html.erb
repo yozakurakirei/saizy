@@ -24,6 +24,9 @@
     <div class="profile-follow-btn">
       <%= render 'follow_form' if logged_in? %>
     </div>
+    <div class="profile-content">
+      <%= @user.profile %>
+    </div>
     <% if @user.id == current_user.id %>
       <div class="user-email">
         <i class="far fa-envelope mail-icon"></i>
