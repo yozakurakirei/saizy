@@ -258,8 +258,12 @@
   .top-tag {
     background-color: #fff;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-    border-radius: 5px;
+    padding: 1rem 2rem;
     grid-area: left4;
+    border-radius: 5px;
+    h1 {
+      font-size: 1.5rem;
+    }
   }
   .top-third {
     background-color: #fff;
@@ -331,6 +335,7 @@
     grid-template-columns: 1fr;
     grid-template-areas: 
     "left1"
+    "left4"
     "left2"
     "left3"
     "right";
