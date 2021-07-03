@@ -6,6 +6,7 @@ class SaiziesController < ApplicationController
     @saizies = Saizy.all.limit(20)
     @impressions = Saizy.order(impressions_count: 'DESC')
     @pv_ranking = Saizy.find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(5).pluck(:impressionable_id))
+    @tags = @saizies.tag_counts_on(:tags).order(impressions_count: 'DESC') #タグの人気順
   end
 
   def tag_list
