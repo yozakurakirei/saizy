@@ -10,13 +10,15 @@
     </div>
     <div class="top-tag">
       <h1><i class="fas fa-search top-icon"></i>特徴から探してみる</h1>
-      <% @tags.each do |tag| %>
-        <%= link_to "#{tag.name}(#{tag.taggings.count})",tag_path(tag: tag.name) %>
-      <% end %>
+      <%= render 'layouts/tag-item' %>
     </div>
-    <!-- 投稿 -->
+    <!-- 最新の投稿 -->
     <div class="top-secound">
       <%= render 'layouts/top_contents/top_contents'%>
+    </div>
+    <!-- 過去の投稿 -->
+    <div class="top-archive">
+      <%= render 'layouts/top_contents/top_second_content'%>
     </div>
     <!-- 都道府県 -->
     <%# <%= render 'shared/feed' %>

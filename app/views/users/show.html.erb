@@ -67,12 +67,15 @@
 
         <li v-if="isActive == '1' ">
           <div class="aside">
-            <%= link_to 'いいねした', likes_user_path %>
+            <%= link_to 'いいねした投稿へ', likes_user_path %>
           </div>
         </li>
 
         <li v-if="isActive == '2' ">
           <div class="aside">
+          <% if @user.saizies.published.count === 0 %>
+            <p>公開中の投稿はありません。</p>
+          <% else %>          
             <% @user.saizies.published.each do |saizy| %>
               <%= link_to saizy_path(saizy) do%>
               <div class="aside-content">
@@ -98,11 +101,15 @@
               </div>
               <% end %>
             <% end %>
+          <% end %>
           </div>
         </li>
 
         <li v-if="isActive == '3' ">
           <div class="aside">
+          <% if @user.saizies.deleted.count === 0 %>
+            <p>出店終了の投稿はありません。</p>
+          <% else %>
             <% @user.saizies.deleted.each do |saizy| %>
               <%= link_to saizy_path(saizy) do%>
               <div class="aside-content">
@@ -128,11 +135,15 @@
               </div>
               <% end %>
             <% end %>
+          <% end %>
           </div>
         </li>
 
         <li v-if="isActive == '4' ">
         <div class="aside">
+        <% if @user.saizies.draft.count === 0 %>
+          <p>下書きに保存している投稿はありません。</p>
+        <% else %>
           <% @user.saizies.draft.each do |saizy| %>
             <%= link_to saizy_path(saizy) do%>
             <div class="aside-content">
@@ -158,6 +169,7 @@
             </div>
             <% end %>
           <% end %>
+        <% end %>
         </div>
         </li>
       </ul>

@@ -1,13 +1,11 @@
-<div class="top-post-slide">
-
-  <div class="new-post">
+<div class="new-post">
     <div class="section-info">
-        <h2>新着のSaizy</h2>
+      <h2>過去のSaizy</h2>
     </div>
-    <!-- 新着投稿 -->
+    <!-- post grid -->
     <div class="post-grid">
-      <div id="slider">
-        <% @saizies.published.each do |saizy| %>
+      <div id="slider-deleted">
+        <% @saizies.deleted.each do |saizy| %>
           <div class="post">
             <div class="post-img">
               <%= link_to saizy_path(saizy) do%>
@@ -28,6 +26,3 @@
       </div>
     </div>
   </div>
-  <!-- アーカイブ -->
-  
-</div>

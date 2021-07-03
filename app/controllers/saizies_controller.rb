@@ -15,6 +15,7 @@ class SaiziesController < ApplicationController
     if @tag = params[:tag]
       @saizy = Saizy.tagged_with(params[:tag])
     end
+    @pages = Saizy.page(params[:page]).per(10)
   end
 
   def show

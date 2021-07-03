@@ -12,6 +12,10 @@
       <div><%= f.text_field :title, class: "article-item-input" %></div>
     </div>
     <div class="article-item">
+      <div><%= f.label :tag_list, "タグ", class: "article-item-label" %></div>
+      <div><%= f.text_field :tag_list, value: @saizy.tag_list.join(','),class: "article-item-input", placeholder: ",区切りでタグを入力してください" %></div>
+    </div>
+    <div class="article-item">
       <div><%= f.label :name, "ブランド名", class: "article-item-label" %></div>
       <div><%= f.text_field :name, class: "article-item-input" %></div>
     </div>

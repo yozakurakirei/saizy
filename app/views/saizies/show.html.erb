@@ -13,9 +13,7 @@
       <%= render partial: 'likes/like', locals: {saizy: @saizy} %>
     </div>
     <div class="tag-area">
-      <% @tags.each do |tag| %>
-        <%= link_to "#{tag.name}(#{tag.taggings.count})",tag_path(tag: tag.name) %>
-      <% end %>
+      <%= render 'layouts/tag-item' %>
     </div>
     <!-- image area --> 
     <div class="show-box">
@@ -88,8 +86,7 @@
             </div>
             <div class="user-post-name">
               <p>投稿者：<%= @saizy.user.name %></p>
-              <p><%= time_ago_in_words(@saizy.created_at) %>前に投稿</p>
-              <p><%= time_ago_in_words(@saizy.updated_at) %>前に編集しました</p>
+              <p><%= time_ago_in_words(@saizy.updated_at) %>前に編更新</p>
               <% end %>
             </div>
           </div>

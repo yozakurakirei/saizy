@@ -221,25 +221,23 @@
       overflow: hidden;
       .aside-des-tag {
         width: 100%;
-        background-color: #ed8f8f;
         margin-bottom: .5rem;
         border-radius: 5px;
         padding: .3rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         h1 {
           font-size: .9rem;
-          color: #fff;
+          color: #767676;
           .aside-icon {
             margin-right: .5rem;
             font-size: .9rem;
           }
         }
         p {
-          font-size: .7rem;
-          color: #fff;
+          font-size: .9rem;
+          color: #767676;
           .aside-icon {
             margin-right: .5rem;
-            font-size: .7rem;
+            font-size: .9rem;
           }
         }
       }

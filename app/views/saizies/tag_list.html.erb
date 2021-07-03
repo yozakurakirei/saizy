@@ -1,7 +1,36 @@
-<% if @saizy.present? %>
-  <h1><%= "#{@tag}" %>のページです</h1>
-  <% @saizy.each do |saizy| %>
-    <%= saizy.title %>
-  <% end %>
-<% end %>
+<% provide(:title, "#{@tag}"+"のページ")%>
+
+<div class="result">
+  <div class="result-top-text">
+    <h1><%= "#{@tag}" %>催事一覧です</h1>
+  </div>
+
+  <div class="result-flex">
+      <% @saizy.each do |saizy| %>
+    <div class="result-card">
+      <!-- image -->
+      <div class="result-image">
+        <%= link_to saizy_path(saizy) do%>
+          <% if saizy.images.count > 0 %>
+            <div class="day">
+              <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+            </div>
+            <%= image_tag saizy.images.first.variant(resize: "500x500").processed %>
+          <% end %>
+      </div>
+      <!-- description -->
+      <div class="result-desc">
+        <h2><%= saizy.title.truncate(18) %></h2>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <%= saizy.place.truncate(18) %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <%= paginate @pages %>
+</div>
 
