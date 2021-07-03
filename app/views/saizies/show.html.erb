@@ -12,6 +12,11 @@
     <div class="like-area" id="like_<%= @saizy.id %>">
       <%= render partial: 'likes/like', locals: {saizy: @saizy} %>
     </div>
+    <div class="tag-area">
+      <% @tags.each do |tag| %>
+        <%= link_to "#{tag.name}(#{tag.taggings.count})",tag_path(tag: tag.name) %>
+      <% end %>
+    </div>
     <!-- image area --> 
     <div class="show-box">
       <div class="show-image-area">

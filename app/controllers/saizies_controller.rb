@@ -8,11 +8,20 @@ class SaiziesController < ApplicationController
     @pv_ranking = Saizy.find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(5).pluck(:impressionable_id))
   end
 
+  def tag_list
+    @saizies = Saizy.all
+    @tags = Saizy.tag_counts_on(:tags).order('count DESC')
+    if @tag = params[:tag]
+      @saizy = Saizy.tagged_with(params[:tag])
+    end
+  end
+
   def show
     @saizy = Saizy.find(params[:id])
     @saizies = Saizy.all.limit(20)
     impressionist(@saizy, nil, unique: [:session_hash])
     require_login if @saizy.draft?
+    @tags = @saizy.tag_counts_on(:tags)
   end
 
   def new
@@ -57,7 +66,7 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, images: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, :tag_list, images: [])
     end
 
     def require_login

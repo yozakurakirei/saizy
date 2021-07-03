@@ -1,0 +1,7 @@
+<% if @saizy.present? %>
+  <h1><%= "#{@tag}" %>のページです</h1>
+  <% @saizy.each do |saizy| %>
+    <%= saizy.title %>
+  <% end %>
+<% end %>
+

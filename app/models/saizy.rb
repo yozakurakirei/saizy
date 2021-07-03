@@ -7,6 +7,7 @@ class Saizy < ApplicationRecord
   has_many :like_users, through: :likes, source: :user
 
   is_impressionable counter_cache: true
+  acts_as_taggable
   
   enum status: { draft: 0, published: 1, deleted: 2 } # 追加
   enum area: {

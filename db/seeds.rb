@@ -16,18 +16,6 @@ User.create!(name:  "test",
   activated: true,
   activated_at: Time.zone.now)
 
-# タグ
-Tag.create([
-  { name: "洋菓子" },
-  { name: "和菓子" },
-  { name: "お弁当・惣菜" },
-  { name: "グローサリー" },
-  { name: "パン" },
-  { name: "飲料" },
-  { name: "お酒" },
-  { name: "その他" }
-])
-
 # # 追加のユーザーをまとめて生成する
 55.times do |n|
 name  = Faker::Name.name

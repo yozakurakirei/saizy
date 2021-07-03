@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  root to:  'saizies#index'
 
   get 'similars/index'
   get 'likes/create'
   get 'likes/destroy'
   get 'counters/index'
   get 'counters/new'
-  root to:  'saizies#index'
+  get 'tag', to: 'saizies#tag_list'
 
   get 'password_resets/new'
   get 'password_resets/edit'
