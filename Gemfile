@@ -18,6 +18,7 @@ gem 'kaminari'
 gem 'paapi'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
+gem 'jquery-ui-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
