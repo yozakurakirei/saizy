@@ -16,8 +16,6 @@ require("custom.js")
 require("slick.min")
 require("map")
 require("tab")
-require("tag-it")
-require("tab")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
