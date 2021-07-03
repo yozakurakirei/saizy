@@ -77,7 +77,6 @@
     h2 {
       margin-bottom: .5rem;
       font-size: 25px;
-      font-weight: bold;
     }
   }
 }
@@ -161,11 +160,13 @@
 
 // prefectures
 .area {
-    padding: 1rem;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
   h2 {
+    margin-top: 1rem;
+    padding-left: 1rem;
     font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
   }
   .area-card {
     display: flex;
@@ -176,8 +177,8 @@
     .area-item {
       width: 250px;
       margin: 1rem 1rem 1rem 0;
-      height: 230px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      height: 250px;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
       border-radius: 5px;
       &:hover {
         opacity: .8;
@@ -190,7 +191,7 @@
       }
       p {
         font-weight: bold;
-        margin-left: 1rem;
+        margin: 1rem;
         &:hover {
           color: #e96161;
           transition: .5s;
