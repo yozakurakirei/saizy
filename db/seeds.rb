@@ -16,6 +16,15 @@ User.create!(name:  "test",
   activated: true,
   activated_at: Time.zone.now)
 
+# # testユーザー
+User.create!(name:  "Saizy",
+  email: "saizy-account@example.com",
+  password:              "password",
+  password_confirmation: "password",
+  admin: false,
+  activated: true,
+  activated_at: Time.zone.now)
+
 # # 追加のユーザーをまとめて生成する
 55.times do |n|
 name  = Faker::Name.name
