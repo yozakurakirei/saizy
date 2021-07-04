@@ -1,6 +1,5 @@
 <% provide(:title, @saizy.name+"さんの催事")%>
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
-
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="show-area">
   <%# main contents %>
   <div class="show-main">
@@ -95,6 +94,11 @@
             <div class="maps-title">アクセス</div>
             <div id="map"></div>
           </div>
+          <%# review %>
+          <div class="review-area">
+            <%= render 'reviews/review_form', review: @review, saizy: @saizy %>
+          </div>
+
           <div class="edit-destroy">
             <% if current_user?(@saizy.user) %>
             <div class="edit-btn">

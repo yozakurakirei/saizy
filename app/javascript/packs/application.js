@@ -16,6 +16,7 @@ require("custom.js")
 require("slick.min")
 require("map")
 require("tab")
+require("raty")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
@@ -33,3 +34,5 @@ window.initMap = function(...args) {
   event.args = args
   window.dispatchEvent(event)
 }
+
+window.$ = window.jQuery = require('jquery'); //追記

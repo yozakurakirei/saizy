@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :likes, dependent: :destroy
   has_many :like_saizies, through: :likes, source: :saizy
+  has_many :reviews, dependent: :destroy
 
   has_one_attached :avatar
   attr_accessor :remember_token, :activation_token, :reset_token

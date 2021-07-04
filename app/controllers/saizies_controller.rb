@@ -24,6 +24,7 @@ class SaiziesController < ApplicationController
     impressionist(@saizy, nil, unique: [:session_hash])
     require_login if @saizy.draft?
     @tags = @saizy.tag_counts_on(:tags)
+    @review = Review.new
   end
 
   def new
@@ -90,7 +91,7 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, :tag_list, images: [])
+      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, :tag_list, :evaluation, images: [])
     end
 
     def require_login
