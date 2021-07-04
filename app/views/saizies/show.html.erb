@@ -79,9 +79,11 @@
             <%= link_to user_path(@saizy.user) do %>
             <div class="profile-img">
               <% if @saizy.user.avatar.attached? %>
-                <%= image_tag @saizy.user.avatar.variant(resize: "100x100"), width:150 %>
+                <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
               <% else %>
-                <%= image_pack_tag 'media/images/candy-apple.jpeg', width: 150 %>
+                <div class="profile-img">
+                  <i class="fas fa-user default-user"></i>
+                </div>
               <% end %>
             </div>
             <div class="user-post-name">

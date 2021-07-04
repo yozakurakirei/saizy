@@ -15,31 +15,35 @@
       </div>
       <% end %>
     </div>
-    <div class="profile-name">
-      <h3 class="user-name"><%= @user.name %></h3>
-    </div>
-    <div class="profile-follow">
-      <%= render 'layouts/follow/stats' %>
-    </div>
-    <div class="profile-follow-btn">
-      <%= render 'follow_form' if logged_in? %>
-    </div>
-    <div class="profile-content">
-      <%= @user.profile %>
-    </div>
-    <% if @user.id == current_user.id %>
-      <div class="user-email">
-        <i class="far fa-envelope mail-icon"></i>
-        <%= @user.email %>
+    <div class="profile-area">
+      <div class="profile-name">
+        <h3><%= @user.name %></h3>
       </div>
-      <div class="edit-btn">
-        <%= link_to 'プロフィールを編集する', edit_user_path(current_user) %>  
+      <div class="profile-content">
+        <%= @user.profile %>
       </div>
-      <div class="edit-btn">
-        <%= link_to 'パスワードを再設定する', password_resets_new_path %>  
+      <div class="profile-follow">
+        <%= render 'layouts/follow/stats' %>
       </div>
-    <% else %>
-    <% end %>
+
+      <% if @user.id == current_user.id %>
+        <div class="user-email">
+          <i class="far fa-envelope mail-icon"></i>
+          <%= @user.email %>
+        </div>
+        <div class="edit-btn">
+          <%= link_to 'プロフィールを編集する', edit_user_path(current_user) %>  
+        </div>
+        <div class="edit-btn">
+          <%= link_to 'パスワードを再設定する', password_resets_new_path %>  
+        </div>
+      <% else %>
+        <div class="profile-follow-btn">
+          <%= render 'follow_form' if logged_in? %>
+        </div>
+      <% end %>
+    
+    </div>
   </div>
   
   <!-- post -->

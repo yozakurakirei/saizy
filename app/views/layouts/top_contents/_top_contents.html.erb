@@ -1,3 +1,5 @@
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+
 <div class="top-post-slide">
 
   <div class="new-post">
@@ -5,27 +7,30 @@
         <h2>新着のSaizy</h2>
     </div>
     <!-- 新着投稿 -->
-    <div class="post-grid">
-      <div id="slider">
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
         <% @saizies.published.each do |saizy| %>
-          <div class="post">
-            <div class="post-img">
-              <%= link_to saizy_path(saizy) do%>
-                <% if saizy.images.count > 0 %>
-                  <div class="day">
-                    <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                  </div>
-                  <%= image_tag saizy.images.first.variant(resize: "200x200").processed %>
-                <% end %>
-              <% end %>
-            </div>
+          <%= link_to saizy_path(saizy) do%>
+            <% if saizy.images.count > 0 %>
+            <div class="swiper-slide">
+              <div class="day">
+                <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
+              </div>
+              <div>
+                <%= image_tag saizy.images.first.variant(resize: "500x500").processed %>
+              </div>
+            <% end %>
             <div class="post-desc">
               <h3><%= saizy.title.truncate(18) %></h3>
               <p><%= saizy.place.truncate(18) %></p>
             </div>
-          </div> 
+            <% end %>
+          </div>
         <% end %>
       </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
   <!-- アーカイブ -->
