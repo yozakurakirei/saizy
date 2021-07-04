@@ -25,6 +25,7 @@ class SaiziesController < ApplicationController
     require_login if @saizy.draft?
     @tags = @saizy.tag_counts_on(:tags)
     @review = Review.new
+    @reviews = Review.all
   end
 
   def new

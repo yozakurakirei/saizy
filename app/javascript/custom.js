@@ -1,50 +1,13 @@
 // slick-slider
-
-// $(function() {
-//   $('#slider').slick({
-//     infinite: true,
-//     speed: 300,
-//     slidesToShow: 1,
-//     centerMode: true,
-//     variableWidth: true,
-//     arrows: true,
-//     responsive: [
-//       {
-//         breakpoint: 670,
-//       }
-//     ]
-//   });
-// });
-$(function() {
-  $('#slider-deleted').slick({
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true
-  });
-});
 $(function() {
   $('.area-card').slick({
     dots: false,
     slidesToShow: 2,
     slidesToScroll: 2,
     centerMode: true,
-    arrows: true
+    arrows: true,
   })
 })
-
-
-//サムネイル
-// $(function() {
-//   const area = new Swiper(".area", {
-//     loop: true,
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-//   })
-// })
 
 
 $(function() {
@@ -81,9 +44,7 @@ $(function() {
   });
 })
 
-
-
-
+// review
 
 
 	

@@ -10,9 +10,11 @@
     </div>
     <div class="like-area" id="like_<%= @saizy.id %>">
       <%= render partial: 'likes/like', locals: {saizy: @saizy} %>
+      <%= @average_review %>
     </div>
     <div class="tag-area">
       <%= render 'layouts/tag-item' %>
+
     </div>
     <!-- image area --> 
     <div class="show-box">
@@ -148,6 +150,9 @@
         </div>
       <% end %>
     <% end %>
+    <div class="aside-review">
+      <%= render 'reviews/review_index' %>
+    </div>
   </div>
 </div>
 

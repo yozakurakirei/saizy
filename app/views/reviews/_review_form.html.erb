@@ -1,3 +1,17 @@
+<% if review.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= pluralize(object.errors.count, "つのエラー") %>があります。
+    </div> 
+    <ul>
+      <% review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <p>レビューを書いてみよう</p>
 
 <div class="rating-box">
@@ -13,11 +27,15 @@
         <span id="rating-value-display">0</span>/5
       </div>
     </div>
-    <%= f.hidden_field :saizy_id, value: saizy.id %>
-    <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_area :content, class: "textarea", placeholder: "実装中なのでまだレビューはできません" %>
-    <%= f.submit "投稿する", class: "review-btn" %>
-    <%= link_to '他のレビューをみてみる', saizy_reviews_path(saizy), class: "other-review-btn" %>
+    <div class="rating-content">
+      <%= f.hidden_field :saizy_id, value: saizy.id %>
+      <%= f.hidden_field :score, id: "rating-value" %>
+      <%= f.text_area :content, class: "textarea", placeholder: "実装中なのでまだレビューはできません" %>
+      <div class="review-button-area">
+        <%= f.submit "投稿する", class: "review-btn" %>
+        <%= link_to '他のレビューをみてみる', saizy_reviews_path(saizy), class: "other-review-btn" %>    
+      </div>
+    </div>
 
   <% end %>
 </div>
