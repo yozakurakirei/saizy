@@ -1,5 +1,6 @@
 <div class="review-list">
   <% @reviews.each do |review| %>
     <%= review.content %>
+    <%= review.user.name %>
   <% end %>
 </div>

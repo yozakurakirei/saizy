@@ -50,10 +50,12 @@
         </div>
       </div>
       <!-- 投稿 -->
-      <%= render 'layouts/top_contents/top_contents'%>  
-      <!-- 都道府県 -->
-      <%= render 'layouts/top_contents/area' %>
-      <!-- 百貨店 -->
+      <div class="no-login-area">
+        <%= render 'layouts/top_contents/top_contents'%>  
+        <!-- 都道府県 -->
+        <%# <%= render 'layouts/top_contents/area' %>
+        <!-- 百貨店 -->
+      </div>
     </section>
   <% end %>
 </div>
