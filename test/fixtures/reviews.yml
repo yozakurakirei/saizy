@@ -3,11 +3,7 @@
 one:
   user: one
   saizy: one
-  content: MyString
-  score: 1
 
 two:
   user: two
   saizy: two
-  content: MyString
-  score: 1

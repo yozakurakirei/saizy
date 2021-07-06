@@ -92,7 +92,7 @@ class SaiziesController < ApplicationController
 
   private
     def saizy_params
-      params.require(:saizy).permit(:content,:name, :title, :place, :open, :close, :start, :finish, :status,:area, :tag_list, :evaluation, images: [])
+      params.require(:saizy).permit(:content,:rate, :name, :title, :place, :open, :close, :start, :finish, :status,:area, :tag_list, images: [])
     end
 
     def require_login

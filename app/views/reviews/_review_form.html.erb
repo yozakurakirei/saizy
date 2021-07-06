@@ -1,15 +1,4 @@
-<% if review.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger">
-      <%= pluralize(object.errors.count, "つのエラー") %>があります。
-    </div> 
-    <ul>
-      <% review.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+
 
 
 <p>レビューを書いてみよう</p>
@@ -19,18 +8,13 @@
     <div class="main-rating">
       <div class="ratings">
         <div id="star-icon">
-          <span class="ratings-text">評価</span> <%# star-icon %>
+          <%= f.label :rate, "評価" %>
+          <%= f.hidden_field :rate %>
         </div>
-      </div>
-      <%# ユーザーがいくつ星を選択しているか %>
-      <div class="rating-value-display">
-        <span id="rating-value-display">0</span>/5
       </div>
     </div>
     <div class="rating-content">
-      <%= f.hidden_field :saizy_id, value: saizy.id %>
-      <%= f.hidden_field :score, id: "rating-value" %>
-      <%= f.text_area :content, class: "textarea", placeholder: "実装中なのでまだレビューはできません" %>
+      <%= f.text_area :comment, class: "textarea", placeholder: "実装中なのでまだレビューはできません" %>
       <div class="review-button-area">
         <%= f.submit "投稿する", class: "review-btn" %>
         <%= link_to '他のレビューをみてみる', saizy_reviews_path(saizy), class: "other-review-btn" %>    
@@ -46,7 +30,7 @@
     starOff   : '<%= asset_path('star-icon2.png') %>',
     starOn    : '<%= asset_path('star-icon.png') %>',
     starHalf  : '<%= asset_path('star-half.png') %>',
-    scoreName : 'saizy[rating]',
+    scoreName : 'review[rate]',
     half      : false,
   });
 

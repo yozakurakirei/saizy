@@ -58,7 +58,7 @@ Rails.application.routes.draw do
       get :search
     end
     resource :likes, only: [:create, :destroy]
-    resource :reviews, only: [:index, :create]
+    resource :reviews, only: [:create]
   end
 
   resources :hashtags, only: [:index, :show]

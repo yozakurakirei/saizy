@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_04_120421) do
+ActiveRecord::Schema.define(version: 2021_07_06_143229) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -89,11 +89,10 @@ ActiveRecord::Schema.define(version: 2021_07_04_120421) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "saizy_id", null: false
-    t.string "content"
-    t.integer "score"
+    t.string "rate", default: "0", null: false
+    t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "rate"
     t.index ["saizy_id"], name: "index_reviews_on_saizy_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
