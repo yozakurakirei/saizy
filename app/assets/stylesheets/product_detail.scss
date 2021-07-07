@@ -288,13 +288,14 @@
 
 @media only screen and (max-width: 670px) {
   .show-area {
-    width: 95%;
+    width: 100%;
     padding: .5rem;
     grid-template-columns: 1fr;
     grid-template-areas: 
       "post"
       "side";
       .show-main {
+        width: 100%;
         padding: 0;
         .show-title {
           margin: 1rem 0;
@@ -303,19 +304,36 @@
           }
         }
         .show-box {
+          width: 100%;
+          .other-area {
+            width: 100%;
+            padding: 1rem 0 0 0;
+            font-size: 1rem;
+            .impression-area {
+              margin: 0;
+            }
+          }
           .show-content-area {
+            padding: .3rem;
             .show-content-box {
               margin-top: 1rem;
               .main-text {
-                margin-top: 1rem;
                 .main-text-title {
-                  font-size: 1rem;
+                  font-size: .8rem;
                   margin: 0;
                   padding-bottom: .5rem;
                 }
                 .main-text-dsc {
                   padding-bottom: .5rem;
-                  font-size: .8rem;
+                  font-size: .7rem;
+                }
+              }
+              .user-post-box {
+                .profile-img {
+                }
+                .user-post-name {
+                  font-size: .9rem;
+                  padding: .3rem;
                 }
               }
             }
