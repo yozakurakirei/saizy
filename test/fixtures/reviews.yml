@@ -3,7 +3,13 @@
 one:
   user: one
   saizy: one
+  comment: MyString
+  rate: 1.5
+  title: MyString
 
 two:
   user: two
   saizy: two
+  comment: MyString
+  rate: 1.5
+  title: MyString

@@ -1,2 +1,10 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<div class="review-area">
+  <h1>みんなの口コミ</h1>
+  <% @reviews.each do |review| %>
+    <%= review.title %>
+    <%= review.comment %>
+    <%= review.user.name %>
+  <% end %>
+
+  <%= link_to '戻る', saizies_path(@saizy) %>
+</div>

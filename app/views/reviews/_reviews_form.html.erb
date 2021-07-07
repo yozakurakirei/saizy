@@ -1,0 +1,27 @@
+<%# レビューフォーム %>
+
+<div class="review-form">
+  <h1><i class="fas fa-edit"></i>この催事のレビューを書く</h1>
+  <%= form_with model: review, url: saizy_reviews_path(saizy), local: true do |f| %>
+    <div id="star">
+      <%= f.label :rate, "評価", class: "evaluation" %>
+      <%= f.hidden_field :saizy_id, value: saizy.id %>
+      <%= f.hidden_field :rate %>
+    </div>
+    <div class="review-content">
+      <%= f.text_area  :comment, placeholder: "口コミを書きましょう！", class: "review-text" %>
+      <%= f.submit "投稿する", class: "review-btn" %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $("#star").raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-icon2.png') %>',
+    starOn : '<%= asset_path('star-icon.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'review[rate]',
+    half: false,
+  })
+</script>
