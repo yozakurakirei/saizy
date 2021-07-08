@@ -10,9 +10,9 @@
       <% if @user.avatar.attached? %>
         <%= image_tag @user.avatar.variant(resize: "300x300"), width:150 %>
       <% else %>
-      <div class="default-img">
-        <i class="fas fa-user default-user"></i>
-      </div>
+        <div class="default-img">
+          <i class="fas fa-user default-user"></i>
+        </div>
       <% end %>
     </div>
     <div class="profile-area">

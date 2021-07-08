@@ -1,15 +1,3 @@
-// slick-slider
-$(function() {
-  $('.area-card').slick({
-    dots: false,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    centerMode: true,
-    arrows: true,
-  })
-})
-
-
 $(function() {
   var sliderThumbnail = new Swiper('.slider-thumbnail', {
     slidesPerView: 4,

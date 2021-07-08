@@ -28,6 +28,7 @@ class SaiziesController < ApplicationController
     @pv_ranking = Saizy.find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(10).pluck(:impressionable_id))
     @review = Review.new
     @reviews = @saizy.reviews.order(created_at: :desc).limit(3)
+    @all_reviews = @saizy.reviews.order(reviews_count: :desc)
   end
 
   def new

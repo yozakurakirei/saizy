@@ -1,0 +1,15 @@
+<%# reviews_list %>
+$('.review-rate').raty({
+  size: 10,
+  starOff:  '<%= asset_path('star-icon2.png') %>',
+  starOn : '<%= asset_path('star-icon.png') %>',
+  half: false,
+  readOnly: true,
+  score: function () {
+    return $(this).attr('data-score');
+  },
+});
+
+
+
+

@@ -49,10 +49,17 @@
 
 .review-list {
   padding: 1rem 2rem;
-  h1 {
-    font-size: 1.2rem;
-    .review-icon {
-      margin-right: 1rem;
+  .review-top {
+    display: flex;
+    align-items: center;
+    h1 {
+      font-size: 1.2rem;
+      .review-icon {
+        margin-right: 1rem;
+      }
+    }
+    .average-star {
+      margin: 0 1rem;
     }
   }
 }
@@ -72,6 +79,41 @@
   .review-list-comment {
     margin-top: .3rem;
     font-size: .9rem;
+  }
+}
+.review-list-down {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  .review-user-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ed8f8f;
+    }
+    .review-default-user {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #ed8f8f;
+      overflow: hidden;
+    }
+  }
+  .review-rate {
+    margin-right: 1rem;
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  .review-list-create {
+    font-size: .7rem;
   }
 }
 .review-list-more {

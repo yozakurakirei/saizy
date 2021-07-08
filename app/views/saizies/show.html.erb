@@ -44,7 +44,7 @@
       <div class="other-area">
         <div class="review-link">
           <%= link_to  saizy_reviews_path(@saizy), target: "_blank" do %>
-            <span><i class="far fa-comment-dots review-icon"></i>レビューを見てみる (<%= @reviews.count %>件)</span>
+            <span><i class="far fa-comment-dots review-icon"></i>レビューを見てみる (<%= @all_reviews.count %>件)</span>
           <% end %>
         </div>
         <div class="impression-area">
@@ -84,7 +84,7 @@
             <%= link_to user_path(@saizy.user) do %>
             <div class="profile-img">
               <% if @saizy.user.avatar.attached? %>
-                <%= image_tag @user.avatar.variant(resize: "300x300") %>
+                <%= image_tag @saizy.user.avatar.variant(resize: "300x300") %>
               <% else %>
                 <div class="profile-img">
                   <i class="fas fa-user default-user"></i>
@@ -93,7 +93,7 @@
             </div>
             <div class="user-post-name">
               <p>投稿者：<%= @saizy.user.name %></p>
-              <p><%= time_ago_in_words(@saizy.updated_at) %>前に更新</p>
+              <p><%= @saizy.created_at.strftime('%Y年%m月%d日') %>に投稿</p>
               <% end %>
             </div>
           </div>
@@ -118,7 +118,7 @@
         </div>
       </div>
         <%= render 'reviews/reviews_form', review: @review, saizy: @saizy %>
-        <%= render 'reviews/reviews_list' %>
+        <%= render 'reviews/reviews_list', review: @review, saizy: @saizy %>
     </div>
   </div>
   <%# /main contents %>
