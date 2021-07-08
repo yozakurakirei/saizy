@@ -2,6 +2,7 @@
   padding: 1rem 2rem;
   h1 {
     font-size: 1.2rem;
+    align-items: center;
   }
   #star {
     display: flex;
@@ -13,11 +14,18 @@
   }
   .review-content {
     width: 100%;
+    .review-title {
+      width: 100%;
+      padding: .5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
     .review-text {
       width: 100%;
       padding: .5rem;
-      height: 100px;
       border: 1px solid #ccc;
+      height: 100px;
       border-radius: 5px;
     }
     .review-btn {
@@ -36,5 +44,42 @@
         transition: .5s;
       }
     }
+  }
+}
+
+.review-list {
+  padding: 1rem 2rem;
+  h1 {
+    font-size: 1.2rem;
+    .review-icon {
+      margin-right: 1rem;
+    }
+  }
+}
+.review-list-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #fffffff2;
+  .review-list-title {
+    border-bottom: dotted 2px #ccc;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .review-list-comment {
+    margin-top: .3rem;
+    font-size: .9rem;
+  }
+}
+.review-list-more {
+  margin-top: 1rem;
+  text-align: right;
+  font-size: 1.1rem;
+  .more-icon {
+    margin-right: .5rem;
+    color: #ed8f8f;
   }
 }

@@ -1,5 +1,33 @@
-<% @reviews.each do |review| %>
-  <%= review.title %>
-  <%= review.comment %>
-  <%= review.user.username %>
-<% end %>
+<div class="review-list">
+  <h1><i class="far fa-comment-dots review-icon"></i><%= @reviews.count %>件の口コミ</h1>
+
+  <% if @reviews.count == 0 %>
+    <p>まだ口コミはありません。</p>
+  <% else %>
+    <% @reviews.each do |review| %>
+      <div class="review-list-content">
+        <div class="review-list-title">
+          <%= review.title %>
+        </div>
+        <div class="review-list-comment">
+          <%= review.comment %>
+        </div>
+        <div class="review-list-down">
+          <div class="review-list-user">
+            <%= review.user.name %>
+          </div>
+          <div class="review-list-create">
+            <%= time_ago_in_words(review.created_at) %>前に投稿
+          </div>
+        </div>
+      </div>
+    <% end %>
+      <div class="review-list-more">
+        <%= link_to  saizy_reviews_path(@saizy), target: "_blank" do %>
+          <i class="fas fa-play-circle more-icon"></i><span>もっと口コミを見てみる</span>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+
+

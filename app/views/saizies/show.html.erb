@@ -43,7 +43,9 @@
       </div>
       <div class="other-area">
         <div class="review-link">
-          <span><i class="far fa-comment-dots review-icon"></i>レビューを見てみる</span>
+          <%= link_to  saizy_reviews_path(@saizy), target: "_blank" do %>
+            <span><i class="far fa-comment-dots review-icon"></i>レビューを見てみる (<%= @reviews.count %>件)</span>
+          <% end %>
         </div>
         <div class="impression-area">
           <i class="fas fa-eye eye-icon"></i><%= @saizy.impressions_count %>
@@ -91,7 +93,7 @@
             </div>
             <div class="user-post-name">
               <p>投稿者：<%= @saizy.user.name %></p>
-              <p><%= time_ago_in_words(@saizy.updated_at) %>前に編更新</p>
+              <p><%= time_ago_in_words(@saizy.updated_at) %>前に更新</p>
               <% end %>
             </div>
           </div>
@@ -115,42 +117,17 @@
         </div>
         </div>
       </div>
-        <%= render 'reviews/reviews_form', review: @review, saizy: @saizy  %>
+        <%= render 'reviews/reviews_form', review: @review, saizy: @saizy %>
+        <%= render 'reviews/reviews_list' %>
     </div>
   </div>
   <%# /main contents %>
 
   <%# right side %>
   <div class="aside">
-    <div class="aside-title">
-      <p>その他のSaizy</p>
+    <div class="side-content">
+      <%= render 'layouts/top_contents/ranking' %>
     </div>
-    <%# sidebar-content %>
-    <% @saizies.published.each do |saizy| %>
-      <%= link_to saizy_path(saizy) do%>
-        <div class="aside-content">
-          <div class="aside-image-area">
-              <% if saizy.images.count > 0 %>
-                <div class="day">
-                  <span><%= saizy.start.strftime("%m月%d日") %>〜<%= saizy.finish.strftime("%m月%d日") %></span>
-                </div>
-                <%= image_tag saizy.images.first.variant(resize: "200x200").processed, width: 150 %>
-              <% end %>
-          </div>
-          <div class="aside-dsc">
-            <div class="aside-des-tag">
-              <h1><i class="fas fa-tag aside-icon"></i><%= saizy.title.truncate(18) %></h1>
-            </div>
-            <div class="aside-des-tag">
-              <p><i class="fas fa-shopping-bag aside-icon"></i><%= saizy.name.truncate(14) %></p>
-            </div>
-            <div class="aside-des-tag">
-              <p><i class="fas fa-map-marker-alt aside-icon"></i><%= saizy.place.truncate(14) %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
   </div>
 </div>
 

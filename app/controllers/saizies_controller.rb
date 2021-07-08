@@ -24,8 +24,10 @@ class SaiziesController < ApplicationController
     impressionist(@saizy, nil, unique: [:session_hash])
     require_login if @saizy.draft?
     @tags = @saizy.tag_counts_on(:tags)
+    @impressions = Saizy.order(impressions_count: 'DESC')
+    @pv_ranking = Saizy.find(Impression.group(:impressionable_id).order('count(impressionable_id) desc').limit(10).pluck(:impressionable_id))
     @review = Review.new
-    @reviews = @saizy.reviews.order(created_at: :desc)
+    @reviews = @saizy.reviews.order(created_at: :desc).limit(3)
   end
 
   def new

@@ -1,5 +1,5 @@
 <%# レビューフォーム %>
-
+<% if logged_in? %>
 <div class="review-form">
   <h1><i class="fas fa-edit"></i>この催事のレビューを書く</h1>
   <%= form_with model: review, url: saizy_reviews_path(saizy), local: true do |f| %>
@@ -9,11 +9,13 @@
       <%= f.hidden_field :rate %>
     </div>
     <div class="review-content">
+      <%= f.text_field :title, placeholder: "タイトル", class: "review-title" %>
       <%= f.text_area  :comment, placeholder: "口コミを書きましょう！", class: "review-text" %>
       <%= f.submit "投稿する", class: "review-btn" %>
     </div>
   <% end %>
 </div>
+<% end %>
 
 <script>
   $("#star").raty({
