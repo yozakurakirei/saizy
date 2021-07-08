@@ -1,8 +1,10 @@
 <div class="review-list"> 
   <div class="review-top">
     <h1><i class="far fa-comment-dots review-icon"></i><%= @all_reviews.count %>件の口コミ</h1>
-    <h1 class="average-star">平均: </h1>
-    <span id="star-average-<%= saizy.id %>"></span>
+    <div class="average-star">
+      <h1 class="">平均: </h1>
+      <span id="star-average-<%= saizy.id %>"></span>
+    </div>
   </div>
 
   <% if @reviews.count == 0 %>

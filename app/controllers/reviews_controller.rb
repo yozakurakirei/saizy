@@ -1,7 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :create, :destroy]
+
   def index
     @saizy = Saizy.find(params[:saizy_id])
     @reviews = @saizy.reviews
+    @reviews_all = @saizy.reviews.order(created_at: :desc).limit(3)
+    @review_page = Review.page(params[:page]).per(5)
   end
 
   def create 
@@ -16,6 +20,7 @@ class ReviewsController < ApplicationController
       render 'saizies/show'
     end
   end
+
 
   private
     def review_params

@@ -1,10 +1,79 @@
-<div class="review-area">
-  <h1>みんなの口コミ</h1>
-  <% @reviews.each do |review| %>
-    <%= review.title %>
-    <%= review.comment %>
-    <%= review.user.name %>
-  <% end %>
+<% provide(:title, @saizy.name+"の口コミ")%>
 
-  <%= link_to '戻る', saizies_path(@saizy) %>
+<div class="review-index">
+  <h1>みんなの口コミ</h1>
+  <div class="show-back-button">
+    <%= link_to '催事詳細に戻る', saizy_path(@saizy), class: "back-button-text" %>
+  </div>
+  <% if @reviews.count == 0 %>
+    <p>まだ口コミはありません。</p>
+  <% else %>
+  <div class="review-top-flex">
+    <div class="show-title">
+      <p><%= @saizy.name %>の催事　
+      <%= @saizy.start.strftime("%m月%d日") %>〜<%= @saizy.finish.strftime("%m月%d日") %>まで</p>
+    </div>
+    <div class="like-area" id="like_<%= @saizy.id %>">
+      <%= render partial: 'likes/like', locals: {saizy: @saizy} %>
+      <%= @average_review %>
+    </div>
+  </div>
 </div>
+
+<div class="review-area">
+
+  <div class="review-left">
+    <!-- image area --> 
+    <div class="show-image-area">
+      <% if @saizy.images.attached? %>
+        <% @saizy.images.each do |image| %>
+            <%= image_tag image.variant(resize: "500x500"), class: "show-main-image"%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="review-list-area">
+    <% @reviews.each do |review| %>
+      <div class="review-list-content">
+        <div class="review-list-title">
+          <%= review.title %>
+        </div>
+        <div class="review-list-comment">
+          <%= safe_join(review.comment.split("\n"), tag(:br)) %>
+        </div>
+        <div class="review-list-down">
+          <div class="review-user-img">
+            <% if review.user.avatar.attached? %>
+              <%= image_tag review.user.avatar.variant(resize: "300x300") %>
+            <% else %>
+              <i class="fas fa-user review-default-user"></i>
+            <% end %>
+          </div>
+          <div class="review-rate" data-score="<%= review.rate %>"></div>
+
+          <div class="review-list-create">
+            <%= review.created_at.strftime('%Y年%m月%d日') %>に投稿
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @review_page %>
+  <% end %>
+  </div>
+</div>
+
+<script>
+  <%= render 'shared/star_js' %>
+  
+  $("#star-average-<%= @saizy.id %>").raty({
+  starOff:  '<%= asset_path('star-icon2.png') %>',
+  starOn : '<%= asset_path('star-icon.png') %>',
+  starHalf: '<%= asset_path('star-icon.png') %>',
+
+  half: false,
+  readOnly: true,
+  score: '<%= @saizy.reviews.average(:rate).to_f.round(2) %>'
+});
+
+</script>
