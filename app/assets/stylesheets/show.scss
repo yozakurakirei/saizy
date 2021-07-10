@@ -40,9 +40,10 @@
     justify-content: center;
     margin-top: 1rem;
     .profile-name {
+      padding: 0;
+      margin: 0;
       h3 {
         font-size: 1.3rem;
-        margin-bottom: 1rem;
       }
     }
     .profile-follow {
@@ -66,12 +67,11 @@
       }
     }
     .user-email {
-      margin: 1rem;
       word-wrap: break-all;
-      padding: 1rem;
+      padding: .5rem;
     }
     .edit-btn {
-      margin-top: 1rem;
+      margin-top: .5rem;
       background-color: #fff;
       padding: .5rem 1rem;
       border: 2px solid #d57261;
@@ -148,7 +148,6 @@
   .user-show {
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 430px auto; 
     grid-template-areas: 
       "profile"
       "post";
