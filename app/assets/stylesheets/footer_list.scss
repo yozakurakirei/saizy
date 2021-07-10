@@ -20,3 +20,41 @@
     margin-bottom: 2rem;
   }
 }
+
+// 利用規約
+.policy {
+  width: 80%;
+  margin: 5rem auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .policy-title {
+    margin-bottom: 5rem;
+    h1 {
+      font-size: 1.7rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 3rem;
+    }
+  }
+  .policy-contents {
+    .policy-contents-title {
+      margin-bottom: 1.3rem;
+      border-left: 5px solid #e96161;
+      h2 {
+        font-size: 1.4rem;
+        margin-left: 1rem;
+      }
+    }
+    .policy-contents-text {
+      margin-bottom: 4rem;
+      .privacy-text {
+        color: #e96161 !important;
+        margin: 1rem 0;
+      }
+      .policy-list {
+        margin: 1rem 0 1rem 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<%# google analytics %>
+
+<script src="https://www.googletagmanager.com/gtag/js?id=G-Z9M7C2HQ3R"></script>
+
+<script>
+  
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z9M7C2HQ3R');
+  if (#{raw current_user.to_json}) {
+    gtag('set', {'user_id': #{raw current_user.to_json}.id});
+  }
+
+</script>

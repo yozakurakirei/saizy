@@ -8,6 +8,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_pack_tag 'application' %>
+    
+    <% if Rails.env.production? %>
+      <%= render 'layouts/google_analytics' %>
+    <% end %>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
