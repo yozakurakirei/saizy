@@ -17,6 +17,8 @@ body {
     background-color: #fafafa !important;
   }
 section {
+    box-sizing: border-box;
+    min-height: 100vh;
 }
   
 header {
@@ -24,10 +26,6 @@ header {
 }
 footer {
     width: 100%;
-}
-  
-section {
-    min-height: 100vh;
 }
 
 // お気に入りボタン

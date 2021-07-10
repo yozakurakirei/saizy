@@ -34,12 +34,18 @@ $(function() {
 $(function() {
   const swiper = new Swiper(".miniSwiper", {
     loop: true,
-    slidesPerView: 3,
+    slidesPerView: 1.5,
     centeredSlides : true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      670: {
+        slidesPerView: 3,
+        centeredSlides : true,
+      }
+    } 
   });
 })
 
