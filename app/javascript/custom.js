@@ -31,6 +31,17 @@ $(function() {
     },
   });
 })
+$(function() {
+  const swiper = new Swiper(".miniSwiper", {
+    loop: true,
+    slidesPerView: 3,
+    centeredSlides : true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+})
 
 // review
 

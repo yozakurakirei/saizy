@@ -8,7 +8,6 @@
   min-height: 100vh;
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
@@ -20,17 +19,18 @@
   align-items: center;
   padding: 2rem;
   color: #fff;
-  height: auto;
-  .profile-img {
+  .profile-img .default-img {
+
     img {
       width: 130px;
-      max-width: 130px;
       height: 130px;
-      max-height: 130px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #ff8974;
       margin-bottom: 1rem;
+    }
+    .default-user {
+      text-align: center;
     }
   }
   .profile-area {
@@ -148,7 +148,7 @@
   .user-show {
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 400px auto; 
+    grid-template-rows: 430px auto; 
     grid-template-areas: 
       "profile"
       "post";
@@ -157,11 +157,10 @@
         height: 100%;
         padding: .5rem;
         .profile-img {
-          img {
-            width: 100px;
-            height: 100px;
-          }
         }
       }
+  }
+  .edit-btn {
+    padding: .5rem;
   }
 }
