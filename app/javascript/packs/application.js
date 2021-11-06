@@ -20,6 +20,8 @@ require("raty")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
+import 'swiper/swiper-bundle'
+import 'swiper'
 
 // Rails.start()
 // // Turbolinks.start()

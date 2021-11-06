@@ -18,7 +18,7 @@
     <!-- image area --> 
     <div class="show-box">
       <div class="show-image-area">
-        <div class="swiper-container show-slider">
+        <div class="swiper show-slider">
           <div class="swiper-wrapper">
             <% if @saizy.images.attached? %>
               <% @saizy.images.each do |image| %>
@@ -28,6 +28,8 @@
               <% end %>
             <% end %>
           </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       <%# サムネイル %>
       <div class="swiper-container slider-thumbnail">
