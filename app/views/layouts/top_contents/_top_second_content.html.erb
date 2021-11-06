@@ -3,7 +3,7 @@
     <h2>過去のSaizy</h2>
   </div>
   <!-- 新着投稿 -->
-  <div class="swiper-container mySwiper">
+  <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <% @saizies.deleted.each do |saizy| %>
         <%= link_to saizy_path(saizy) do%>

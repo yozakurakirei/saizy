@@ -16,6 +16,7 @@
     "popper.js": "^1.16.1",
     "rails-ujs": "^5.2.6",
     "style-loader": "^2.0.0",
+    "swiper": "^7.2.0",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.12",
     "vue-axios": "^3.2.4",
