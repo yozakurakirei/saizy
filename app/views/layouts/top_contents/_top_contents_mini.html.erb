@@ -5,7 +5,7 @@
     <h2>新着のSaizy</h2>
   </div>
   <!-- 新着投稿 -->
-  <div class="swiper miniSwiper">
+  <div class="swiper">
     <div class="swiper-wrapper">
       <% @saizies.published.each do |saizy| %>
         <%= link_to saizy_path(saizy) do%>

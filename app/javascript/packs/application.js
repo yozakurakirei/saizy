@@ -1,8 +1,3 @@
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-
 require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -11,23 +6,18 @@ require("channels")
 require("jquery")
 require("bootstrap")
 require("popper.js")
-require("custom.js")
-// require("../simple_js/modal.js")
-require("slick.min")
-require("map")
-require("tab")
-require("raty")
 
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
 import 'swiper/swiper-bundle'
-import 'swiper'
+import './custom'
+import './map'
+import './tab'
+import './raty'
 
 // Rails.start()
 // // Turbolinks.start()
 // ActiveStorage.start()
- 
-const images = require.context('../images', true);
 
 // googlemaps
 window.initMap = function(...args) {
@@ -37,4 +27,4 @@ window.initMap = function(...args) {
   window.dispatchEvent(event)
 }
 
-window.$ = window.jQuery = require('jquery'); //追記
+// window.$ = window.jQuery = require('jquery'); //追記
