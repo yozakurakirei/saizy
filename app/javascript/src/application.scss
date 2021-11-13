@@ -1,3 +1,5 @@
+@import 'swiper/swiper-bundle';
+@import 'swiper/swiper.min';
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import 'stylesheets/navbar';
@@ -14,7 +16,7 @@
 @import 'stylesheets/relationships';
 @import 'stylesheets/follow';
 @import 'stylesheets/reviews';
-@import 'swiper/swiper-bundle';
+
 
 // responsive
 @import 'stylesheets/responsive/user-show-res';
